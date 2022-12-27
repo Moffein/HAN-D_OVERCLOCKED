@@ -49,6 +49,10 @@ Sounds taken from Risk of Rain 1 and Starstorm
 
 ## Changelog
 
+`1.1.12`
+
+- Updated Ukrainian translation.
+
 `1.1.11`
 
 - Added Ukrainian translation (Thanks Damglador!)

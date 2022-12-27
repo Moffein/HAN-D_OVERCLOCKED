@@ -11,16 +11,16 @@
         "MOFFEIN_HAND_BODY_PASSIVE_NAME": "РОЙОВА_БРОНЯ",
         "MOFFEIN_HAND_BODY_PASSIVE_DESC": "<style=cIsDamage>Понижує шкоду по вам</style> на <style=cIsDamage>0.3%</style> від вашого макс. здоров'я за кожного <style=cIsUtility>дрона</style> в вашій команді.",
         
-        "MOFFEIN_HAND_BODY_PRIMARY_NAME": "КАЛІЧЕННЯ",
+        "MOFFEIN_HAND_BODY_PRIMARY_NAME": "КАЛІЧИТИ",
         "MOFFEIN_HAND_BODY_PRIMARY_DESC": "Б'є ворогів поблизу кулаками, завдаючи <style=cIsDamage>390% шкоди</style>. <style=cIsDamage>Приголомшує</style> поки активний <style=cIsDamage>РОЗГІН</style>.",
         
         "MOFFEIN_HAND_BODY_PRIMARY_HAMMER_NAME": "РОЗПЛЮЩИТИ",
         "MOFFEIN_HAND_BODY_PRIMARY_HAMMER_DESC": "<style=cIsHealth>Сповільнює вас</style> та виконує замах молотом поперед себе, завдаючи <style=cIsDamage>600% шкоди</style>. <style=cIsDamage>Приголомшує</style>, поки активний <style=cIsDamage>РОЗГІН</style>.",
         
-        "MOFFEIN_HAND_BODY_SECONDARY_NAME": "ПРИМУСОВА_ЗБІРКА",
+        "MOFFEIN_HAND_BODY_SECONDARY_NAME": "ПРИМУСОВА_ПЕРЕРОБКА",
         "MOFFEIN_HAND_BODY_SECONDARY_DESC": "<style=cIsDamage>Приголомшує</style>. Заряджає замах молотом, та вдаряє по землі завдаючи <style=cIsDamage>600%-1500% шкоди</style> ворогам поблизу та підкидаючи їх в повітря.",
         
-        "MOFFEIN_HAND_BODY_SECONDARY_SCEPTER_NAME": "НЕЕТИЧНА_ЗБІРКА",
+        "MOFFEIN_HAND_BODY_SECONDARY_SCEPTER_NAME": "НЕЕТИЧНА_ПЕРЕРОБКА",
         "MOFFEIN_HAND_BODY_SECONDARY_SCEPTER_DESC": "<style=cIsDamage>Приголомшує</style>. Charge up and apply <style=cIsHealth>ПЕРЕВАЖАННЯ</style> force to all combatants for <style=cIsDamage>900%-2250% шкоди</style>.",
         
         "KEYWORD_MOFFEINHANDOVERCLOCKED_BOOST": "<style=cKeywordName>Буст</style><style=cSub>Здібності можуть бути відмінені раніше, щоб підкинути себе вверх.</style>",
