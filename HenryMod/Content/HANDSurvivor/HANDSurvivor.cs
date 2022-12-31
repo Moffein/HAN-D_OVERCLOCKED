@@ -462,14 +462,11 @@ namespace HANDMod.Content.HANDSurvivor
 
                 if (DoesSkinHaveDroneReplacement(skin))
                 {
-                    skin.projectileGhostReplacements = new SkinDef.ProjectileGhostReplacement[]
+                    HG.ArrayUtils.ArrayAppend(ref skin.projectileGhostReplacements,new SkinDef.ProjectileGhostReplacement
                     {
-                        new SkinDef.ProjectileGhostReplacement
-                        {
                             projectilePrefab = EntityStates.HAND_Overclocked.Special.FireSeekingDrone.projectilePrefab,
                             projectileGhostReplacementPrefab = CreateProjectileGhostReplacementPrefab(skin),
-                        }
-                    };
+                    });
                 }
             }
 
