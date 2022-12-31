@@ -49,6 +49,10 @@ Sounds taken from Risk of Rain 1 and Starstorm
 
 ## Changelog
 
+`1.1.13`
+
+- Fixed some code related to DRONE replacements on skins. (Thanks RandomlyAwesome!)
+
 `1.1.12`
 
 - Updated Ukrainian translation.
