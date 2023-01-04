@@ -1,4 +1,5 @@
 ﻿using BepInEx;
+using HANDMod.Modules;
 using HANDMod.Content.HANDSurvivor;
 using HANDMod.Content.RMORSurvivor;
 using R2API.Utils;
@@ -25,7 +26,6 @@ namespace HANDMod
     [R2APISubmoduleDependency(new string[]
     {
         "PrefabAPI",
-        "SoundAPI",
         "UnlockableAPI",
         "RecalculateStatsAPI",
         "DamageAPI"
@@ -35,12 +35,11 @@ namespace HANDMod
     {
         public const string MODUID = "com.EnforcerGang.HANDOverclocked";
         public const string MODNAME = "HAN-D Overclocked";
-        public const string MODVERSION = "1.1.13";
+        public const string MODVERSION = "1.2.0";
 
         public const string DEVELOPER_PREFIX = "MOFFEIN";
 
         public static HandPlugin instance;
-        public static PluginInfo pluginInfo;
 
         public static bool ScepterStandaloneLoaded = false;
         public static bool ScepterClassicLoaded = false;
@@ -51,7 +50,7 @@ namespace HANDMod
 
         private void Awake()
         {
-            pluginInfo = Info;
+            Files.PluginInfo = Info;
             instance = this;
 
             CheckDependencies();
@@ -80,6 +79,11 @@ namespace HANDMod
                 Stage.onStageStartGlobal += SetArena;
             }
             RoR2.RoR2Application.onLoad += AddMechanicalBodies;
+        }
+
+        private void Start()
+        {
+            SoundBanks.Init();
         }
 
         private void AddMechanicalBodies()

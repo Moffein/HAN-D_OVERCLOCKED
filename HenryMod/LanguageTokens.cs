@@ -1,4 +1,5 @@
-﻿using R2API;
+﻿using HANDMod.Modules;
+using R2API;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,19 +17,12 @@ namespace HANDMod
         {
             get
             {
-                return System.IO.Path.GetDirectoryName(HandPlugin.pluginInfo.Location);
+                return System.IO.Path.GetDirectoryName(Files.PluginInfo.Location);
             }
         }
         public LanguageTokens()
         {
             RegisterLanguageTokens();
-            //string handPrefix = Content.HANDSurvivor.HANDSurvivor.HAND_PREFIX;
-
-            /*string rmorPrefix = Content.RMORSurvivor.RMORSurvivor.RMOR_PREFIX;
-            LanguageAPI.Add(rmorPrefix + "NAME", "R-MOR");
-
-            LanguageAPI.Add(rmorPrefix + "PRIMARY_NAME", "ERADICATE");
-            LanguageAPI.Add(rmorPrefix + "PRIMARY_DESC", "Charge up your cannons and fire a barrage of rockets for up to <style=cIsDamage>3x420% damage</style>.");*/
         }
 
         public static void RegisterLanguageTokens()

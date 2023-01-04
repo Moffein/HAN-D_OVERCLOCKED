@@ -7,6 +7,7 @@ using System.IO;
 using System.Collections.Generic;
 using RoR2.UI;
 using System;
+using HANDMod.Modules;
 
 namespace HANDMod.Modules
 {
@@ -21,7 +22,6 @@ namespace HANDMod.Modules
         internal static void Initialize()
         {
             LoadAssetBundle();
-            LoadSoundbank();
             PopulateAssets();
         }
 
@@ -31,27 +31,13 @@ namespace HANDMod.Modules
             {
                 if (mainAssetBundle == null)
                 {
-                    using (var assetStream = Assembly.GetExecutingAssembly().GetManifestResourceStream($"{csProjName}.{assetbundleName}"))
-                    {
-                        mainAssetBundle = AssetBundle.LoadFromStream(assetStream);
-                    }
+                    mainAssetBundle = AssetBundle.LoadFromFile(Files.GetPathToFile("AssetBundles", "handoverclockedassetbundle"));
                 }
             }
             catch (Exception e)
             {
                 Log.Error("Failed to load assetbundle. Make sure your assetbundle name is setup correctly\n" + e);
                 return;
-            }
-        }
-
-        internal static void LoadSoundbank()
-        {                                                                
-            //soundbank currently broke, but this is how you should load yours
-            using (Stream manifestResourceStream2 = Assembly.GetExecutingAssembly().GetManifestResourceStream($"{csProjName}.HAND_Overclocked_Soundbank.bnk"))
-            {
-                byte[] array = new byte[manifestResourceStream2.Length];
-                manifestResourceStream2.Read(array, 0, array.Length);
-                SoundAPI.SoundBanks.Add(array);
             }
         }
 
