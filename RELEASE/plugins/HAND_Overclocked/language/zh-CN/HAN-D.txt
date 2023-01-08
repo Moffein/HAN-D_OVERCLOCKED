@@ -5,8 +5,8 @@
 	"MOFFEIN_HAND_BODY_SUBTITLE" : "看门狗",
 	"MOFFEIN_HAND_BODY_DESCRIPTION" : "韩迪是一个坦克机器人，其强大的近战攻击肯定会造成混乱！<style=cSub>\r\n\r\n< ! > 锤击增加了对空中敌人的击退。使用强制重组将敌人弹到空中，然后锤击他们，让他们飞起来！\r\n\r\n< ! > 只要保持攻击敌人，超频就会持续。\r\n\r\n< ! > 强制重组的自我击退可以用来接触飞行的敌人。\r\n\r\n< ! > 使用无人机治愈自身以提高生存能力。\r\n\r\n",
 	"MOFFEIN_HAND_BODY_LORE" :  "<style=cMono>\r\n//--来自UES基础部门的自动转录[已编校]--//</style>\r\n\r\n<i>*敲了敲<color=#327FFF>尖晶强心剂</color>*</i>\n\n玩的时候不带上“软蛋专属”<color=#6955A6>统率</color>神器？\n\n笑死，我真没法想象能有比不带上<color=#6955A6>统率</color>神器更废物的做法了。说实在的，咱们理性的思考一下。你这六十分钟射来射去跑来跑去跳来跳去仅仅是他妈的因为你能够拿到个<color=#77FF16>乌贼增生体</color>。你这轮游戏付出的所有汗水：躲避<style=cIsHealth>石傀儡</style>的激光，被头顶上六千个<style=cIsHealth>小型幽魂</color>骚扰，甚至激活了<color=#E5C962>山之神龛</color>都只是为了花钱让你的物品栏被<color=#FFFFFF>战旗</color>和<color=#FFFFFF>怪物牙齿</color>填满。\n\n这可真是棒极了不是吗？很好，一大堆没有增益效果的垃圾物品最后都会出现在你花钱买的<color=#E5C962>箱子</color>中出现。这帮人把你杀<style=cIsHealth>利莫里亚</style>赚来的辛苦钱全都骗走啦~\n\n作为一个玩这个游戏的新新人类，你<style=cIsHealth>完全</style>就是在花费你宝贵人生中的两个小时来开箱还要跪求不要再出另外一个<color=#77FF16>时空装置</color>。哥们，这才是超级无敌宇宙巨无霸废物，好好想想吧。\r\n<style=cMono>\r\n转录已完成。\r\n</style>\r\n \r\n\r\n",
-	"MOFFEIN_HAND_BODY_OUTRO_FLAVOR" : "..就这样它离开了，伺服系统充满了新的生机。",
-	"MOFFEIN_HAND_BODY_OUTRO_FAILURE" : "..所以它消失了，所有的努力都没有得到回报。",
+	"MOFFEIN_HAND_BODY_OUTRO_FLAVOR" : "……就这样它离开了，伺服系统充满了新的生机。",
+	"MOFFEIN_HAND_BODY_OUTRO_FAILURE" : "……所以它消失了，所有的努力都没有得到回报。",
 	
 	"MOFFEIN_HAND_BODY_PASSIVE_NAME" : "机械护甲",
 	"MOFFEIN_HAND_BODY_PASSIVE_DESC" : "每个友方<style=cIsUtility>无人机</style>可减少最大生命值<style=cIsDamage>0.3%</style>的<style=cIsDamage>伤害</style>。",

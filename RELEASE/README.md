@@ -49,6 +49,11 @@ Sounds taken from Risk of Rain 1 and Starstorm
 
 ## Changelog
 
+`1.2.0`
+
+- Assetbundle/Soundbank are no longer embedded. This will reduce RAM usage.
+- Updated CN localization.
+
 `1.1.13`
 
 - Fixed some code related to DRONE replacements on skins. (Thanks RandomlyAwesome!)
