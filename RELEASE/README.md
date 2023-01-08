@@ -1,7 +1,7 @@
 HAN-D is a tanky melee survivor who can heal himself and his allies to stay in the fight. His melee attacks have high knockback, and comboing them properly will allow him to knock away even the heaviest enemies!
 
 We are looking for translators! Check the languages folder on the [GitHub](https://github.com/Moffein/HAN-D_OVERCLOCKED/tree/master/language) if you would like to submit a translation for your language.
-Current Supported Languages: English, Simplified Chinese
+Current Supported Languages: English, Simplified Chinese, Russian, French, Ukrainian
 
 [![](https://i.imgur.com/9pHqh2i.jpg)]()
 [![](https://i.imgur.com/5HoCYrq.png)]()
@@ -35,15 +35,72 @@ KoobyKarasu - SMASH Skill Icon
 
 Jaysian - Bankroller
 
+## Translation Credits
+
 WockyTheWolf, JunJun_w - Simplified Chinese translation.
+
+MoonsugarCrusader - Russian translation.
+
+FyreBW - French translation.
+
+Damglador - Ukrainian translation.
 
 Sounds taken from Risk of Rain 1 and Starstorm
 
 ## Changelog
 
+`1.1.13`
+
+- Fixed some code related to DRONE replacements on skins. (Thanks RandomlyAwesome!)
+
+`1.1.12`
+
+- Updated Ukrainian translation.
+
+`1.1.11`
+
+- Added Ukrainian translation (Thanks Damglador!)
+
+`1.1.10`
+
+- Added French translation (Thanks FyreBW!)
+
+`1.1.9`
+
+- SWARM_ARMOR now supports DroneMeld.
+
+`1.1.8`
+
+- Remembered to mark KingKombatArena as a softdependency so that it will always load before HAN-D.
+
+`1.1.7`
+
+- Updated SMASH to check InputBank instead of CharacterMotor.
+
+`1.1.6`
+
+- Minor tweak to HURT's self-force code.
+	- HURT doesn't apply self-force if you are standing still. Before, this was checked via the CharacterMotor's move vector. Now it uses the actual Input move vector to check this.
+
+`1.1.5`
+
+- Fixed Scepter M2 anim not playing online.
+
+`1.1.4`
+
+- Fixed Mastery skin not being unlockable when using the Force Unlock config option.
+
+`1.1.3`
+
+- Fixed game not booting up with the Russian translation.
+
+`1.1.2`
+
+- Added Russian translation (Thanks MoonsugarCrusader!)
+
 `1.1.1`
 
-- Renamed Mastery skin. (Thanks Commando Gaming!)
+- Renamed Mastery skin. (Credits to Commando Gaming for the suggestion!)
 
 `1.1.0`
 

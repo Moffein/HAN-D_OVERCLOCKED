@@ -1,4 +1,5 @@
 ﻿using BepInEx;
+using HANDMod.Modules;
 using HANDMod.Content.HANDSurvivor;
 using HANDMod.Content.RMORSurvivor;
 using R2API.Utils;
@@ -18,13 +19,13 @@ namespace HANDMod
     [BepInDependency("com.weliveinasociety.CustomEmotesAPI", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.ThinkInvisible.ClassicItems", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("com.Kingpinush.KingKombatArena", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
     [R2APISubmoduleDependency(new string[]
     {
         "PrefabAPI",
-        "SoundAPI",
         "UnlockableAPI",
         "RecalculateStatsAPI",
         "DamageAPI"
@@ -34,12 +35,11 @@ namespace HANDMod
     {
         public const string MODUID = "com.EnforcerGang.HANDOverclocked";
         public const string MODNAME = "HAN-D Overclocked";
-        public const string MODVERSION = "1.1.0";
+        public const string MODVERSION = "1.2.0";
 
         public const string DEVELOPER_PREFIX = "MOFFEIN";
 
         public static HandPlugin instance;
-        public static PluginInfo pluginInfo;
 
         public static bool ScepterStandaloneLoaded = false;
         public static bool ScepterClassicLoaded = false;
@@ -50,7 +50,7 @@ namespace HANDMod
 
         private void Awake()
         {
-            pluginInfo = Info;
+            Files.PluginInfo = Info;
             instance = this;
 
             CheckDependencies();
@@ -77,6 +77,21 @@ namespace HANDMod
             if (ArenaPluginLoaded)
             {
                 Stage.onStageStartGlobal += SetArena;
+            }
+            RoR2.RoR2Application.onLoad += AddMechanicalBodies;
+        }
+
+        private void Start()
+        {
+            SoundBanks.Init();
+        }
+
+        private void AddMechanicalBodies()
+        {
+            BodyIndex sniperClassicIndex = BodyCatalog.FindBodyIndex("SniperClassicBody");
+            if (sniperClassicIndex != BodyIndex.None)
+            {
+                Content.HANDSurvivor.Components.Body.DroneStockController.mechanicalBodies.Add(sniperClassicIndex);
             }
         }
 

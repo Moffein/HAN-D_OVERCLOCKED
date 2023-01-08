@@ -2,7 +2,7 @@
 using RoR2.Achievements;
 using UnityEngine;
 
-namespace HAND_Overclocked.Content.HANDSurvivor.Achievements
+namespace HANDMod.Content.HANDSurvivor.Achievements
 {
 	[RegisterAchievement("MoffeinHANDOverclockedSurvivorUnlock", "Characters.HANDOverclocked", null, typeof(HANDOverclockedSurvivorUnlockServerAchievement))]
 	public class HANDOverclockedSurvivorUnlockAchievement : BaseAchievement

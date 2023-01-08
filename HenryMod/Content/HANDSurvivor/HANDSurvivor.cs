@@ -462,14 +462,11 @@ namespace HANDMod.Content.HANDSurvivor
 
                 if (DoesSkinHaveDroneReplacement(skin))
                 {
-                    skin.projectileGhostReplacements = new SkinDef.ProjectileGhostReplacement[]
+                    HG.ArrayUtils.ArrayAppend(ref skin.projectileGhostReplacements,new SkinDef.ProjectileGhostReplacement
                     {
-                        new SkinDef.ProjectileGhostReplacement
-                        {
                             projectilePrefab = EntityStates.HAND_Overclocked.Special.FireSeekingDrone.projectilePrefab,
                             projectileGhostReplacementPrefab = CreateProjectileGhostReplacementPrefab(skin),
-                        }
-                    };
+                    });
                 }
             }
 
@@ -553,6 +550,9 @@ namespace HANDMod.Content.HANDSurvivor
 
             Modules.ContentPacks.entityStates.Add(typeof(EntityStates.HAND_Overclocked.Secondary.ChargeSlam));
             Modules.ContentPacks.entityStates.Add(typeof(EntityStates.HAND_Overclocked.Secondary.FireSlam));
+
+            Modules.ContentPacks.entityStates.Add(typeof(EntityStates.HAND_Overclocked.Secondary.ChargeSlamScepter));
+            Modules.ContentPacks.entityStates.Add(typeof(EntityStates.HAND_Overclocked.Secondary.FireSlamScepter));
 
             Modules.ContentPacks.entityStates.Add(typeof(EntityStates.HAND_Overclocked.Utility.BeginOverclock));
             Modules.ContentPacks.entityStates.Add(typeof(EntityStates.HAND_Overclocked.Utility.CancelOverclock));

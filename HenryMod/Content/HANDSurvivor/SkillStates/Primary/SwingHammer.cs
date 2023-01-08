@@ -164,11 +164,11 @@ namespace EntityStates.HAND_Overclocked.Primary
             { 
                 if (!this.hasFired)
                 {
-                    this.startedSkillStationary = base.characterMotor && base.characterMotor.moveDirection == Vector3.zero;
-                    if (base.characterMotor && !this.startedSkillStationary)
+                    this.startedSkillStationary = base.inputBank && base.inputBank.moveVector == Vector3.zero;
+                    if (base.inputBank && !this.startedSkillStationary)
                     {
                         Ray aimRay = base.GetAimRay();
-                        Vector2 moveDirectionFlat = new Vector2(base.characterMotor.moveDirection.x, base.characterMotor.moveDirection.z);
+                        Vector2 moveDirectionFlat = new Vector2(base.inputBank.moveVector.x, base.inputBank.moveVector.z);
                         Vector2 forwardDirectionFlat = new Vector2(aimRay.direction.x, aimRay.direction.z);
 
                         float angle = Vector2.Angle(moveDirectionFlat, forwardDirectionFlat);
