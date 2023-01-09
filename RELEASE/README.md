@@ -35,7 +35,9 @@ KoobyKarasu - SMASH Skill Icon
 
 Jaysian - Bankroller
 
-## Translation Credits
+Sounds taken from Risk of Rain 1 and Starstorm
+
+## Localization Credits
 
 WockyTheWolf, JunJun_w - Simplified Chinese translation.
 
@@ -45,9 +47,13 @@ FyreBW - French translation.
 
 Damglador - Ukrainian translation.
 
-Sounds taken from Risk of Rain 1 and Starstorm
+CaffeinePain - Korean translation.
 
 ## Changelog
+
+`1.2.1`
+
+- Added Korean translation (Thanks CaffeinePain!)
 
 `1.2.0`
 

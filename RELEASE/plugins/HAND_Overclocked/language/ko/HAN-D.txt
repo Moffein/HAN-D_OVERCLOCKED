@@ -1,0 +1,53 @@
+{
+	strings:
+	{
+	"MOFFEIN_HAND_BODY_NAME" : "HAN-D",
+	"MOFFEIN_HAND_BODY_SUBTITLE" : "무급 경비원",
+	"MOFFEIN_HAND_BODY_DESCRIPTION" : "HAN-D는 강력한 근거리 공격으로 적들을 혼란시키는 탱크 같은 로봇 경비원입니다! <style=cSub>\r\n\r\n< ! > 공중에 떠 있는 적에 대한 상해의 넉백이 증가했습니다. 강제_재조립을 이용해 적들을 공중으로 띄운 다음, 상해를 사용해 그들을 날려보내세요!\r\n\r\n< ! > 적을 계속해서 칠 수 있는 한 오버클럭은 계속 유지됩니다.\r\n\r\n< ! > 오버클럭을 중단하면 위로 사출되어 공중의 적에게 도달할 수 있습니다.\r\n\r\n< ! > 드론을 사용하여 회복하고 전투를 지속하세요.\r\n\r\n",
+	"MOFFEIN_HAND_BODY_LORE" :  "<style=cMono>\r\n//--UES의 기반 부서로부터 자동-전사됨 [삭제됨]--//</style>\r\n\r\n<i>*<color=#327FFF>첨정석 토닉</color> 맞는 소리*</i>\n\n<color=#6955A6>지휘</color>의 유물 없이 플레이하는 것이 뻘짓의 궁극적인 형태야?\n\n나는 <color=#6955A6>지휘</color>의 유물 없는 플레이보다 더 바보같은 일을 생각해내거나 이해할 수 없어. 솔직히, 이성적으로 생각해 봐. 너는 60분동안 단지 거지같은 <color=#77FF16>오징어 폴립</color>을 얻기 위해 쏘고, 달리고, 점프하는 거야. 니가 런 중에 했던 모든 힘든 일들 - <style=cIsHealth>돌 거인</style>의 레이저 피하기, 네 머리 위에서 스폰되는 <style=cIsHealth>소형 위습</color> 때문에 스트레스 받기, <color=#E5C962>산의 성소</color> 활성화하기 등 모든 것들은 하나의 단순한 결과를 위한 거야: 네 인벤토리는 돈이 드는 <color=#FFFFFF>전쟁깃발</color>과 <color=#FFFFFF>몬스터 이빨</color> 목걸이로 가득 찼어.\n\n잘 풀리는 런에서? 좋아. 네 런에 아무 것도 도움이 되지 않는 똥같은 아이템 다발이 결국 네가 사는 <color=#E5C962>상자</color>에서 나와. 그것들은 네가 <style=cIsHealth>레무리안</style>들을 죽이는 것으로부터 힘들게 얻어낸 네 노력으로부터 이익을 취해.\n\n이 게임을 하는 사람으로서 너는 <style=cIsHealth><b>말 그대로</b></style> 네 인생의 두 시간을 상자를 열고 또 다른 <color=#77FF16>시간의 방울</color>이 나오지 않도록 기도하는 데에 헌납하고 있어. 이건 정말 궁극적이고 최종적인 바보짓이야. 논리적으로 생각해 보길 바래.\r\n<style=cMono>\r\n전사 완료됨.\r\n</style>\r\n \r\n\r\n",
+	"MOFFEIN_HAND_BODY_OUTRO_FLAVOR" : "..그리하여 그것은 떠났다, 새로운 삶에 대한 기쁨으로 부품을 떨면서.",
+	"MOFFEIN_HAND_BODY_OUTRO_FAILURE" : "..그리하여 그것은 사라졌다, 그것의 노력 모두를 보상받지 못한 채로.",
+	
+	"MOFFEIN_HAND_BODY_PASSIVE_NAME" : "군중_견갑",
+	"MOFFEIN_HAND_BODY_PASSIVE_DESC" : "모든 아군 <style=cIsUtility>드론</style>에 대해 <style=cIsDamage>들어오는 피해</style>를 자신의 최대 체력의 <style=cIsDamage>0.3%</style>만큼 <style=cIsDamage>줄입니다.</style>",
+	
+	"MOFFEIN_HAND_BODY_PRIMARY_NAME" : "상해",
+	"MOFFEIN_HAND_BODY_PRIMARY_DESC" : "모든 전투원에게 <style=cIsDamage>390%의 피해</style>를 입힙니다. <style=cIsDamage>오버클럭</style>이 활성화되어 있는 동안엔 적들을 <style=cIsDamage>기절</style>시킵니다.",
+	
+	"MOFFEIN_HAND_BODY_PRIMARY_HAMMER_NAME" : "충돌",
+	"MOFFEIN_HAND_BODY_PRIMARY_HAMMER_DESC" : "잠시 <style=cIsHealth>느려진 후</style> 모든 전투원에게 망치를 휘둘러 <style=cIsDamage>600%의 피해</style>를 입힙니다. <style=cIsDamage>오버클럭</style>이 활성화되어 있는 동안엔 적들을 <style=cIsDamage>기절</style>시킵니다.",
+	
+	"MOFFEIN_HAND_BODY_SECONDARY_NAME" : "강제_재조립",
+	"MOFFEIN_HAND_BODY_SECONDARY_DESC" : "<style=cIsDamage>기절</style>. 충전한 후 모든 전투원에게 큰 충격을 가해 <style=cIsDamage>600%-1500%의 피해</style>를 입힙니다.",
+	
+	"MOFFEIN_HAND_BODY_SECONDARY_SCEPTER_NAME" : "비윤리적_재조립",
+	"MOFFEIN_HAND_BODY_SECONDARY_SCEPTER_DESC" : "<style=cIsDamage>기절</style>. 충전한 후 모든 전투원에게 <style=cIsHealth>압도적인</style> 충격을 가해 <style=cIsDamage>900%-2250%의 피해</style>를 입힙니다.",
+	
+	"KEYWORD_MOFFEINHANDOVERCLOCKED_BOOST" : "<style=cKeywordName>사출</style><style=cSub>이 스킬을 도중에 취소하여 위로 뛰어오를 수 있습니다.</style>",
+	
+	"MOFFEIN_HAND_BODY_UTILITY_CANCEL_NAME" : "중단",
+	"MOFFEIN_HAND_BODY_UTILITY_CANCEL_DESC" : "<style=cIsUtility>위로 뛰어오릅니다</style>.",
+	
+	"MOFFEIN_HAND_BODY_UTILITY_NAME" : "오버클럭",
+	"MOFFEIN_HAND_BODY_UTILITY_DESC" : "<style=cIsUtility>사출</style>. <style=cIsUtility>이동 속도</style>와 <style=cIsDamage>공격 속도</style>를 <style=cIsDamage>40%</style>만큼 증가시킵니다. 적을 타격하면 <style=cIsUtility>지속시간이 연장됩니다</style>.",
+	
+	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_NAME" : "초점",
+	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>사출</style>. <style=cIsDamage>공격력의 50%</style>를 추가로 얻고 <style=cIsUtility>50의 방어력</style>을 얻지만, <style=cIsHealth>30%의 이동속도를 잃습니다</style>. 적을 타격하면 <style=cIsUtility>지속시간이 연장됩니다</style>.",
+	
+	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "드론",
+	"MOFFEIN_HAND_BODY_SPECIAL_DESC" : "드론을 발사하여 <style=cIsDamage>270%의 피해</style>를 입히고 <style=cIsHealing>가한 피해의 40%를 회복합니다</style>. 적을 죽이거나 주 공격을 적중시켜 <style=cIsUtility>재사용 대기시간을 줄입니다</style>.",
+	
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_NAME" : "만능인",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_DESCRIPTION" : "탈출정의 연료 배열로 델타 집결지에 있는 로봇 경비원을 수리하십시오.",
+	
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDNEMESISFOCUSUNLOCK_NAME" : "HAN-D: 한방",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDNEMESISFOCUSUNLOCK_DESCRIPTION" : "오버클럭을 45초 동안 유지하십시오.",
+	
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDHAMMERPRIMARYUNLOCK_NAME" : "HAN-D: 꽝!",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDHAMMERPRIMARYUNLOCK_DESCRIPTION" : "최종 보스를 납작하게 만드십시오.",
+	
+	"MOFFEIN_HAND_BODY_MASTERY_SKIN_NAME" : "WOO-D",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDCLEARGAMEMONSOON_NAME" : "HAN-D: 마스터",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDCLEARGAMEMONSOON_DESCRIPTION" : "HAN-D로 몬순에서 승리하거나 소멸하십시오.",
+	}
+}
