@@ -6,6 +6,7 @@ using R2API;
 using HANDMod.Content.HANDSurvivor;
 using HANDMod.Content;
 using HANDMod.Content.Shared.Components.Body;
+using HANDMod.Modules;
 
 namespace EntityStates.HAND_Overclocked.Secondary
 {
@@ -201,14 +202,17 @@ namespace EntityStates.HAND_Overclocked.Secondary
                     base.SmallHop(base.characterMotor, FireSlam.shortHop);
                 }
 
-                ShakeEmitter se = ShakeEmitter.CreateSimpleShakeEmitter(base.transform.position, new Wave()
+                if (Config.screenshakeScale > 0f)
                 {
-                    amplitude = 12f,
-                    cycleOffset = 0f,
-                    frequency = 6f
-                },
-                0.75f, 30f, true);
-                se.transform.parent = base.transform;
+                    ShakeEmitter se = ShakeEmitter.CreateSimpleShakeEmitter(base.transform.position, new Wave()
+                    {
+                        amplitude = 10f * Config.screenshakeScale,
+                        cycleOffset = 0f,
+                        frequency = 5f
+                    },
+                    0.75f, 30f, true);
+                    se.transform.parent = base.transform;
+                }
             }
         }
 

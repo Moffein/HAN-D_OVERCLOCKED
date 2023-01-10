@@ -51,6 +51,11 @@ CaffeinePain - Korean translation.
 
 ## Changelog
 
+`1.2.2`
+
+- Lowered HURT/FORCED_REASSEMBLY screenshake by 80%
+- Added screenshake scale config option.
+
 `1.2.1`
 
 - Added Korean translation (Thanks CaffeinePain!)

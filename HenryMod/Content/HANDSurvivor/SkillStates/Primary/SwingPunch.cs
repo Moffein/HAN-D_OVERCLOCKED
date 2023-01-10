@@ -7,6 +7,7 @@ using UnityEngine;
 using HANDMod.Content;
 using HANDMod.Content.Shared.Components.Body;
 using HANDMod;
+using HANDMod.Modules;
 
 namespace EntityStates.HAND_Overclocked.Primary
 {
@@ -155,9 +156,9 @@ namespace EntityStates.HAND_Overclocked.Primary
 
         public override void OnFiredAttack()
         {
-            if (base.isAuthority)
+            if (base.isAuthority && Config.screenshakeScale > 0f)
             {
-                ShakeEmitter se = ShakeEmitter.CreateSimpleShakeEmitter(base.transform.position, new Wave() { amplitude = 3f, cycleOffset = 0f, frequency = 4f }, 0.25f, 20f, true);
+                ShakeEmitter se = ShakeEmitter.CreateSimpleShakeEmitter(base.transform.position, new Wave() { amplitude = 3f * Config.screenshakeScale, cycleOffset = 0f, frequency = 4f }, 0.25f, 20f, true);
                 se.transform.parent = base.transform;
             }
 
