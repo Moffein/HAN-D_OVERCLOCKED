@@ -39,17 +39,23 @@ Sounds taken from Risk of Rain 1 and Starstorm
 
 ## Localization Credits
 
-WockyTheWolf, JunJun_w - Simplified Chinese translation.
+WockyTheWolf, JunJun_w - Simplified Chinese translation
 
-MoonsugarCrusader - Russian translation.
+MoonsugarCrusader - Russian translation
 
-FyreBW - French translation.
+FyreBW - French translation
 
-Damglador - Ukrainian translation.
+Damglador - Ukrainian translation
 
-CaffeinePain - Korean translation.
+CaffeinePain - Korean translation
+
+Juhnter - Spanish translation
 
 ## Changelog
+
+`1.2.3`
+
+- Added Spanish translation (Thanks Juhnter!)
 
 `1.2.2`
 
