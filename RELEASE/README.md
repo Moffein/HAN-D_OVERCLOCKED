@@ -51,7 +51,13 @@ CaffeinePain - Korean translation
 
 Juhnter - Spanish translation
 
+Kauzok - Portuguese translation
+
 ## Changelog
+
+`1.2.4`
+
+- Added Brazilian Portuguese translation (Thanks Kauzok!)
 
 `1.2.3`
 
