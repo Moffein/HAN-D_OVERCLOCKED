@@ -55,6 +55,10 @@ Kauzok - Portuguese translation
 
 ## Changelog
 
+`1.2.6`
+
+- Updated BR TL.
+
 `1.2.5`
 
 - Fixed missing quotation mark in BR TL.
