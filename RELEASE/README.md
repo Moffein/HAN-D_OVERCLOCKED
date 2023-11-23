@@ -55,15 +55,13 @@ Kauzok - Portuguese translation
 
 ## Changelog
 
-`1.2.6`
+`1.3.0`
 
-- Updated BR TL.
+- Added DRONE - Speed
 
-`1.2.5`
+<details>
 
-- Fixed missing quotation mark in BR TL.
-
-`1.2.4`
+`1.2.4` to `1.2.7`
 
 - Added Brazilian Portuguese translation (Thanks Kauzok!)
 
@@ -197,3 +195,5 @@ Kauzok - Portuguese translation
 - Added 3 built-in emotes.
 
 *Special thanks to Jaysian for commissioning dotflare for the new HAN-D Model/Anims!*
+
+</details>

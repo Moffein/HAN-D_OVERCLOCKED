@@ -50,7 +50,7 @@ namespace EntityStates.HAND_Overclocked.Special
             fireProjectileInfo.damageColorIndex = DamageColorIndex.Default;
             fireProjectileInfo.owner = base.gameObject;
             fireProjectileInfo.force = FireSeekingDrone.force;
-            fireProjectileInfo.projectilePrefab = FireSeekingDrone.projectilePrefab;
+            fireProjectileInfo.projectilePrefab = GetProjectile();
             if (target)
             {
                 fireProjectileInfo.target = target.gameObject;
@@ -75,6 +75,11 @@ namespace EntityStates.HAND_Overclocked.Special
         public override InterruptPriority GetMinimumInterruptPriority()
         {
             return InterruptPriority.Skill;
+        }
+
+        public virtual GameObject GetProjectile()
+        {
+            return FireSeekingDrone.projectilePrefab;
         }
 
         private bool hasFired;
