@@ -34,8 +34,11 @@
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_NAME" : "FOCUS",
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>Boost</style>. Gana <style=cIsDamage>+50% de daño</style> y <style=cIsUtility>50 de armadura</style>, pero pierdes <style=cIsHealth>-30% de velocidad de movimiento</style>. Golpea enemigos para que <style=cIsUtility>aumente la duracion</style>.",
 	
-	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "DRONE",
+	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "DRON - CURACIÓN",
 	"MOFFEIN_HAND_BODY_SPECIAL_DESC" : "Lanza un dron que hace <style=cIsDamage>270% de daño</style> y <style=cIsHealing>cura el 40% del daño causado</style>. Muertes e impactos cuerpo a cuerpo <style=cIsUtility>reducen su enfriamiento</style>.",
+	
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_NAME" : "DRON - VELOCIDAD",
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_DESC" : "Lanza un dron que hace un <style=cIsDamage>270% de daño</style> y que <style=cIsDamage>aumenta la velocidad de ataque temporalmente</style>. Bajas y golpes cuerpo a cuerpo <style=cIsUtility>reducen el tiempo de reutilización</style>.",
 	
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_NAME" : "Manitas",
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_DESCRIPTION" : "Repara al robot conserje en el Punto de reunión Delta con la matriz de combustible de una cápsula de escape.",

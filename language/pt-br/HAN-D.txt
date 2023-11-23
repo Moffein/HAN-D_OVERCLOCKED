@@ -34,7 +34,8 @@
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_NAME" : "FOCO",
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>Impulso</style>. Ganhe <style=cIsDamage>+50% de dano</style> e <style=cIsUtility>50 de armadura</style>, mas perde <style=cIsHealth>-30% de velocidade de movimento</style>. Acertar inimigos <style=cIsUtility>aumenta a duração</style>.",
 	
-	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "DRONE - CURAR",
+
+	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "DRONE – CURAR",
 	"MOFFEIN_HAND_BODY_SPECIAL_DESC" : "Dispare um drone que causa <style=cIsDamage>270% de dano</style> e <style=cIsHealing>cura 40% do dano causado</style>. Abates e acertos corpo-a-corpo <style=cIsUtility>reduzem o tempo de recarga</style>.",
 
 	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_NAME" : "DRONE - VELOCIDADE",

@@ -15,6 +15,9 @@ using System.Linq;
 using R2API;
 using System.Runtime.CompilerServices;
 using HANDMod.Content.HANDSurvivor.CharacterUnlock;
+using HANDMod.Content.HANDSurvivor.Components.DroneProjectile;
+using EntityStates.HAND_Overclocked.Special;
+using HANDMod.Content.Shared;
 
 namespace HANDMod.Content.HANDSurvivor
 {
@@ -310,37 +313,62 @@ namespace HANDMod.Content.HANDSurvivor
 
             EntityStateMachine stateMachine = bodyPrefab.AddComponent<EntityStateMachine>();
             stateMachine.customName = "DroneLauncher";
-            stateMachine.initialStateType = new SerializableEntityStateType(typeof(EntityStates.BaseBodyAttachmentState));
-            stateMachine.mainStateType = new SerializableEntityStateType(typeof(EntityStates.BaseBodyAttachmentState));
+            stateMachine.initialStateType = new SerializableEntityStateType(typeof(EntityStates.BaseState));
+            stateMachine.mainStateType = new SerializableEntityStateType(typeof(EntityStates.BaseState));
             NetworkStateMachine nsm = bodyPrefab.GetComponent<NetworkStateMachine>();
             nsm.stateMachines = nsm.stateMachines.Append(stateMachine).ToArray();
 
-            //DroneSkillDef too restrictive, but it's there if it's needed.
-            SkillDef droneSkill = SkillDef.CreateInstance<SkillDef>();
-            droneSkill.activationState = new SerializableEntityStateType(typeof(EntityStates.HAND_Overclocked.Special.FireSeekingDrone));
-            droneSkill.skillNameToken = HANDSurvivor.HAND_PREFIX + "SPECIAL_NAME";
-            droneSkill.skillName = "Drones";
-            droneSkill.skillDescriptionToken = HANDSurvivor.HAND_PREFIX + "SPECIAL_DESC";
-            droneSkill.isCombatSkill = true;
-            droneSkill.cancelSprintingOnActivation = false;
-            droneSkill.canceledFromSprinting = false;
-            droneSkill.baseRechargeInterval = 20f;
-            droneSkill.interruptPriority = EntityStates.InterruptPriority.Any;
-            droneSkill.mustKeyPress = false;
-            droneSkill.beginSkillCooldownOnSkillEnd = true;
-            droneSkill.baseMaxStock = 10;
-            droneSkill.fullRestockOnAssign = false;
-            droneSkill.rechargeStock = 1;
-            droneSkill.requiredStock = 1;
-            droneSkill.stockToConsume = 1;
-            droneSkill.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSpecial.png");
-            droneSkill.activationStateMachineName = "DroneLauncher";
-            droneSkill.keywordTokens = new string[] { };
-            Modules.Skills.FixScriptableObjectName(droneSkill);
-            Modules.ContentPacks.skillDefs.Add(droneSkill);
-            SkillDefs.SpecialDrone = droneSkill;
+            DroneSkillDef droneHealSkill = DroneSkillDef.CreateInstance<DroneSkillDef>();
+            droneHealSkill.activationState = new SerializableEntityStateType(typeof(EntityStates.HAND_Overclocked.Special.FireSeekingDrone));
+            droneHealSkill.skillNameToken = HANDSurvivor.HAND_PREFIX + "SPECIAL_NAME";
+            droneHealSkill.skillName = "Drones";
+            droneHealSkill.skillDescriptionToken = HANDSurvivor.HAND_PREFIX + "SPECIAL_DESC";
+            droneHealSkill.isCombatSkill = true;
+            droneHealSkill.cancelSprintingOnActivation = false;
+            droneHealSkill.canceledFromSprinting = false;
+            droneHealSkill.baseRechargeInterval = 20f;
+            droneHealSkill.interruptPriority = EntityStates.InterruptPriority.Any;
+            droneHealSkill.mustKeyPress = false;
+            droneHealSkill.beginSkillCooldownOnSkillEnd = true;
+            droneHealSkill.baseMaxStock = 10;
+            droneHealSkill.fullRestockOnAssign = false;
+            droneHealSkill.rechargeStock = 1;
+            droneHealSkill.requiredStock = 1;
+            droneHealSkill.stockToConsume = 1;
+            droneHealSkill.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSpecial.png");
+            droneHealSkill.activationStateMachineName = "DroneLauncher";
+            droneHealSkill.keywordTokens = new string[] { };
+            droneHealSkill.targetingMode = DroneSkillDef.TargetingMode.EnemiesAndAllies;
+            Modules.Skills.FixScriptableObjectName(droneHealSkill);
+            Modules.ContentPacks.skillDefs.Add(droneHealSkill);
+            SkillDefs.SpecialDrone = droneHealSkill;
 
-            Skills.AddSpecialSkills(bodyPrefab, new SkillDef[] { droneSkill });
+            DroneSkillDef droneSpeedSkill = DroneSkillDef.CreateInstance<DroneSkillDef>();
+            droneSpeedSkill.activationState = new SerializableEntityStateType(typeof(EntityStates.HAND_Overclocked.Special.FireSpeedDrone));
+            droneSpeedSkill.skillNameToken = HANDSurvivor.HAND_PREFIX + "SPECIAL_SPEED_NAME";
+            droneSpeedSkill.skillName = "Drones";
+            droneSpeedSkill.skillDescriptionToken = HANDSurvivor.HAND_PREFIX + "SPECIAL_SPEED_DESC";
+            droneSpeedSkill.isCombatSkill = true;
+            droneSpeedSkill.cancelSprintingOnActivation = false;
+            droneSpeedSkill.canceledFromSprinting = false;
+            droneSpeedSkill.baseRechargeInterval = 40f;
+            droneSpeedSkill.interruptPriority = EntityStates.InterruptPriority.Any;
+            droneSpeedSkill.mustKeyPress = false;
+            droneSpeedSkill.beginSkillCooldownOnSkillEnd = true;
+            droneSpeedSkill.baseMaxStock = 10;
+            droneSpeedSkill.fullRestockOnAssign = false;
+            droneSpeedSkill.rechargeStock = 1;
+            droneSpeedSkill.requiredStock = 1;
+            droneSpeedSkill.stockToConsume = 1;
+            droneSpeedSkill.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("sHANDSkills_10.png");
+            droneSpeedSkill.activationStateMachineName = "DroneLauncher";
+            droneSpeedSkill.keywordTokens = new string[] { };
+            droneSpeedSkill.targetingMode = DroneSkillDef.TargetingMode.EnemiesOnly;
+            Modules.Skills.FixScriptableObjectName(droneSpeedSkill);
+            Modules.ContentPacks.skillDefs.Add(droneSpeedSkill);
+            SkillDefs.SpecialDroneSpeed = droneSpeedSkill;
+
+            Skills.AddSpecialSkills(bodyPrefab, new SkillDef[] { droneHealSkill, droneSpeedSkill });
         }
 
         private void InitializeScepterSkills()
@@ -559,6 +587,7 @@ namespace HANDMod.Content.HANDSurvivor
             Modules.ContentPacks.entityStates.Add(typeof(EntityStates.HAND_Overclocked.Utility.BeginFocus));
 
             Modules.ContentPacks.entityStates.Add(typeof(EntityStates.HAND_Overclocked.Special.FireSeekingDrone));
+            Modules.ContentPacks.entityStates.Add(typeof(EntityStates.HAND_Overclocked.Special.FireSpeedDrone));
         }
 
         private GameObject CreateSlamEffect()

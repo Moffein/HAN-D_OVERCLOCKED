@@ -4,6 +4,7 @@ using RoR2.Skills;
 using RoR2;
 using UnityEngine.Networking;
 using HANDMod.Content.HANDSurvivor.Components.Master;
+using UnityEngine;
 
 namespace HANDMod.Content.HANDSurvivor.Components.Body
 {
@@ -25,10 +26,7 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
                 }
                 else
                 {
-                    if (characterBody.skillLocator.special.skillDef == SkillDefs.SpecialDrone)
-                    {
-                        characterBody.skillLocator.special.stock = dronePersist.droneCount;
-                    }
+                    characterBody.skillLocator.special.stock = Mathf.Max(dronePersist.droneCount, characterBody.skillLocator.special.maxStock);
                 }
             }
         }
@@ -42,7 +40,7 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
         {
             if (hasAuthority)
             {
-                if (dronePersist && characterBody.skillLocator.special.skillDef == SkillDefs.SpecialDrone)
+                if (dronePersist)
                 {
                     if (characterBody.skillLocator.special.stock > dronePersist.droneCount)
                     {
@@ -51,7 +49,7 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
                     dronePersist.droneCount = characterBody.skillLocator.special.stock;
                 }
 
-                int droneCount = (characterBody.skillLocator.special.skillDef == SkillDefs.SpecialDrone) ? characterBody.skillLocator.special.stock : 0;
+                int droneCount = characterBody.skillLocator.special.stock;
                 ReadOnlyCollection<TeamComponent> teamMembers = TeamComponent.GetTeamMembers(characterBody.teamComponent.teamIndex);
                 foreach (TeamComponent tc in teamMembers)
                 {
@@ -107,7 +105,7 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
         [ClientRpc]
         public void RpcAddSpecialStock()
         {
-            if (hasAuthority && characterBody.skillLocator.special.stock < characterBody.skillLocator.special.maxStock && characterBody.skillLocator.special.skillDef == SkillDefs.SpecialDrone)
+            if (hasAuthority && characterBody.skillLocator.special.stock < characterBody.skillLocator.special.maxStock)
             {
                 characterBody.skillLocator.special.stock++;
                 if (characterBody.skillLocator.special.stock == characterBody.skillLocator.special.maxStock)
@@ -146,7 +144,7 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
         }
         public void MeleeHit()
         {
-            if (characterBody.skillLocator.special.stock < characterBody.skillLocator.special.maxStock && characterBody.skillLocator.special.skillDef == SkillDefs.SpecialDrone)
+            if (characterBody.skillLocator.special.stock < characterBody.skillLocator.special.maxStock)
             {
                 characterBody.skillLocator.special.rechargeStopwatch += 2f;
             }

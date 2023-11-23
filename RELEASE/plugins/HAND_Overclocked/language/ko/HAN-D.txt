@@ -34,8 +34,11 @@
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_NAME" : "초점",
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>사출</style>. <style=cIsDamage>공격력의 50%</style>를 추가로 얻고 <style=cIsUtility>50의 방어력</style>을 얻지만, <style=cIsHealth>30%의 이동속도를 잃습니다</style>. 적을 타격하면 <style=cIsUtility>지속시간이 연장됩니다</style>.",
 	
-	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "드론",
+	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "드론 - 치유",
 	"MOFFEIN_HAND_BODY_SPECIAL_DESC" : "드론을 발사하여 <style=cIsDamage>270%의 피해</style>를 입히고 <style=cIsHealing>가한 피해의 40%를 회복합니다</style>. 적을 죽이거나 주 공격을 적중시켜 <style=cIsUtility>재사용 대기시간을 줄입니다</style>.",
+	
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_NAME" : "드론 - 속도",
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_DESC" : "Fire a drone that deals <style=cIsDamage>270% damage</style> and <style=cIsDamage>temporarily grants attack speed</style>. Kills and melee hits <style=cIsUtility>reduce cooldown</style>.",
 	
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_NAME" : "만능인",
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_DESCRIPTION" : "탈출정의 연료 배열로 델타 집결지에 있는 로봇 경비원을 수리하십시오.",

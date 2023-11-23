@@ -12,6 +12,7 @@ namespace HANDMod.Content.Shared
     {
         public static BuffDef NemesisFocus;
         public static BuffDef Overclock;
+        public static BuffDef AttackSpeed;
         public static void Init()
         {
             if (!Buffs.Overclock)
@@ -24,8 +25,6 @@ namespace HANDMod.Content.Shared
                     new Color(1.0f, 0.45f, 0f),
                     Addressables.LoadAssetAsync<BuffDef>("RoR2/Base/ShockNearby/bdTeslaField.asset").WaitForCompletion().iconSprite
                     );
-
-                RecalculateStatsAPI.GetStatCoefficients += OverclockHook;
             }
 
             if (!Buffs.NemesisFocus)
@@ -38,28 +37,39 @@ namespace HANDMod.Content.Shared
                     new Color(193f / 255f, 62f / 255f, 103f / 255f),
                     Addressables.LoadAssetAsync<BuffDef>("RoR2/Base/ShockNearby/bdTeslaField.asset").WaitForCompletion().iconSprite
                     );
-
-                RecalculateStatsAPI.GetStatCoefficients += NemesisFocusHook;
             }
+            
+            if (!Buffs.AttackSpeed)
+            {
+                Buffs.AttackSpeed = Modules.Buffs.CreateBuffDef(
+                    "HANDMod_AttackSpeed",
+                    true,
+                    false,
+                    false,
+                    new Color(1.0f, 0.45f, 0f),
+                    Addressables.LoadAssetAsync<BuffDef>("RoR2/Base/Bandit2/bdCloakSpeed.asset").WaitForCompletion().iconSprite
+                    );
+
+            }
+            RecalculateStatsAPI.GetStatCoefficients += HANDHook;
         }
 
-        private static void OverclockHook(CharacterBody sender, R2API.RecalculateStatsAPI.StatHookEventArgs args)
+        private static void HANDHook(CharacterBody sender, R2API.RecalculateStatsAPI.StatHookEventArgs args)
         {
             if (sender.HasBuff(Buffs.Overclock))
             {
                 args.attackSpeedMultAdd += 0.4f;
                 args.moveSpeedMultAdd += 0.4f;
             }
-        }
 
-        private static void NemesisFocusHook(CharacterBody sender, R2API.RecalculateStatsAPI.StatHookEventArgs args)
-        {
             if (sender.HasBuff(Buffs.NemesisFocus))
             {
                 args.damageMultAdd += 0.5f;
                 args.moveSpeedReductionMultAdd += 0.3f;
                 args.armorAdd += 50f;
             }
+
+            args.attackSpeedMultAdd += 0.1f * sender.GetBuffCount(Buffs.AttackSpeed);
         }
     }
 }

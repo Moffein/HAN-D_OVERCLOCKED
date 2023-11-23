@@ -34,8 +34,11 @@
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_NAME" : "ФОКУСИРОВКА",
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>Прыжок</style>. Временно увеличивает урон на <style=cIsDamage>50%</style> и добавляет <style=cIsUtility>50 брони</style>, но снижает скорость передвижения на <style=cIsUtility>30%</style>. Нанесение урона в рукопашной <style=cIsUtility>продлевает время действия</style>.",
 	
-	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "ДРОН",
+	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "ДРОН — ИСЦЕЛЕНИЕ",
 	"MOFFEIN_HAND_BODY_SPECIAL_DESC" : "Выпустите дрон, который наносит <style=cIsDamage>270% урона</style> и <style=cIsHealing>исцеляет на 40% от нанесенного урона</style>. Убийства и урон в рукопашной <style=cIsUtility>уменьшают время восстановления</style>.",
+	
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_NAME" : "ДРОН — СКОРОСТЬ",
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_DESC" : "Fire a drone that deals <style=cIsDamage>270% damage</style> and <style=cIsDamage>temporarily grants attack speed</style>. Kills and melee hits <style=cIsUtility>reduce cooldown</style>.",
 	
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_NAME" : "Мастер на все руки",
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_DESCRIPTION" : "Отремонтируйте робота-уборщика на Меcте сбора «Дельта» с помощью топливного элемента спасательной капсулы.",

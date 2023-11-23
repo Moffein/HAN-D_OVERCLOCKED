@@ -16,6 +16,7 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
             this.characterBody = base.GetComponent<CharacterBody>();
             this.inputBank = base.GetComponent<InputBankTest>();
             this.teamComponent = base.GetComponent<TeamComponent>();
+            this.skillLocator = base.GetComponent<SkillLocator>();
         }
 
         public void FixedUpdate()
@@ -60,7 +61,7 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
 
         private void SearchForTarget(Ray aimRay)
         {
-            this.search.teamMaskFilter = TeamMask.all;
+            this.search.teamMaskFilter = GetTargetTeams();
             this.search.filterByLoS = true;
             this.search.searchOrigin = aimRay.origin;
             this.search.searchDirection = aimRay.direction;
@@ -70,6 +71,20 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
             this.search.RefreshCandidates();
             this.search.FilterOutGameObject(base.gameObject);
             this.trackingTarget = this.search.GetResults().FirstOrDefault<HurtBox>();
+        }
+
+        private TeamMask GetTargetTeams()
+        {
+            if (!this.skillLocator || !this.skillLocator.special) return TeamMask.all;
+
+            //Seems unsafe
+            switch((this.skillLocator.special.baseSkill as DroneSkillDef).targetingMode)
+            {
+                case DroneSkillDef.TargetingMode.EnemiesOnly:
+                    return TeamMask.GetEnemyTeams(this.teamComponent ? this.teamComponent.teamIndex : TeamIndex.None);
+                default:
+                    return TeamMask.all;
+            }
         }
 
         public HurtBox GetTrackingTarget()
@@ -98,5 +113,6 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
         private Indicator enemyIndicator;
         private Indicator allyIndicator;
         private readonly BullseyeSearch search = new BullseyeSearch();
+        private SkillLocator skillLocator;
     }
 }

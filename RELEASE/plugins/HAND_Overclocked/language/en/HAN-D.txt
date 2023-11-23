@@ -34,8 +34,11 @@
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_NAME" : "FOCUS",
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>Boost</style>. Gain <style=cIsDamage>+50% damage</style> and <style=cIsUtility>50 armor</style>, but lose <style=cIsHealth>-30% movement speed</style>. Hit enemies to <style=cIsUtility>increase duration</style>.",
 	
-	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "DRONE",
+	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "DRONE - HEAL",
 	"MOFFEIN_HAND_BODY_SPECIAL_DESC" : "Fire a drone that deals <style=cIsDamage>270% damage</style> and <style=cIsHealing>heals for 40% of the damage dealt</style>. Kills and melee hits <style=cIsUtility>reduce cooldown</style>.",
+	
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_NAME" : "DRONE - SPEED",
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_DESC" : "Fire a drone that deals <style=cIsDamage>270% damage</style> and <style=cIsDamage>temporarily grants attack speed</style>. Kills and melee hits <style=cIsUtility>reduce cooldown</style>.",
 	
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_NAME" : "Handyman",
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_DESCRIPTION" : "Repair the robot janitor on Rallypoint Delta with an Escape Pod's Fuel Array.",

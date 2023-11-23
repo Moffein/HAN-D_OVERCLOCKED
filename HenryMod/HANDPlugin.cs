@@ -35,7 +35,7 @@ namespace HANDMod
     {
         public const string MODUID = "com.EnforcerGang.HANDOverclocked";
         public const string MODNAME = "HAN-D Overclocked";
-        public const string MODVERSION = "1.2.2";
+        public const string MODVERSION = "1.3.0";
 
         public const string DEVELOPER_PREFIX = "MOFFEIN";
 

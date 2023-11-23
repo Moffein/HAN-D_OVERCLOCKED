@@ -15,7 +15,10 @@ namespace HANDMod.Content.HANDSurvivor
 
         public static void Init()
         {
+            //Currently hardcoded so that Drone Ghost is made in CreateDroneProjectile. Should be separated now that there are multiple things that rely on it.
             if (!FireSeekingDrone.projectilePrefab) FireSeekingDrone.projectilePrefab = CreateDroneProjectile();
+            if (!FireSpeedDrone.speedDroneProjectile) FireSpeedDrone.speedDroneProjectile = CreateDroneSpeedProjectile();
+
             if (!DroneFollowerController.dronePrefab) DroneFollowerController.dronePrefab = CreateDroneFollower();
             if (!HANDTargetingController.allyIndicatorPrefab) HANDTargetingController.allyIndicatorPrefab = CreateAllyIndicator();
             if (!HANDTargetingController.enemyIndicatorPrefab) HANDTargetingController.enemyIndicatorPrefab = CreateEnemyIndicator();
@@ -57,9 +60,9 @@ namespace HANDMod.Content.HANDSurvivor
         {
             GameObject droneProjectile = LegacyResourcesAPI.Load<GameObject>("prefabs/projectiles/EngiHarpoon").InstantiateClone("HANDMod_DroneProjectile", true);
 
+            Shader hotpoo = LegacyResourcesAPI.Load<Shader>("Shaders/Deferred/hgstandard");
             droneProjectileGhost = PrefabAPI.InstantiateClone(HANDMod.Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("DronePrefab"), "HANDMod_DroneProjectileGhost", false);
 
-            Shader hotpoo = LegacyResourcesAPI.Load<Shader>("Shaders/Deferred/hgstandard");
 
             MeshRenderer[] mr = droneProjectileGhost.GetComponentsInChildren<MeshRenderer>();
             foreach (MeshRenderer m in mr)
@@ -141,6 +144,74 @@ namespace HANDMod.Content.HANDSurvivor
             sc.contactOffset = 0.01f;
 
             droneProjectile.AddComponent<Components.DroneProjectile.DroneDamageController>();
+            droneProjectile.AddComponent<Components.DroneProjectile.DroneCollisionController>();
+
+            ProjectileController pc = droneProjectile.GetComponent<ProjectileController>();
+            pc.allowPrediction = false;
+
+            //droneProjectile.layer = LayerIndex.collideWithCharacterHullOnly.intVal;
+
+            return droneProjectile;
+        }
+
+        //Can't be bothered to refactor this right now. Will just copypaste the Drone setup.
+        private static GameObject CreateDroneSpeedProjectile()
+        {
+            GameObject droneProjectile = LegacyResourcesAPI.Load<GameObject>("prefabs/projectiles/EngiHarpoon").InstantiateClone("HANDMod_DroneSpeedProjectile", true);
+            droneProjectile.GetComponent<ProjectileController>().ghostPrefab = droneProjectileGhost;
+
+            HANDMod.Modules.ContentPacks.projectilePrefabs.Add(droneProjectile);
+
+            UnityEngine.Object.Destroy(droneProjectile.GetComponent<ApplyTorqueOnStart>());
+            UnityEngine.Object.Destroy(droneProjectile.GetComponent<MissileController>());
+            ProjectileSteerTowardTarget pst = droneProjectile.AddComponent<ProjectileSteerTowardTarget>();
+            pst.yAxisOnly = false;
+            pst.rotationSpeed = 360f;
+
+            ProjectileSimple ps = droneProjectile.AddComponent<ProjectileSimple>();
+            ps.desiredForwardSpeed = 40f;
+            ps.lifetime = 30f;
+            ps.updateAfterFiring = true;
+            ps.enableVelocityOverLifetime = false;
+            ps.oscillate = true;
+            ps.oscillateMagnitude = 6f;
+            ps.oscillateSpeed = 1.5f;
+
+            ProjectileSphereTargetFinder pstf = droneProjectile.AddComponent<ProjectileSphereTargetFinder>();
+            pstf.lookRange = 90f;
+            pstf.targetSearchInterval = 0.3f;
+            pstf.onlySearchIfNoTarget = true;
+            pstf.allowTargetLoss = false;
+            pstf.testLoS = false;
+            pstf.ignoreAir = false;
+            pstf.flierAltitudeTolerance = Mathf.Infinity;
+
+            UnityEngine.Object.Destroy(droneProjectile.GetComponent<AkEvent>());
+            UnityEngine.Object.Destroy(droneProjectile.GetComponent<AkGameObj>());
+            UnityEngine.Object.Destroy(droneProjectile.GetComponent<ProjectileSingleTargetImpact>());
+
+            ProjectileStickOnImpact stick = droneProjectile.AddComponent<ProjectileStickOnImpact>();
+            stick.ignoreWorld = true;
+            stick.ignoreCharacters = false;
+            stick.alignNormals = false;
+
+
+            Collider[] colliders = droneProjectile.GetComponentsInChildren<Collider>();
+            foreach (Collider c in colliders)
+            {
+                UnityEngine.Object.Destroy(c);
+            }
+            SphereCollider sc = droneProjectile.AddComponent<SphereCollider>();
+            sc.radius = 0.6f;
+            sc.contactOffset = 0.01f;
+
+            //Attack speed buff is initialized before HAN-D stuff is initialized.
+            //In retrospect reorganizing the project to try to associate Buffs/Projectiles with specific characters instead of being usable in the whole project was a bad idea.
+            Components.DroneProjectile.DroneDamageController ddc = droneProjectile.AddComponent<Components.DroneProjectile.DroneDamageController>();
+            ddc.damageHealFraction = 0f;
+            ddc.buffOnHitDuration = 10f;
+            ddc.buffOnHit = Shared.Buffs.AttackSpeed;   
+
             droneProjectile.AddComponent<Components.DroneProjectile.DroneCollisionController>();
 
             ProjectileController pc = droneProjectile.GetComponent<ProjectileController>();
