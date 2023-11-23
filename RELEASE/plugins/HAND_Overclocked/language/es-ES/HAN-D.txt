@@ -38,7 +38,7 @@
 	"MOFFEIN_HAND_BODY_SPECIAL_DESC" : "Lanza un dron que hace <style=cIsDamage>270% de daño</style> y <style=cIsHealing>cura el 40% del daño causado</style>. Muertes e impactos cuerpo a cuerpo <style=cIsUtility>reducen su enfriamiento</style>.",
 	
 	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_NAME" : "DRON - VELOCIDAD",
-	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_DESC" : "Fire a drone that deals <style=cIsDamage>270% damage</style> and <style=cIsDamage>temporarily grants attack speed</style>. Kills and melee hits <style=cIsUtility>reduce cooldown</style>.",
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_DESC" : "Lanza un dron que hace un <style=cIsDamage>270% de daño</style> y que <style=cIsDamage>aumenta la velocidad de ataque temporalmente</style>. Bajas y golpes cuerpo a cuerpo <style=cIsUtility>reducen el tiempo de reutilización</style>.",
 	
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_NAME" : "Manitas",
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_DESCRIPTION" : "Repara al robot conserje en el Punto de reunión Delta con la matriz de combustible de una cápsula de escape.",
