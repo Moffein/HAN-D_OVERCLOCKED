@@ -33,6 +33,8 @@ Vale-X - SWARM_ARMOR Buff Icon
 
 KoobyKarasu - SMASH Skill Icon
 
+Thingw - DRONE - SPEED Icon
+
 Jaysian - Bankroller
 
 Sounds taken from Risk of Rain 1 and Starstorm
@@ -62,7 +64,7 @@ Kauzok - Portuguese translation
 	- New stacks reset the buff duration.
 	- Cooldown is 2x the cooldown of DRONE - HEAL
 	
-	*Needs icon. Hasn't been tested much.*
+	*Thanks to Thingw for the icon!*
 	
 - Fixed a nullref with M2 squashing.
 

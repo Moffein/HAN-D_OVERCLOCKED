@@ -360,7 +360,7 @@ namespace HANDMod.Content.HANDSurvivor
             droneSpeedSkill.rechargeStock = 1;
             droneSpeedSkill.requiredStock = 1;
             droneSpeedSkill.stockToConsume = 1;
-            droneSpeedSkill.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("sHANDSkills_10.png");
+            droneSpeedSkill.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSpecialSpeed.png");
             droneSpeedSkill.activationStateMachineName = "DroneLauncher";
             droneSpeedSkill.keywordTokens = new string[] { };
             droneSpeedSkill.targetingMode = DroneSkillDef.TargetingMode.EnemiesOnly;

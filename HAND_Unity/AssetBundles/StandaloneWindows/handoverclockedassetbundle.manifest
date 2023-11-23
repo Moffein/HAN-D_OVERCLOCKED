@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1287712978
+CRC: 563214631
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 89fb9ac58edd8484503727d5cbf5b193
+    Hash: 71cd8cbbcad743d8d483c71cce24b885
   TypeTreeHash:
     serializedVersion: 2
     Hash: 0713b83fc0fda10e7027ae2bc2bee20d
@@ -85,7 +85,6 @@ Assets:
 - Assets/HAN-D/Materials/Skins/Mastery/matHANDWeaponMastery.mat
 - Assets/HAN-D/Textures/Skills/texUtilityNemesis.png
 - Assets/HAN-D/Mesh/meshHanDDefault_Hammer.mesh
-- Assets/HAN-D/Textures/Skills/sHANDSkills_10.png
 - Assets/HandDrone/DefaultSkin/fbxDrone.fbx
 - Assets/HandDrone/Mesh/meshDroneDefault_Body.mesh
 - Assets/HandDrone/DefaultSkin/matDroneBody.mat
@@ -99,6 +98,7 @@ Assets:
 - Assets/HAN-D/Textures/Skins/Mastery/HanDMaster_normal.png
 - Assets/HandDrone/Mastery/matDroneMastery.mat
 - Assets/HAN-D/Materials/Skins/DefaultSkin/matHANDDefault.mat
+- Assets/HAN-D/Textures/Skills/texSpecialSpeed.png
 - Assets/HandDrone/animDroneSaw.anim
 - Assets/HAN-D/Animations/maskHANDOverclocked_HammerAndArms.mask
 - Assets/HAN-D/Textures/Skins/DefaultSkin/HanD_Emission.png
