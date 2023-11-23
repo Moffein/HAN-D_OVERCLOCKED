@@ -34,8 +34,11 @@
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_NAME" : "专注",
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>弹起</style>。增加<style=cIsDamage>50%的伤害</style>和<style=cIsUtility>50点护甲</style>，但同时减少<style=cIsHealth>30%移动速度</style>。攻击敌人可<style=cIsUtility>增加持续时间</style>。",
 	
-	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "无人机",
+	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "无人机 - 治疗",
 	"MOFFEIN_HAND_BODY_SPECIAL_DESC" : "发射一架无人机对敌人造成<style=cIsDamage>270%的伤害</style>，并<style=cIsHealing>治疗自身其无人机造成伤害的40%</style>。击败或锤击敌人可<style=cIsUtility>减少冷却</style>。",
+	
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_NAME" : "无人机 - 速度",
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_DESC" : "Fire a drone that deals <style=cIsDamage>270% damage</style> and <style=cIsDamage>temporarily grants attack speed</style>. Kills and melee hits <style=cIsUtility>reduce cooldown</style>.",
 	
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_NAME" : "勤杂工",
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_DESCRIPTION" : "使用逃生舱的燃料组件修理达尔塔集合点上的机器人。",

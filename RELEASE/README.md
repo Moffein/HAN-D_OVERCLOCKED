@@ -58,6 +58,9 @@ Kauzok - Portuguese translation
 `1.3.0`
 
 - Added DRONE - SPEED
+	- Grants +10% attack speed for 10 seconds on hit.
+	- New stacks reset the buff duration.
+	- Cooldown is 2x the cooldown of DRONE - HEAL
 - Fixed a nullref with M2 squashing.
 
 <details>

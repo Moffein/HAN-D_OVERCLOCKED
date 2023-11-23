@@ -40,7 +40,6 @@
 	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_NAME" : "DRONE - SPEED",
 	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_DESC" : "Fire a drone that deals <style=cIsDamage>270% damage</style> and <style=cIsDamage>temporarily grants attack speed</style>. Kills and melee hits <style=cIsUtility>reduce cooldown</style>.",
 	
-	
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_NAME" : "Handyman",
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_DESCRIPTION" : "Repair the robot janitor on Rallypoint Delta with an Escape Pod's Fuel Array.",
 	
