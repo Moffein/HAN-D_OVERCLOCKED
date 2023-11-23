@@ -9,5 +9,6 @@ namespace HANDMod.Content.HANDSurvivor
         public static SkillDef SecondaryChargeHammer;
         public static SkillDef SecondaryChargeHammerScepter;
         public static SkillDef SpecialDrone;
+        public static SkillDef SpecialDroneSpeed;
     }
 }

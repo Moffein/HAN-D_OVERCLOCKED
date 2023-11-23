@@ -77,7 +77,7 @@ namespace EntityStates.HAND_Overclocked.Special
             return InterruptPriority.Skill;
         }
 
-        public virtual GameObject GetProjectile()
+        protected virtual GameObject GetProjectile()
         {
             return FireSeekingDrone.projectilePrefab;
         }

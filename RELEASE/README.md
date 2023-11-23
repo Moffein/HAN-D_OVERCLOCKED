@@ -57,7 +57,8 @@ Kauzok - Portuguese translation
 
 `1.3.0`
 
-- Added DRONE - Speed
+- Added DRONE - SPEED
+- Fixed a nullref with M2 squashing.
 
 <details>
 

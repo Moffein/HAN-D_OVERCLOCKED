@@ -35,13 +35,13 @@ namespace HANDMod.Content.HANDSurvivor.Components.DroneProjectile
                     ownerHealthComponent = projectileController.owner.GetComponent<HealthComponent>();
                     TeamComponent tc = owner.GetComponent<TeamComponent>();
                     teamIndex = tc.teamIndex;
-                    CharacterBody cb = owner.GetComponent<CharacterBody>();
-                    if (cb && cb.inventory)
+                    ownerBody = owner.GetComponent<CharacterBody>();
+                    if (ownerBody && ownerBody.inventory)
                     {
-                        master = cb.master;
+                        master = ownerBody.master;
                         float droneAttackSpeed = 1f;
 
-                        dronePartsCount = cb.inventory.GetItemCount(DLC1Content.Items.DroneWeapons);
+                        dronePartsCount = ownerBody.inventory.GetItemCount(DLC1Content.Items.DroneWeapons);
                         if (dronePartsCount > 0)
                         {
                             droneAttackSpeed += 0.5f * dronePartsCount;
@@ -50,7 +50,7 @@ namespace HANDMod.Content.HANDSurvivor.Components.DroneProjectile
                         ItemIndex droneCoolantIndex = ItemCatalog.FindItemIndex("ITEM_DRONE_COOLANT_BOOST");
                         if (droneCoolantIndex != ItemIndex.None)
                         {
-                            coolantCount = cb.inventory.GetItemCount(droneCoolantIndex);
+                            coolantCount = ownerBody.inventory.GetItemCount(droneCoolantIndex);
                             if (coolantCount > 0)
                             {
                                 droneAttackSpeed += 0.1f * coolantCount;
@@ -74,6 +74,16 @@ namespace HANDMod.Content.HANDSurvivor.Components.DroneProjectile
                 }
             }
             EffectManager.SimpleSoundEffect(startSound.index, base.transform.position, true);
+
+            if (buffOnHit && buffOnHitDuration > 0f && ownerBody)
+            {
+                int currentStacks = ownerBody.GetBuffCount(buffOnHit);
+                ownerBody.ClearTimedBuffs(buffOnHit);
+                for (int i = 0; i < currentStacks + 1; i++)
+                {
+                    ownerBody.AddTimedBuff(buffOnHit, buffOnHitDuration);
+                }
+            }
         }
 
         private bool CheckValidVictim()
@@ -117,10 +127,10 @@ namespace HANDMod.Content.HANDSurvivor.Components.DroneProjectile
                         EffectManager.SimpleSoundEffect(hitSound.index, base.transform.position, true);
                     }
 
-                    float currentTickDamage = projectileDamage.damage / (float)DroneDamageController.baseTickCount;
+                    float currentTickDamage = projectileDamage.damage / (float)baseTickCount;
                     float ownerCritMult = 2f;
 
-                    if (ownerHealthComponent)
+                    if (ownerHealthComponent && damageHealFraction > 0f)
                     {
                         ownerCritMult = ownerHealthComponent.body.critMultiplier;
                         HealOrb healOrb = new HealOrb();
@@ -134,15 +144,18 @@ namespace HANDMod.Content.HANDSurvivor.Components.DroneProjectile
 
                     if (victimHealthComponent.body && victimHealthComponent.body.teamComponent && victimHealthComponent.body.teamComponent.teamIndex == teamIndex)
                     {
-                        float minTotalHeal = victimHealthComponent.fullHealth * 0.1f / (float)DroneDamageController.baseTickCount;
+                        if (damageHealFraction > 0f)
+                        {
+                            float minTotalHeal = victimHealthComponent.fullHealth * 0.1f / (float)baseTickCount;
 
-                        HealOrb healOrb = new HealOrb();
-                        healOrb.origin = this.transform.position;
-                        healOrb.target = victimHealthComponent.body.mainHurtBox;
-                        healOrb.healValue = Mathf.Max(minTotalHeal, currentTickDamage);
-                        if (projectileDamage.crit) healOrb.healValue *= ownerCritMult;
-                        healOrb.overrideDuration = 0.3f;
-                        OrbManager.instance.AddOrb(healOrb);
+                            HealOrb healOrb = new HealOrb();
+                            healOrb.origin = this.transform.position;
+                            healOrb.target = victimHealthComponent.body.mainHurtBox;
+                            healOrb.healValue = Mathf.Max(minTotalHeal, currentTickDamage);
+                            if (projectileDamage.crit) healOrb.healValue *= ownerCritMult;
+                            healOrb.overrideDuration = 0.3f;
+                            OrbManager.instance.AddOrb(healOrb);
+                        }
                     }
                     else
                     {
@@ -191,7 +204,7 @@ namespace HANDMod.Content.HANDSurvivor.Components.DroneProjectile
                         }
                     }
                 }
-                EffectManager.SimpleEffect(DroneDamageController.hitEffectPrefab, base.transform.position, default, true);
+                EffectManager.SimpleEffect(hitEffectPrefab, base.transform.position, default, true);
                 stopwatch -= durationBetweenTicks;
             }
         }
@@ -221,13 +234,18 @@ namespace HANDMod.Content.HANDSurvivor.Components.DroneProjectile
             }
         }
 
-        public static float procCoefficient = 0.5f;
-        public static float baseDurationBetweenTicks = 0.5f;
-        public static int baseTickCount = 8;
-        public static float damageHealFraction = 0.4f;
-        public static GameObject hitEffectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Treebot/OmniImpactVFXSlashSyringe.prefab").WaitForCompletion();
+        //These 2 shouldn't be static
         public static NetworkSoundEventDef startSound;
         public static NetworkSoundEventDef hitSound;
+
+        public float procCoefficient = 0.5f;
+        public float baseDurationBetweenTicks = 0.5f;
+        public int baseTickCount = 8;
+        public float damageHealFraction = 0.4f;
+        public GameObject hitEffectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Treebot/OmniImpactVFXSlashSyringe.prefab").WaitForCompletion();
+
+        public BuffDef buffOnHit;
+        public float buffOnHitDuration = 0f;
 
         private float durationBetweenTicks;
         private float stopwatch;
@@ -246,6 +264,7 @@ namespace HANDMod.Content.HANDSurvivor.Components.DroneProjectile
         private ProjectileController projectileController;
         private ProjectileDamage projectileDamage;
         private HealthComponent ownerHealthComponent;
+        private CharacterBody ownerBody;
         private HealthComponent victimHealthComponent;
     }
 }

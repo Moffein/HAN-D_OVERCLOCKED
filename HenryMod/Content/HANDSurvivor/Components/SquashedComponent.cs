@@ -47,7 +47,11 @@ namespace HANDMod.Content.HANDSurvivor.Components
             {
                 Destroy(this);
             }
-            model = base.GetComponent<CharacterBody>().modelLocator.modelTransform.gameObject;
+            CharacterBody body = base.GetComponent<CharacterBody>();
+            if (body && body.modelLocator && body.modelLocator.modelTransform && body.modelLocator.modelTransform.gameObject)
+            {
+                model = body.modelLocator.modelTransform.gameObject;
+            }
         }
 
         public void FixedUpdate()
