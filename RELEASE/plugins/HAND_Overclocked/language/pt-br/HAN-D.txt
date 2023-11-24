@@ -34,11 +34,12 @@
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_NAME" : "FOCO",
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>Impulso</style>. Ganhe <style=cIsDamage>+50% de dano</style> e <style=cIsUtility>50 de armadura</style>, mas perde <style=cIsHealth>-30% de velocidade de movimento</style>. Acertar inimigos <style=cIsUtility>aumenta a duração</style>.",
 	
+
 	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "DRONE – CURAR",
 	"MOFFEIN_HAND_BODY_SPECIAL_DESC" : "Dispare um drone que causa <style=cIsDamage>270% de dano</style> e <style=cIsHealing>cura 40% do dano causado</style>. Abates e acertos corpo-a-corpo <style=cIsUtility>reduzem o tempo de recarga</style>.",
-	
-	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_NAME" : "DRONE – VELOCIDADE",
-	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_DESC" : "Fire a drone that deals <style=cIsDamage>270% damage</style> and <style=cIsDamage>temporarily grants attack speed</style>. Kills and melee hits <style=cIsUtility>reduce cooldown</style>.",
+
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_NAME" : "DRONE - VELOCIDADE",
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_DESC" : "Dispare um drone que causa <style=cIsDamage>270% de dano</style> e <style=cIsDamage>ganhe velocidade de ataque temporária</style> ao mesmo tempo. Abates e acertos corpo-a-corpo <style=cIsUtility>reduzem o tempo de recarga</style>.",
 	
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_NAME" : "Faz-tudo",
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_DESCRIPTION" : "Repare o robô zelador no Ponto de encontro Delta com uma Matriz de Combustível da Cápsula de Fuga.",

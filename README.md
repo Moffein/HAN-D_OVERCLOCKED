@@ -26,6 +26,8 @@ Vale-X - SWARM_ARMOR Buff Icon
 
 KoobyKarasu - SMASH Skill Icon
 
+Thingw - DRONE - SPEED Icon
+
 Jaysian - Bankroller
 
 Sounds taken from Risk of Rain 1 and Starstorm
