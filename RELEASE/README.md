@@ -56,6 +56,11 @@ Kauzok - Portuguese translation
 
 ## Changelog
 
+`1.3.1`
+
+- Tweaked DRONE - SPEED icon.
+- Updated the localization files.
+
 `1.3.0`
 
 - Added DRONE - SPEED
