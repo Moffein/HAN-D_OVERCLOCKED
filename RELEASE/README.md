@@ -24,6 +24,8 @@ dotflare - HAN-D Model + Anims
 
 LucidInceptor - DRONE Model
 
+FORCED_REASSEMBLY - Hopoo Model and Grandmastery
+
 PapaZach - Skill Icons
 
 Tera - FOCUS Skill Icon
@@ -55,6 +57,13 @@ Juhnter - Spanish translation
 Kauzok - Portuguese translation
 
 ## Changelog
+
+`1.4.0`
+
+- Added Hopoo's HAN-D skin.
+- Added Grandmastery.
+
+	*Thanks FORCED_REASSEMBLY!*
 
 `1.3.1`
 

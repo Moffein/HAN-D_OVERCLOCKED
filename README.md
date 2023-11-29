@@ -18,6 +18,8 @@ dotflare - HAN-D Model + Anims
 
 LucidInceptor - DRONE Model
 
+FORCED_REASSEMBLY - Hopoo Model and Grandmastery
+
 PapaZach - Skill Icons
 
 Tera - FOCUS Skill Icon

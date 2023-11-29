@@ -20,6 +20,7 @@ namespace HANDMod
     [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.ThinkInvisible.ClassicItems", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Kingpinush.KingKombatArena", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("HIFU.Inferno", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
@@ -35,7 +36,7 @@ namespace HANDMod
     {
         public const string MODUID = "com.EnforcerGang.HANDOverclocked";
         public const string MODNAME = "HAN-D Overclocked";
-        public const string MODVERSION = "1.3.0";
+        public const string MODVERSION = "1.4.0";
 
         public const string DEVELOPER_PREFIX = "MOFFEIN";
 
@@ -46,6 +47,7 @@ namespace HANDMod
         public static bool EmoteAPILoaded = false;
         public static bool ArenaPluginLoaded = false;
         public static bool ArenaModeActive = false;
+        public static bool InfernoPluginLoaded = false;
         public static bool RiskOfOptionsLoaded = false;
 
         private void Awake()
@@ -102,6 +104,7 @@ namespace HANDMod
             EmoteAPILoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.weliveinasociety.CustomEmotesAPI");
             ArenaPluginLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.Kingpinush.KingKombatArena");
             RiskOfOptionsLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.rune580.riskofoptions");
+            InfernoPluginLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("HIFU.Inferno");
         }
 
 
@@ -127,6 +130,18 @@ namespace HANDMod
                     }
                 }
             };
+        }
+
+        public static DifficultyDef GetInfernoDef()
+        {
+            if (InfernoPluginLoaded) return GetInfernoDefInternal();
+            return null;
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        private static DifficultyDef GetInfernoDefInternal()
+        {
+            return Inferno.Main.InfernoDiffDef;
         }
     }
 }
