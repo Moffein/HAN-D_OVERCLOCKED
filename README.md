@@ -18,7 +18,7 @@ dotflare - HAN-D Model + Anims
 
 LucidInceptor - DRONE Model
 
-FORCED_REASSEMBLY - Hopoo Model and Grandmastery
+FORCED_REASSEMBLY - Hopoo Model Port and Grandmastery
 
 PapaZach - Skill Icons
 
