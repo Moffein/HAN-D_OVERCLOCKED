@@ -522,7 +522,7 @@ namespace HANDMod.Content.HANDSurvivor
             #endregion
             Log.Warning("skin3");
 
-            #region RorrSkin
+            #region HopooSkin
 
             //creating a new skindef as we did before
             SkinDef hopooSkin = Modules.Skins.CreateSkinDef(HAND_PREFIX + "HOPOO_SKIN_NAME",
