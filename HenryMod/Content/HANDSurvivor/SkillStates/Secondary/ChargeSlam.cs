@@ -73,7 +73,7 @@ namespace EntityStates.HAND_Overclocked.Secondary
                 if (!startedChargeAnim)
                 {
                     startedChargeAnim = true;
-                    base.PlayCrossfade("Gesture, Override", "ChargeHammer", "ChargeHammer.playbackRate", (this.chargeDuration - this.minDuration), 0.2f);
+                    base.PlayCrossfade("Gesture, Override", "ChargeHammer", "ChargeHammer.playbackRate", (this.chargeDuration), 0.2f);
                 }
 
                 charge += Time.deltaTime * this.attackSpeedStat;

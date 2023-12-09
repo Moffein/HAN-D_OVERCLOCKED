@@ -227,25 +227,24 @@ namespace EntityStates.HAND_Overclocked.Primary
 
         protected override void PlayAttackAnimation()
         {
-            //Uncomment when updated punch anims are in
             switch (this.swingIndex)
             {
                 case 0:
-                    base.PlayCrossfade(animationLayer, "HammerSwingR", "SwingHammer.playbackRate", this.duration * 1.4f, 0.2f);
+                    base.PlayCrossfade(animationLayer, "HammerSwingR", "SwingHammer.playbackRate", this.duration * 1.4f, 0.2f * duration);
                     break;
                 case 1:
-                    base.PlayCrossfade(animationLayer, "HammerSwingRL", "SwingHammer.playbackRate", this.duration * 0.8f, 0.2f);
+                    base.PlayCrossfade(animationLayer, "HammerSwingRL", "SwingHammer.playbackRate", this.duration * 0.8f, 0.2f * duration);
                     break;
                 case 2:
-                    base.PlayCrossfade(animationLayer, "HammerSwingLR", "SwingHammer.playbackRate", this.duration * 0.8f, 0.2f);
+                    base.PlayCrossfade(animationLayer, "HammerSwingLR", "SwingHammer.playbackRate", this.duration * 0.8f, 0.2f * duration);
                     break;
             }
         }
-
+        
         protected override void OnHitEnemyAuthority()
         {
             base.OnHitEnemyAuthority();
-
+            
             this.accumulatedReductionPercent *= 0.5f;
 
             if (!hitEnemy)

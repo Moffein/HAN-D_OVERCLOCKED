@@ -61,9 +61,11 @@ Kauzok - Portuguese translation
 `1.4.0`
 
 - Added Hopoo's HAN-D skin.
-- Added Grandmastery.
-
+- Added Grandmastery.  
 	*Thanks FORCED_REASSEMBLY!*
+- toned down edge wear on default textures
+- Learned how to do speculars
+- Fixed animations breaking at high attack speed
 
 `1.3.1`
 
