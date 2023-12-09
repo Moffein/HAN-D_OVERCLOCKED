@@ -63,12 +63,15 @@ namespace HANDMod.Content.HANDSurvivor
         public override CustomRendererInfo[] customRendererInfos { get; set; } = new CustomRendererInfo[] {
             new CustomRendererInfo {
                 childName = "HANDMesh",
+                material = Materials.CreateHopooMaterial("matHANDDefault").SetSpecular(0.15f, 2f)
             },
             new CustomRendererInfo {
                 childName = "HanDHammer",
+                material = Materials.CreateHopooMaterial("matHANDWeaponDefault").SetSpecular(0.15f, 2f)
             },
             new CustomRendererInfo {
                 childName = "Drone",
+                material = Materials.CreateHopooMaterial("matDroneBody").SetSpecular(0.15f, 2f)
             },
             new CustomRendererInfo {
                 childName = "Saw",
@@ -96,6 +99,15 @@ namespace HANDMod.Content.HANDSurvivor
         {
             base.InitializeDisplayPrefab();
             displayPrefab.AddComponent<MenuSoundComponent>();
+        }
+
+        protected override void InitializeCharacterBodyAndModel()
+        {
+            base.InitializeCharacterBodyAndModel();
+
+            //uncomment to edit materials specular in runtimeinspector
+            //displayPrefab.AddComponent<FuckinMaterialComponent>().SetSpecular(0.15f, 2f);
+            //characterBodyModel.gameObject.AddComponent<FuckinMaterialComponent>().SetSpecular(0.15f, 2f);
         }
 
         public override void InitializeCharacter()
@@ -443,7 +455,7 @@ namespace HANDMod.Content.HANDSurvivor
 
             //materials are the default materials
             #endregion
-
+            Log.Warning("skin1");
             #region MasterySkin
 
             //creating a new skindef as we did before
@@ -460,9 +472,9 @@ namespace HANDMod.Content.HANDSurvivor
                 "meshDroneMastery_Body",
                 "meshDroneMastery_Saw");
 
-            masterySkin.rendererInfos[0].defaultMaterial = Modules.Materials.CreateHopooMaterial("matHANDMastery");
-            masterySkin.rendererInfos[1].defaultMaterial = Modules.Materials.CreateHopooMaterial("matHANDWeaponMastery");
-            masterySkin.rendererInfos[2].defaultMaterial = Modules.Materials.CreateHopooMaterial("matDroneMastery");
+            masterySkin.rendererInfos[0].defaultMaterial = Modules.Materials.CreateHopooMaterial("matHANDMastery").SetSpecular(0.15f, 2f);
+            masterySkin.rendererInfos[1].defaultMaterial = Modules.Materials.CreateHopooMaterial("matHANDWeaponMastery").SetSpecular(0.15f, 2f);
+            masterySkin.rendererInfos[2].defaultMaterial = Modules.Materials.CreateHopooMaterial("matDroneMastery").SetSpecular(0.15f, 2f);
             masterySkin.rendererInfos[3].defaultMaterial = Modules.Materials.CreateHopooMaterial("matDroneMastery");
 
             UnlockableDef masteryUnlockableDef = ScriptableObject.CreateInstance<UnlockableDef>();
@@ -473,10 +485,71 @@ namespace HANDMod.Content.HANDSurvivor
             masterySkin.unlockableDef = masteryUnlockableDef;
 
             skins.Add(masterySkin);
-            
+
             #endregion
+            Log.Warning("skin2");
+
+            #region RorrSkin
+
+            Sprite rorrIcon = Assets.mainAssetBundle.LoadAsset<Sprite>("texHANDSkinIconRorr");
+
+            UnlockableDef rorrUnlockableDef = ScriptableObject.CreateInstance<UnlockableDef>();
+            rorrUnlockableDef.cachedName = "Skins.HANDOverclocked.GrandMastery";
+            rorrUnlockableDef.nameToken = "ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDCLEARGAMETYPHOON_NAME";
+            rorrUnlockableDef.achievementIcon = rorrIcon;
+            Modules.ContentPacks.unlockableDefs.Add(rorrUnlockableDef);
+             
+            //creating a new skindef as we did before
+            SkinDef rorrSkin = Modules.Skins.CreateSkinDef(HAND_PREFIX + "GRANDMASTERY_SKIN_NAME",
+                rorrIcon,
+                defaultRendererinfos,
+                model,
+                rorrUnlockableDef);
+
+            rorrSkin.meshReplacements = Modules.Skins.getMeshReplacements(defaultRendererinfos,
+                "meshHanDRorr_Body",
+                "meshHanDRorr_Hammer",
+                "meshDroneRorr_Body",
+                null/*"meshDroneMastery_Saw"*/);
+            
+            rorrSkin.rendererInfos[0].defaultMaterial = Modules.Materials.CreateHopooMaterial("matHANDRorr").SetSpecular(0.15f, 2f);
+            rorrSkin.rendererInfos[1].defaultMaterial = Modules.Materials.CreateHopooMaterial("matHANDRorr");//will return cached
+            rorrSkin.rendererInfos[2].defaultMaterial = Modules.Materials.CreateHopooMaterial("matHANDRorr");
+            //rorrSkin.rendererInfos[3].defaultMaterial = Modules.Materials.CreateHopooMaterial("matDroneMastery");
+
+            skins.Add(rorrSkin);
+
+            #endregion
+            Log.Warning("skin3");
+
+            #region RorrSkin
+
+            //creating a new skindef as we did before
+            SkinDef hopooSkin = Modules.Skins.CreateSkinDef(HAND_PREFIX + "HOPOO_SKIN_NAME",
+                Assets.mainAssetBundle.LoadAsset<Sprite>("texHANDSkinIconHopoo"),
+                defaultRendererinfos,
+                model,
+                null);
+
+            hopooSkin.meshReplacements = Modules.Skins.getMeshReplacements(defaultRendererinfos,
+                "meshHanDHopoo_Body",
+                "meshHanDHopoo_Hammer",
+                null,//"meshDroneRorr_Body",
+                null);//"meshDroneMastery_Saw"
+
+            hopooSkin.rendererInfos[0].defaultMaterial = Addressables.LoadAssetAsync<Material>("RoR2/Junk/HAND/matHAND.mat").WaitForCompletion();
+            hopooSkin.rendererInfos[1].defaultMaterial = Addressables.LoadAssetAsync<Material>("RoR2/Junk/HAND/matHANDHammer.mat").WaitForCompletion();
+            hopooSkin.rendererInfos[2].defaultMaterial = Modules.Materials.CreateHopooMaterial("matDroneHopoo").SetSpecular(0.15f, 2f);
+            //hopooSkin.rendererInfos[3].defaultMaterial = Modules.Materials.CreateHopooMaterial("matDroneMastery");
+
+            skins.Add(hopooSkin);
+
+            #endregion
+            Log.Warning("skin4");
 
             skinController.skins = skins.ToArray();
+            Log.Warning("skin69");
+
 
             On.RoR2.ProjectileGhostReplacementManager.Init += ProjectileGhostReplacementManager_Init;
         }

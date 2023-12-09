@@ -29,7 +29,7 @@ namespace HANDMod.Content.HANDSurvivor.Components
             if (health && health.body) return health.body.bodyIndex;
             return BodyIndex.None;
         }
-
+        
         public void ResetGraceTimer()
         {
             if (!triggeredSquash)

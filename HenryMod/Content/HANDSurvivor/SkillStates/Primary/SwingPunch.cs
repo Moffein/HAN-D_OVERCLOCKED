@@ -186,11 +186,11 @@ namespace EntityStates.HAND_Overclocked.Primary
 
             if (this.swingIndex == 1)
             {
-                base.PlayCrossfade(animationLayer, "PunchR", "Punch.playbackRate", this.duration, 0.2f);
+                base.PlayCrossfade(animationLayer, "PunchR", "Punch.playbackRate", this.duration, 0.2f * duration);
             }
             else
             {
-                base.PlayCrossfade(animationLayer, "PunchL", "Punch.playbackRate", this.duration, 0.2f);
+                base.PlayCrossfade(animationLayer, "PunchL", "Punch.playbackRate", this.duration, 0.2f * duration);
             }
         }
 
