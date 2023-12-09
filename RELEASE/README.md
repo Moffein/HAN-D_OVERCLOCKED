@@ -2,8 +2,8 @@ HAN-D is a tanky melee survivor who can heal himself and his allies to stay in t
 
 We are looking for translators! Check the languages folder on the [GitHub](https://github.com/Moffein/HAN-D_OVERCLOCKED/tree/master/language) if you would like to submit a translation for your language.
 
-[![https://github.com/Moffein/HAN-D_OVERCLOCKED/tree/master/RELEASE/images/lobby.jpg](https://github.com/Moffein/HAN-D_OVERCLOCKED/tree/master/RELEASE/images/lobby.jpg)]()
-[![https://github.com/Moffein/HAN-D_OVERCLOCKED/tree/master/RELEASE/images/portrait.png](https://github.com/Moffein/HAN-D_OVERCLOCKED/tree/master/RELEASE/images/portrait.png)]()
+[![](https://github.com/Moffein/HAN-D_OVERCLOCKED/blob/master/RELEASE/images/lobby.jpg?raw=true)](https://github.com/Moffein/HAN-D_OVERCLOCKED/blob/master/RELEASE/images/lobby.jpg?raw=true)
+[![](https://github.com/Moffein/HAN-D_OVERCLOCKED/blob/master/RELEASE/images/portrait.png?raw=true)](https://github.com/Moffein/HAN-D_OVERCLOCKED/blob/master/RELEASE/images/portrait.png?raw=true)
 
 ## For Skin Creators
 
