@@ -455,7 +455,7 @@ namespace HANDMod.Content.HANDSurvivor
 
             //materials are the default materials
             #endregion
-            Log.Warning("skin1");
+
             #region MasterySkin
 
             //creating a new skindef as we did before
@@ -487,7 +487,6 @@ namespace HANDMod.Content.HANDSurvivor
             skins.Add(masterySkin);
 
             #endregion
-            Log.Warning("skin2");
 
             #region RorrSkin
 
@@ -520,7 +519,6 @@ namespace HANDMod.Content.HANDSurvivor
             skins.Add(rorrSkin);
 
             #endregion
-            Log.Warning("skin3");
 
             #region RorrSkin
 
@@ -545,10 +543,8 @@ namespace HANDMod.Content.HANDSurvivor
             skins.Add(hopooSkin);
 
             #endregion
-            Log.Warning("skin4");
 
             skinController.skins = skins.ToArray();
-            Log.Warning("skin69");
 
 
             On.RoR2.ProjectileGhostReplacementManager.Init += ProjectileGhostReplacementManager_Init;
