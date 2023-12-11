@@ -58,6 +58,10 @@ Kauzok - Portuguese translation
 
 ## Changelog
 
+`1.4.1`
+
+- Fixed Gummy Clone and Ghost HAN-Ds leaving behind interactables if "Allow Player Repair" is enabled.
+
 `1.4.0`
 
 - Added Hopoo's HAN-D skin.

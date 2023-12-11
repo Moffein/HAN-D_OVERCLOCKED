@@ -173,6 +173,24 @@ namespace HANDMod.Content.HANDSurvivor.CharacterUnlock
             healthComponent = base.GetComponent<HealthComponent>();
         }
 
+        public void Start()
+        {
+            if (healthComponent && healthComponent.body && healthComponent.body.inventory)
+            {
+                Inventory inv = healthComponent.body.inventory;
+                int badItems = 0;
+                badItems += inv.GetItemCount(DLC1Content.Items.GummyCloneIdentifier);
+                badItems += inv.GetItemCount(RoR2Content.Items.Ghost);
+                if (healthComponent.body.master && healthComponent.body.master.GetComponent<DestroyOnTimer>()) badItems++;
+                if (healthComponent.body.GetComponent<DestroyOnTimer>()) badItems++;
+                if (badItems > 0)
+                {
+                    Destroy(this);
+                }
+            }
+
+        }
+
         public void FixedUpdate()
         {
             if (NetworkServer.active && !spawnedRepair && !(healthComponent && healthComponent.alive))
@@ -189,6 +207,7 @@ namespace HANDMod.Content.HANDSurvivor.CharacterUnlock
                 }
             }
         }
+
         public static Vector3 FindSafeTeleportPosition(GameObject gameObject, Vector3 targetPosition)
         {
             return FindSafeTeleportPosition(gameObject, targetPosition, float.NegativeInfinity, float.NegativeInfinity);
