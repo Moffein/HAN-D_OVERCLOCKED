@@ -58,6 +58,10 @@ Kauzok - Portuguese translation
 
 ## Changelog
 
+`1.4.2`
+
+- Updated BR TL.
+
 `1.4.1`
 
 - Fixed Gummy Clone and Ghost HAN-Ds leaving behind interactables if "Allow Player Repair" is enabled.
