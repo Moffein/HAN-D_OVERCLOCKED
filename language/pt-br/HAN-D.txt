@@ -55,7 +55,7 @@
 
 	"MOFFEIN_HAND_BODY_GRANDMASTERY_SKIN_NAME" : "RE-TRN",
 	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDCLEARGAMETYPHOON_NAME" : "HAN-D: Grande Domínio",
-	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDCLEARGAMETYPHOON_DESCRIPTION" : "Como HAN-D, vença o jogo ou aniquile em Tufão ou Eclipse.\n<color=#8888>(A dificuldade Tufão requer o mod Starstorm 2)</color>",</color>",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDCLEARGAMETYPHOON_DESCRIPTION" : "Como HAN-D, vença o jogo ou aniquile em Tufão ou Eclipse.\n<color=#8888>(A dificuldade Tufão requer o mod Starstorm 2)</color>",
 	
 	"MOFFEIN_HAND_BODY_HOPOO_SKIN_NAME" : "HO-POO",
 	}
