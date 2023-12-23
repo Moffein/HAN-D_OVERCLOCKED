@@ -58,7 +58,7 @@ Kauzok - Portuguese translation
 
 ## Changelog
 
-`1.4.2`
+`1.4.2` - `1.4.3`
 
 - Updated BR TL.
 
