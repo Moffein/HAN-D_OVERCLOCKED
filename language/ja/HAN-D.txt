@@ -1,0 +1,62 @@
+{
+	strings:
+	{
+	"MOFFEIN_HAND_BODY_NAME" : "HAN-D",
+	"MOFFEIN_HAND_BODY_SUBTITLE" : "無給警備員",
+	"MOFFEIN_HAND_BODY_DESCRIPTION" : "HAN-Dは強力な近距離攻撃で敵を混乱させる、戦車のようなロボット警備員です! <style=cSub>\r\n\r\n< ! > HURTは空中の敵に対するノックバックが増加します。FORCED-REASSEMBLYで空中の敵を飛ばしてHURTで吹っ飛ばしましょう！\r\n\r\n< ! > 敵を打ち続けることができる限りOVERCLOCKは継続される。\r\n\r\n< ! > OVERCLOCKを中断すると上方に射出され、空中の敵に到達することができます。\r\n\r\n< ! > DRONEを使用し回復して戦闘を続けましょう。\r\n\r\n",
+	"MOFFEIN_HAND_BODY_LORE" :  "<style=cMono>\r\n//--自動転送 FROM:UESのベース部門 [削除済み]--//</style>\r\n\r\n<i> *<color=#327FFF>尖晶石の強壮剤</color> の衝突音* </i>\n\n <color=#6955A6>支配</color> のアーティファクト無しでプレイするのが究極のポンコツの形だと?\n\n俺は <color=#6955A6>支配</color> のアーティファクトがないプレイ以上に馬鹿げたことは、考えられないし、理解すらできないな。正直に言うが合理的に考えてみろ。例えばお前は60分間、ただクソみたいな <color=#77FF16>イカのポリプ</color> を作るためだけに走ったりジャンプしたりするんだ。 <style=cIsHealth>ストーン ゴレーム</style> のレーザーを必死に回避したり、頭の上に湧いて出てくる6000匹を超える <style=cIsHealth>レッサー ウィスプ</color> にイライラして、 <color=#E5C962>山の祭壇</color> をアクティブにするのは全て１つの単純な結果の為だろう：インベントリには金のかかる <color=#FFFFFF>戦旗</color> と <color=#FFFFFF>モンスターの歯</color> のネックレスでいっぱいです。\n\n神の走りだって？ そいつはすごいな。お前が買った <color=#E5C962>チェスト</color> からはお前の走りには何の足しにもなりもしない糞みたいなアイテムが大量に出てくるぞ。<style=cIsHealth>レムリアン達</style>を倒して稼いだ大金の恩恵がまさにそれになるんだ。\n\nこのゲームをプレイする奴は <style=cIsHealth>文字通り</style> 人生の２時間をチェストを開ける事に捧げて、そしてそれが <color=#77FF16>クロノボーブル</color> でないことを祈らなくちゃならない。論理的に考えてみれば、それは究極で最後のカモってことじゃないか。\r\n<style=cMono>\r\nテープ起こし完了。\r\n</style>\r\n \r\n\r\n",
+	"MOFFEIN_HAND_BODY_OUTRO_FLAVOR" : "..そして、新たな人生への喜びにパーツを震わせながら去っていった。",
+	"MOFFEIN_HAND_BODY_OUTRO_FAILURE" : "..そして、その努力は報われること無く消えていった。",
+	
+	"MOFFEIN_HAND_BODY_PASSIVE_NAME" : "SWARM_ARMOR",
+	"MOFFEIN_HAND_BODY_PASSIVE_DESC" : "チーム内の味方の <style=cIsUtility>DRONE</style> 1体につき、自身の最大体力の <style=cIsDamage>0.3%</style> の <style=cIsDamage>被ダメージを軽減</style> する。",
+	
+	"MOFFEIN_HAND_BODY_PRIMARY_NAME" : "HURT",
+	"MOFFEIN_HAND_BODY_PRIMARY_DESC" : "全攻撃対象に <style=cIsDamage>390% ダメージ</style>を与え、<style=cIsDamage>OVERCLOCK</style> が発動している間は <style=cIsDamage>失神</style> する。",
+	
+	"MOFFEIN_HAND_BODY_PRIMARY_HAMMER_NAME" : "SMASH",
+	"MOFFEIN_HAND_BODY_PRIMARY_HAMMER_DESC" : "全ての敵に <style=cIsDamage>600% damage</style> と <style=cIsHealth>スローダウン</style> を与え、<style=cIsDamage>OVERCLOCK</style> が発動している間は <style=cIsDamage>失神</style> する。",
+	
+	"MOFFEIN_HAND_BODY_SECONDARY_NAME" : "FORCED-REASSEMBLY",
+	"MOFFEIN_HAND_BODY_SECONDARY_DESC" : "<style=cIsDamage>失神</style>。チャージ後に全ての敵に対し <style=cIsDamage>600%-1500% ダメージ</style> の大きな衝撃を与える。",
+	
+	"MOFFEIN_HAND_BODY_SECONDARY_SCEPTER_NAME" : "UNETHICAL-REASSEMBLY",
+	"MOFFEIN_HAND_BODY_SECONDARY_SCEPTER_DESC" : "<style=cIsDamage>失神</style>。チャージ後に全ての敵に対し <style=cIsHealth>圧倒的な</style> 衝撃と <style=cIsDamage>900%-2250% ダメージ</style>を与える。",
+	
+	"KEYWORD_MOFFEINHANDOVERCLOCKED_BOOST" : "<style=cKeywordName>射出</style><style=cSub>スキルを早めにキャンセルすることにより上方向へ跳ぶことができる。</style>",
+	
+	"MOFFEIN_HAND_BODY_UTILITY_CANCEL_NAME" : "CANCEL",
+	"MOFFEIN_HAND_BODY_UTILITY_CANCEL_DESC" : "<style=cIsUtility>上方向へ跳ぶ</style>。",
+	
+	"MOFFEIN_HAND_BODY_UTILITY_NAME" : "OVERCLOCK",
+	"MOFFEIN_HAND_BODY_UTILITY_DESC" : "<style=cIsUtility>射出</style>。 <style=cIsUtility>移動速度</style> と <style=cIsDamage>攻撃速度</style> を <style=cIsDamage>40%</style>増加させる。敵に攻撃を当てると <style=cIsUtility>効果時間が延長される</style>。",
+	
+	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_NAME" : "FOCUS",
+	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>射出</style>。 <style=cIsDamage>+50% ダメージ</style> と <style=cIsUtility>50 アーマー</style>を追加で得るが、 <style=cIsHealth>30% 移動速度を失う</style> 。 敵に攻撃を当てると <style=cIsUtility>効果時間が延長される</style>。",
+	
+	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "DRONE - HEAL",
+	"MOFFEIN_HAND_BODY_SPECIAL_DESC" : " <style=cIsUtility>DRONE</style> を発射し <style=cIsDamage>270% ダメージ</style> を与え、 <style=cIsHealing>与えたダメージの 40% を回復</style> する。 敵を倒すか近接攻撃の命中は <style=cIsUtility>クールダウンを減少させる</style>。",
+	
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_NAME" : "DRONE - SPEED",
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_DESC" : " <style=cIsUtility>DRONE</style> を発射し <style=cIsDamage>270% ダメージ</style> を与え <style=cIsDamage>攻撃速度を一時的に付与</style> をします。 敵を倒すか近接攻撃の命中は <style=cIsUtility>クールダウンを減少させる</style>。",
+	
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_NAME" : "便利屋",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_DESCRIPTION" : "再集結地デルタにいる壊れたロボット警備員を脱出ポッドの燃料アレイで修理する。",
+	
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDNEMESISFOCUSUNLOCK_NAME" : "HAN-D: ビートダウン",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDNEMESISFOCUSUNLOCK_DESCRIPTION" : "OVERCLOCKを45秒の間、維持する。",
+	
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDHAMMERPRIMARYUNLOCK_NAME" : "HAN-D: ボンッ!",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDHAMMERPRIMARYUNLOCK_DESCRIPTION" : "最終ステージのボスを平たくする。",
+	
+	"MOFFEIN_HAND_BODY_MASTERY_SKIN_NAME" : "WOO-D",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDCLEARGAMEMONSOON_NAME" : "HAN-D: 熟達",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDCLEARGAMEMONSOON_DESCRIPTION" : "HAN-Dとして難易度「暴風雨」でゲームをクリアまたは自分自身を消す。",
+	
+	"MOFFEIN_HAND_BODY_GRANDMASTERY_SKIN_NAME" : "RE-TRN",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDCLEARGAMETYPHOON_NAME" : "HAN-D: 偉大な師範",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDCLEARGAMETYPHOON_DESCRIPTION" : "HAN-Dとして難易度「Typhoon」か「Eclipse」でゲームをクリアまたは自分自身を消す。\n<color=#8888>(Typhoon以上の難易度がカウント対象)</color>",
+	
+	"MOFFEIN_HAND_BODY_HOPOO_SKIN_NAME" : "HO-POO",
+	}
+}
