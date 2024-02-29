@@ -1,3 +1,8 @@
+`1.4.5`
+
+- SMASH
+	- Added config option to disable forward lunge. (Can be changed in-game with Risk of Options)
+
 `1.4.4`
 
 - Added Japanese translation (Thanks punch!)

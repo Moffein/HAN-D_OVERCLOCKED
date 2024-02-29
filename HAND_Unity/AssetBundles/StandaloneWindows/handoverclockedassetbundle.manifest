@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1876380536
+CRC: 1534915798
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f400b18d8c533181ee86aeb75e51bad9
+    Hash: ea96580c28da6c440c1d767fe70fe3e5
   TypeTreeHash:
     serializedVersion: 2
     Hash: 0713b83fc0fda10e7027ae2bc2bee20d
@@ -75,6 +75,7 @@ Assets:
 - Assets/HAN-D/Materials/Skins/Rorr/matHANDRorr.mat
 - Assets/HAN-D/Textures/Skins/Mastery/HanDWeaponMaster_normal.png
 - Assets/HandDrone/Mastery/texHanDDroneMaster_normal.png
+- Assets/modicon.png
 - Assets/HAN-D/Textures/UI/texIndicatorDroneHeal.png
 - Assets/HAN-D/Textures/Skills/texUtilityOverclockCancel.png
 - Assets/HAN-D/Mesh/meshHanDRorr_Hammer.mesh

@@ -8,6 +8,7 @@ using HANDMod.Content;
 using HANDMod.Content.Shared.Components.Body;
 using UnityEngine.Networking;
 using HANDMod;
+using BepInEx.Configuration;
 
 namespace EntityStates.HAND_Overclocked.Primary
 {
@@ -24,6 +25,8 @@ namespace EntityStates.HAND_Overclocked.Primary
         public static float momentumStartPercent = 0.5f;
         public static float momentumFadePercent = 0.6825f;
         public static float momentumEndPercent = 0.8f;
+
+        public static ConfigEntry<bool> useForwardLunge;
 
         private float accumulatedReductionPercent = 1f;
         private float inputReductionPercent = 0f;
@@ -164,7 +167,7 @@ namespace EntityStates.HAND_Overclocked.Primary
             { 
                 if (!this.hasFired)
                 {
-                    this.startedSkillStationary = base.inputBank && base.inputBank.moveVector == Vector3.zero;
+                    this.startedSkillStationary = (base.inputBank && base.inputBank.moveVector == Vector3.zero) || !useForwardLunge.Value;
                     if (base.inputBank && !this.startedSkillStationary)
                     {
                         Ray aimRay = base.GetAimRay();

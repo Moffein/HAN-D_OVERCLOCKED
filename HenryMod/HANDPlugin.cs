@@ -56,10 +56,10 @@ namespace HANDMod
             instance = this;
 
             CheckDependencies();
-            Modules.Config.ReadConfig();
 
             Log.Init(Logger);
             Modules.Assets.Initialize(); // load assets and read config
+            Modules.Config.ReadConfig();
             Modules.ItemDisplays.PopulateDisplays(); // collect item display prefabs for use in our display rules
 
             new LanguageTokens();
