@@ -1,3 +1,7 @@
+`1.4.6`
+
+- Updated RU TL
+
 `1.4.5`
 
 - SMASH
