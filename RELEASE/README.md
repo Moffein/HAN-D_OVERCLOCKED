@@ -44,7 +44,7 @@ Sounds taken from Risk of Rain 1 and Starstorm
 
 WockyTheWolf, JunJun_w - Simplified Chinese translation
 
-MoonsugarCrusader, marklecarde - Russian translation
+MoonsugarCrusader, lecarde - Russian translation
 
 FyreBW - French translation
 
