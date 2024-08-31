@@ -26,17 +26,17 @@ namespace HANDMod.Content.HANDSurvivor
                        false,
                        false,
                        new Color(74f / 255f, 170f / 255f, 198f / 255f),
-                       Assets.mainAssetBundle.LoadAsset<Sprite>("texBuffSwarmArmor.png")
+                       Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texBuffSwarmArmor.png")
                        );
-                On.RoR2.HealthComponent.TakeDamage += DronePassiveHook;
+                On.RoR2.HealthComponent.TakeDamageProcess += DronePassiveHook;
             }
         }
 
-        private static void DronePassiveHook(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
+        private static void DronePassiveHook(On.RoR2.HealthComponent.orig_TakeDamageProcess orig, HealthComponent self, DamageInfo damageInfo)
         {
             if (NetworkServer.active)
             {
-                if (!damageInfo.damageType.HasFlag(DamageType.BypassArmor) && self.body)
+                if ((damageInfo.damageType & DamageType.BypassArmor) == 0 && self.body)
                 {
                     int buffCount = self.body.GetBuffCount(Buffs.DronePassive);
                     if (buffCount > 0 && damageInfo.damage > 1f)

@@ -29,11 +29,11 @@ namespace HANDMod.Content
             DamageTypes.HANDSecondaryScepter = DamageAPI.ReserveDamageType();
             DamageTypes.SquashOnKill = DamageAPI.ReserveDamageType();
 
-            On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamage;
+            On.RoR2.HealthComponent.TakeDamageProcess += HealthComponent_TakeDamage;
 
         }
 
-        private static void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
+        private static void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamageProcess orig, HealthComponent self, DamageInfo damageInfo)
         {
             if (NetworkServer.active)
             {

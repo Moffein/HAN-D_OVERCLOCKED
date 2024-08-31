@@ -32,7 +32,7 @@
 	"MOFFEIN_HAND_BODY_UTILITY_DESC" : "<style=cIsUtility>射出</style>。 <style=cIsUtility>移動速度</style> と <style=cIsDamage>攻撃速度</style> を <style=cIsDamage>40%</style>増加させる。敵に攻撃を当てると <style=cIsUtility>効果時間が延長される</style>。",
 	
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_NAME" : "FOCUS",
-	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>射出</style>。 <style=cIsDamage>+50% ダメージ</style> と <style=cIsUtility>50 アーマー</style>を追加で得るが、 <style=cIsHealth>30% 移動速度を失う</style> 。 敵に攻撃を当てると <style=cIsUtility>効果時間が延長される</style>。",
+	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>射出</style>。 <style=cIsDamage>+50% ダメージ</style> と <style=cIsUtility>50 アーマー</style>を追加で得るが。 敵に攻撃を当てると <style=cIsUtility>効果時間が延長される</style>。",
 	
 	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "DRONE - HEAL",
 	"MOFFEIN_HAND_BODY_SPECIAL_DESC" : " <style=cIsUtility>DRONE</style> を発射し <style=cIsDamage>270% ダメージ</style> を与え、 <style=cIsHealing>与えたダメージの 40% を回復</style> する。 敵を倒すか近接攻撃の命中は <style=cIsUtility>クールダウンを減少させる</style>。",

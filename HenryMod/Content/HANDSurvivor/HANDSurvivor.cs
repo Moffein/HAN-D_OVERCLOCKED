@@ -39,7 +39,7 @@ namespace HANDMod.Content.HANDSurvivor
             bodyNameToken = HandPlugin.DEVELOPER_PREFIX + "_HAND_BODY_NAME",
             subtitleNameToken = HandPlugin.DEVELOPER_PREFIX + "_HAND_BODY_SUBTITLE",
 
-            characterPortrait = Assets.mainAssetBundle.LoadAsset<Texture>("texHANDPortrait.png"),
+            characterPortrait = Modules.Assets.mainAssetBundle.LoadAsset<Texture>("texHANDPortrait.png"),
             bodyColor = new Color(0.556862745f, 0.682352941f, 0.690196078f),
 
             crosshair = LegacyResourcesAPI.Load<GameObject>("prefabs/crosshair/simpledotcrosshair"),
@@ -85,7 +85,7 @@ namespace HANDMod.Content.HANDSurvivor
                 survivorUnlock = ScriptableObject.CreateInstance<UnlockableDef>();
                 survivorUnlock.cachedName = "Characters.HANDOverclocked";
                 survivorUnlock.nameToken = "ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_NAME";
-                survivorUnlock.achievementIcon = Assets.mainAssetBundle.LoadAsset<Sprite>("texHANDUnlock.png");
+                survivorUnlock.achievementIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texHANDUnlock.png");
                 Modules.ContentPacks.unlockableDefs.Add(survivorUnlock);
             }
 
@@ -320,8 +320,8 @@ namespace HANDMod.Content.HANDSurvivor
         {
             DroneSetup.Init();
 
-            Components.DroneProjectile.DroneDamageController.startSound = Assets.CreateNetworkSoundEventDef("Play_HOC_Drill");
-            Components.DroneProjectile.DroneDamageController.hitSound = Assets.CreateNetworkSoundEventDef("Play_treeBot_m1_impact");
+            Components.DroneProjectile.DroneDamageController.startSound = Modules.Assets.CreateNetworkSoundEventDef("Play_HOC_Drill");
+            Components.DroneProjectile.DroneDamageController.hitSound = Modules.Assets.CreateNetworkSoundEventDef("Play_treeBot_m1_impact");
 
             EntityStateMachine stateMachine = bodyPrefab.AddComponent<EntityStateMachine>();
             stateMachine.customName = "DroneLauncher";
@@ -441,7 +441,7 @@ namespace HANDMod.Content.HANDSurvivor
             #region DefaultSkin
             //this creates a SkinDef with all default fields
             SkinDef defaultSkin = Modules.Skins.CreateSkinDef("DEFAULT_SKIN",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texHANDSkinIconDefault"),
+                Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texHANDSkinIconDefault"),
                 defaultRendererinfos,
                 model);
 
@@ -459,7 +459,7 @@ namespace HANDMod.Content.HANDSurvivor
             #region MasterySkin
 
             //creating a new skindef as we did before
-            Sprite masteryIcon = Assets.mainAssetBundle.LoadAsset<Sprite>("texHANDSkinIconMastery");
+            Sprite masteryIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texHANDSkinIconMastery");
             SkinDef masterySkin = Modules.Skins.CreateSkinDef(HAND_PREFIX + "MASTERY_SKIN_NAME",
                 masteryIcon,
                 defaultRendererinfos,
@@ -491,7 +491,7 @@ namespace HANDMod.Content.HANDSurvivor
 
             #region RorrSkin
 
-            Sprite rorrIcon = Assets.mainAssetBundle.LoadAsset<Sprite>("texHANDSkinIconRorr");
+            Sprite rorrIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texHANDSkinIconRorr");
 
             UnlockableDef rorrUnlockableDef = ScriptableObject.CreateInstance<UnlockableDef>();
             rorrUnlockableDef.cachedName = "Skins.HANDOverclocked.GrandMastery";
@@ -526,7 +526,7 @@ namespace HANDMod.Content.HANDSurvivor
 
             //creating a new skindef as we did before
             SkinDef hopooSkin = Modules.Skins.CreateSkinDef(HAND_PREFIX + "HOPOO_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texHANDSkinIconHopoo"),
+                Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texHANDSkinIconHopoo"),
                 defaultRendererinfos,
                 model,
                 null);

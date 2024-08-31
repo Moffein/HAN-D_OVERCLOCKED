@@ -71,7 +71,7 @@ namespace HANDMod.Modules
         internal static NetworkSoundEventDef CreateNetworkSoundEventDef(string eventName)
         {
             NetworkSoundEventDef networkSoundEventDef = ScriptableObject.CreateInstance<NetworkSoundEventDef>();
-            networkSoundEventDef.akId = AkSoundEngine.GetIDFromString(eventName);
+            //networkSoundEventDef.akId = AkSoundEngine.GetIDFromString(eventName);
             networkSoundEventDef.eventName = eventName;
 
             Modules.Content.AddNetworkSoundEventDef(networkSoundEventDef);

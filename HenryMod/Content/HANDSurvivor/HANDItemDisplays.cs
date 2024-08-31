@@ -11,6 +11,8 @@ namespace HANDMod.Content.HANDSurvivor
     {
         protected override void SetItemDisplayRules(List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules)
         {
+            Debug.LogWarning("HAN-D Overclocked: ItemDisplays are currently broken. Remember to fix this later!");
+            return;
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
                 keyAsset = RoR2Content.Items.UtilitySkillMagazine,

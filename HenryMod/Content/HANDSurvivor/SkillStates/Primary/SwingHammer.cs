@@ -36,8 +36,10 @@ namespace EntityStates.HAND_Overclocked.Primary
 
         private bool removedBuff = false;
 
+        private float lastUpdateTime;
         public override void OnEnter()
         {
+            lastUpdateTime = Time.time;
             this.bonusForce = Vector3.zero;
             this.attackRecoil = 0f;
             //this.hitEffectPrefab = SwingHammer.hitEffect;  //Why does this play the DRONE sound?
@@ -129,6 +131,8 @@ namespace EntityStates.HAND_Overclocked.Primary
 
         public override void FixedUpdate()
         {
+            float deltaTime = Time.time - lastUpdateTime;
+            lastUpdateTime = Time.time;
             Vector3 aimFlat = base.GetAimRay().direction;
             aimFlat.y = 0;
             aimFlat.Normalize();
@@ -194,7 +198,7 @@ namespace EntityStates.HAND_Overclocked.Primary
                     float momentumEndTime = this.duration * SwingHammer.momentumEndPercent;
                     if (this.stopwatch <= momentumEndTime)
                     {
-                        float evaluatedForwardSpeed = SwingHammer.forwardSpeed * Time.fixedDeltaTime * (1f - inputReductionPercent) * accumulatedReductionPercent;
+                        float evaluatedForwardSpeed = SwingHammer.forwardSpeed * deltaTime * (1f - inputReductionPercent) * accumulatedReductionPercent;
                         if (this.stopwatch > fadeTime)
                         {
                             evaluatedForwardSpeed = Mathf.Lerp(evaluatedForwardSpeed, 0f, (this.stopwatch - fadeTime) / (momentumEndTime - fadeTime));

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace HANDMod.Content.HANDSurvivor.Achievements
 {
-	[RegisterAchievement("MoffeinHANDOverclockedSurvivorUnlock", "Characters.HANDOverclocked", null, typeof(HANDOverclockedSurvivorUnlockServerAchievement))]
+	[RegisterAchievement("MoffeinHANDOverclockedSurvivorUnlock", "Characters.HANDOverclocked", null, 3u, typeof(HANDOverclockedSurvivorUnlockServerAchievement))]
 	public class HANDOverclockedSurvivorUnlockAchievement : BaseAchievement
 	{
 		public override void OnInstall()

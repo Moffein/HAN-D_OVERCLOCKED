@@ -21,22 +21,20 @@ namespace HANDMod
     [BepInDependency("com.ThinkInvisible.ClassicItems", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Kingpinush.KingKombatArena", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("HIFU.Inferno", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency(R2API.R2API.PluginGUID)]
+    [BepInDependency(R2API.PrefabAPI.PluginGUID)]
+    [BepInDependency(R2API.RecalculateStatsAPI.PluginGUID)]
+    [BepInDependency(R2API.SoundAPI.PluginGUID)]
+    [BepInDependency(R2API.DamageAPI.PluginGUID)]
+    [BepInDependency(R2API.UnlockableAPI.PluginGUID)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
-    [R2APISubmoduleDependency(new string[]
-    {
-        "PrefabAPI",
-        "UnlockableAPI",
-        "RecalculateStatsAPI",
-        "DamageAPI"
-    })]
 
     public class HandPlugin : BaseUnityPlugin
     {
         public const string MODUID = "com.EnforcerGang.HANDOverclocked";
         public const string MODNAME = "HAN-D Overclocked";
-        public const string MODVERSION = "1.4.1";
+        public const string MODVERSION = "1.4.9";
 
         public const string DEVELOPER_PREFIX = "MOFFEIN";
 
@@ -59,6 +57,7 @@ namespace HANDMod
 
             Log.Init(Logger);
             Modules.Assets.Initialize(); // load assets and read config
+            SoundBanks.Init();
             Modules.Config.ReadConfig();
             Modules.ItemDisplays.PopulateDisplays(); // collect item display prefabs for use in our display rules
 
@@ -81,11 +80,6 @@ namespace HANDMod
                 Stage.onStageStartGlobal += SetArena;
             }
             RoR2.RoR2Application.onLoad += AddMechanicalBodies;
-        }
-
-        private void Start()
-        {
-            SoundBanks.Init();
         }
 
         private void AddMechanicalBodies()

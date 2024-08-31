@@ -7,8 +7,10 @@ namespace EntityStates.HAND_Overclocked.Secondary
 {
     public class ChargeSlam : BaseState
     {
+        private float lastUpdateTime;
         public override void OnEnter()
         {
+            lastUpdateTime = Time.time;
             base.OnEnter();
             Util.PlaySound("Play_HOC_StartHammer", base.gameObject);
             this.minDuration = ChargeSlam.baseMinDuration / this.attackSpeedStat;
@@ -63,6 +65,9 @@ namespace EntityStates.HAND_Overclocked.Secondary
         {
             base.FixedUpdate();
 
+            float deltaTime = Time.time - lastUpdateTime;
+            lastUpdateTime = Time.time;
+
             if (base.characterBody)
             {
                 base.characterBody.SetAimTimer(3f);
@@ -76,7 +81,7 @@ namespace EntityStates.HAND_Overclocked.Secondary
                     base.PlayCrossfade("Gesture, Override", "ChargeHammer", "ChargeHammer.playbackRate", (this.chargeDuration), 0.2f);
                 }
 
-                charge += Time.deltaTime * this.attackSpeedStat;
+                charge += deltaTime * this.attackSpeedStat;
                 if (charge >= chargeDuration)
                 {
                     base.PlayCrossfade("Gesture, Override", "ChargeHammerHold", "ChargeHammer.playbackRate", 0.6f, 0.05f);

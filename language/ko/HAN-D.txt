@@ -32,7 +32,7 @@
 	"MOFFEIN_HAND_BODY_UTILITY_DESC" : "<style=cIsUtility>사출</style>. <style=cIsUtility>이동 속도</style>와 <style=cIsDamage>공격 속도</style>를 <style=cIsDamage>40%</style>만큼 증가시킵니다. 적을 타격하면 <style=cIsUtility>지속시간이 연장됩니다</style>.",
 	
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_NAME" : "초점",
-	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>사출</style>. <style=cIsDamage>공격력의 50%</style>를 추가로 얻고 <style=cIsUtility>50의 방어력</style>을 얻지만, <style=cIsHealth>30%의 이동속도를 잃습니다</style>. 적을 타격하면 <style=cIsUtility>지속시간이 연장됩니다</style>.",
+	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>사출</style>. <style=cIsDamage>공격력의 50%</style>를 추가로 얻고 <style=cIsUtility>50의 방어력</style>을 얻지만. 적을 타격하면 <style=cIsUtility>지속시간이 연장됩니다</style>.",
 	
 	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "드론 - 치유",
 	"MOFFEIN_HAND_BODY_SPECIAL_DESC" : "드론을 발사하여 <style=cIsDamage>270%의 피해</style>를 입히고 <style=cIsHealing>가한 피해의 40%를 회복합니다</style>. 적을 죽이거나 주 공격을 적중시켜 <style=cIsUtility>재사용 대기시간을 줄입니다</style>.",

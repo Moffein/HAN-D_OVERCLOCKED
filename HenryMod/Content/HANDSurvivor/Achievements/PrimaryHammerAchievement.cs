@@ -6,7 +6,7 @@ using HANDMod.Content.HANDSurvivor.Components;
 
 namespace HANDMod.Content.HANDSurvivor.Achievements
 {
-    [RegisterAchievement("MoffeinHANDOverclockedHammerPrimaryUnlock", "Skills.HANDOverclocked.HammerPrimary", null, null)]
+    [RegisterAchievement("MoffeinHANDOverclockedHammerPrimaryUnlock", "Skills.HANDOverclocked.HammerPrimary", null, 3u, null)]
     public class HANDOverclockedHammerPrimaryUnlockAchievement : BaseAchievement
     {
         BodyIndex mithrixBody;

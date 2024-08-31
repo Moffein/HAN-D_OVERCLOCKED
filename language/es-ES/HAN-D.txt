@@ -32,7 +32,7 @@
 	"MOFFEIN_HAND_BODY_UTILITY_DESC" : "<style=cIsUtility>Boost</style>. Increase <style=cIsUtility>movement speed</style> and <style=cIsDamage>attack speed</style> by <style=cIsDamage>40%</style>. Hit enemies to <style=cIsUtility>increase duration</style>.",
 	
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_NAME" : "FOCUS",
-	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>Boost</style>. Gana <style=cIsDamage>+50% de daño</style> y <style=cIsUtility>50 de armadura</style>, pero pierdes <style=cIsHealth>-30% de velocidad de movimiento</style>. Golpea enemigos para que <style=cIsUtility>aumente la duracion</style>.",
+	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>Boost</style>. Gana <style=cIsDamage>+50% de daño</style> y <style=cIsUtility>50 de armadura</style>. Golpea enemigos para que <style=cIsUtility>aumente la duracion</style>.",
 	
 	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "DRON - CURACIÓN",
 	"MOFFEIN_HAND_BODY_SPECIAL_DESC" : "Lanza un dron que hace <style=cIsDamage>270% de daño</style> y <style=cIsHealing>cura el 40% del daño causado</style>. Muertes e impactos cuerpo a cuerpo <style=cIsUtility>reducen su enfriamiento</style>.",

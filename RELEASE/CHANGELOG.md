@@ -1,3 +1,9 @@
+`1.4.9`
+
+- DLC2 fix.
+	- ItemDisplays broke.
+- FOCUS no longer slows.
+
 `1.4.6` to `1.4.8`
 
 - Updated RU TL

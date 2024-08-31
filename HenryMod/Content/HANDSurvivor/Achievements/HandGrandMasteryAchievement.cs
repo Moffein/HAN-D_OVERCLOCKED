@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace HANDMod.Content.HANDSurvivor.Achievements
 {
-    [RegisterAchievement("MoffeinHANDOverclockedClearGameTyphoon", "Skins.HANDOverclocked.GrandMastery", null, null)]
+    [RegisterAchievement("MoffeinHANDOverclockedClearGameTyphoon", "Skins.HANDOverclocked.GrandMastery", null, 15u, null)]
     public class HandGrandMasteryAchievement : BaseGrandMasteryAchievement
     {
         public override BodyIndex LookUpRequiredBodyIndex()
