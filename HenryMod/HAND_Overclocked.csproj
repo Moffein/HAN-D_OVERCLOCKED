@@ -13,6 +13,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Content\RMORSurvivor\SkillStates\Secondary\**" />
+    <EmbeddedResource Remove="Content\RMORSurvivor\SkillStates\Secondary\**" />
+    <None Remove="Content\RMORSurvivor\SkillStates\Secondary\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="HenryBank.bnk" />
     <None Remove="Modules\Characters\Henry.cs~RF6221a098.TMP" />
   </ItemGroup>
@@ -387,10 +393,6 @@
     <Reference Include="Zio">
       <HintPath>libs\Zio.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Content\RMORSurvivor\SkillStates\Secondary\" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
