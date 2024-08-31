@@ -11,8 +11,6 @@ namespace HANDMod.Content.HANDSurvivor
     {
         protected override void SetItemDisplayRules(List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules)
         {
-            Debug.LogWarning("HAN-D Overclocked: ItemDisplays are currently broken. Remember to fix this later!");
-            return;
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
                 keyAsset = RoR2Content.Items.UtilitySkillMagazine,
@@ -3643,61 +3641,6 @@ namespace HANDMod.Content.HANDSurvivor
                             localPos = new Vector3(0.03246F, 1.71885F, 0.16059F),
                             localAngles = new Vector3(327.9469F, 288.4993F, 5.56038F),
                             localScale = new Vector3(0.3F, 0.3F, 0.3F),
-                            limbMask = LimbFlags.None
-                        }
-                    }
-                }
-            });
-
-
-            itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
-            {
-                keyAsset = DLC1Content.Items.DroneWeaponsDisplay1,
-                displayRuleGroup = new DisplayRuleGroup
-                {
-                    rules = new ItemDisplayRule[]
-                    {
-                        new ItemDisplayRule
-                        {
-                            ruleType = ItemDisplayRuleType.ParentedPrefab,
-                            followerPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/DroneWeapons/DisplayDroneWeaponLauncher.prefab").WaitForCompletion(),
-                            childName = "Chest",
-                            localPos = new Vector3(-0.49153F, 0.63633F, -1.06785F),
-                            localAngles = new Vector3(0F, 180F, 0F),
-                            localScale = new Vector3(1F, 1F, 1F),
-                            limbMask = LimbFlags.None
-                        },
-
-                        new ItemDisplayRule
-                        {
-                            ruleType = ItemDisplayRuleType.ParentedPrefab,
-                            followerPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/DroneWeapons/DisplayDroneWeaponMinigun.prefab").WaitForCompletion(),
-                            childName = "Head",
-                            localPos = new Vector3(1.31409F, 0.52271F, 0.11515F),
-                            localAngles = new Vector3(90F, 270F, 0F),
-                            localScale = new Vector3(1F, 1F, 1F),
-                            limbMask = LimbFlags.None
-                        }
-                    }
-                }
-            });
-
-
-            itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
-            {
-                keyAsset = DLC1Content.Items.DroneWeaponsDisplay2,
-                displayRuleGroup = new DisplayRuleGroup
-                {
-                    rules = new ItemDisplayRule[]
-                    {
-                        new ItemDisplayRule
-                        {
-                            ruleType = ItemDisplayRuleType.ParentedPrefab,
-                            followerPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/DroneWeapons/DisplayDroneWeaponRobotArm.prefab").WaitForCompletion(),
-                            childName = "ShoulderL",
-                            localPos = new Vector3(0F, 1.25838F, 0.02986F),
-                            localAngles = new Vector3(327.3969F, 181.9719F, 330.4663F),
-                            localScale = new Vector3(1.5F, 1.5F, 1.5F),
                             limbMask = LimbFlags.None
                         }
                     }

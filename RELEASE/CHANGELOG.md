@@ -1,3 +1,7 @@
+`1.4.10`
+
+- Fixed itemdisplays.
+
 `1.4.9`
 
 - DLC2 fix.
