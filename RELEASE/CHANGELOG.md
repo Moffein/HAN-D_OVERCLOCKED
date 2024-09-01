@@ -1,3 +1,7 @@
+`1.4.12`
+
+- Updated pt-br TL.
+
 `1.4.11`
 
 - Fixed MP.
