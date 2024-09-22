@@ -1,5 +1,10 @@
+`1.4.13`
+
+- Extra nullchecking in DroneFollowerController.
+
 `1.4.12`
 
+- Moved HAN-D unlock spawnpoint since the old one is now inaccessible.
 - Updated pt-br TL.
 
 `1.4.11`

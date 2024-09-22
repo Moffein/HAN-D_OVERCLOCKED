@@ -21,6 +21,7 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
         private static void ModelSkinController_ApplySkin(On.RoR2.ModelSkinController.orig_ApplySkin orig, ModelSkinController self, int skinIndex)
         {
             orig(self, skinIndex);
+            if (!self.characterModel || !self.characterModel.body) return;
             if(self.characterModel.body.TryGetComponent<DroneFollowerController>(out DroneFollowerController controller))
             {
                 controller.ApplyDroneSkins();

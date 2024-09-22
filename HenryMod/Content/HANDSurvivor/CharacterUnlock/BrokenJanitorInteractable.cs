@@ -39,8 +39,8 @@ namespace HANDMod.Content.HANDSurvivor.CharacterUnlock
                 GameObject interactable = UnityEngine.Object.Instantiate(HANDMod.Content.HANDSurvivor.CharacterUnlock.BrokenJanitorInteractable.interactablePrefab);
                 if (interactable)
                 {
-                    interactable.transform.position = new Vector3(41.92087f, 5f, 87.45225f);
-                    interactable.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+                    interactable.transform.position = new Vector3(1.495881f, 10.6f, 13.58449f);
+                    interactable.transform.rotation = Quaternion.Euler(0f, -90f, 0f);
                     NetworkServer.Spawn(interactable);
                 }
             }
