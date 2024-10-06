@@ -1,3 +1,7 @@
+`1.4.14`
+
+- MinionMeld support for passive.
+
 `1.4.13`
 
 - Extra nullchecking in DroneFollowerController.

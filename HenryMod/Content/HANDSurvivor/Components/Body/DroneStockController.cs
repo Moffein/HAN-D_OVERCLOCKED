@@ -67,6 +67,12 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
                             {
                                 droneCount += tc.body.inventory.GetItemCount(droneMeldStackItem);
                             }
+
+                            ItemIndex minionMeldStackItem = ItemCatalog.FindItemIndex("MinionMeldInternalStackItem");
+                            if (minionMeldStackItem != ItemIndex.None)
+                            {
+                                droneCount += tc.body.inventory.GetItemCount(minionMeldStackItem);
+                            }
                         }
                     }
                 }
