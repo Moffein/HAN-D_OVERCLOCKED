@@ -57,3 +57,5 @@ Juhnter - Spanish translation
 Kauzok - Portuguese translation
 
 punch - Japanese translation
+
+Lonerdev - Italian Translation

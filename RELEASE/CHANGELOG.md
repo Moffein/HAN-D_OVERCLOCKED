@@ -1,3 +1,7 @@
+`1.4.15`
+
+- Italian Translation (Thanks Lonerdev!)
+
 `1.4.14`
 
 - MinionMeld support for passive.
