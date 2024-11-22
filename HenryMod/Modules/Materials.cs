@@ -32,6 +32,10 @@ namespace HANDMod.Modules
 
         public static Material SetHopooMaterial(this Material tempMat)
         {
+            bool isStandard = tempMat.shader &&
+                       (tempMat.shader.name == "Standard" || tempMat.shader.name == "Autodesk Interactive");
+            if (!isStandard) return tempMat;
+
             if (cachedMaterials.Contains(tempMat))
                 return tempMat;
 
