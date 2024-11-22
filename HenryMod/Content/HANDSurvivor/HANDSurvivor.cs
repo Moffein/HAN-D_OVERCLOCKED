@@ -537,8 +537,12 @@ namespace HANDMod.Content.HANDSurvivor
                 null,//"meshDroneRorr_Body",
                 null);//"meshDroneMastery_Saw"
 
-            hopooSkin.rendererInfos[0].defaultMaterial = Addressables.LoadAssetAsync<Material>("RoR2/Junk/HAND/matHAND.mat").WaitForCompletion();
-            hopooSkin.rendererInfos[1].defaultMaterial = Addressables.LoadAssetAsync<Material>("RoR2/Junk/HAND/matHANDHammer.mat").WaitForCompletion();
+            hopooSkin.rendererInfos[0].defaultMaterial = Modules.Assets.mainAssetBundle.LoadAsset<Material>("matHopooBody");//This already has stubbed shader
+            if (hopooSkin.rendererInfos[0].defaultMaterial == null) hopooSkin.rendererInfos[0].defaultMaterial = Addressables.LoadAssetAsync<Material>("RoR2/Junk/HAND/matHAND.mat").WaitForCompletion();
+
+            hopooSkin.rendererInfos[1].defaultMaterial = Modules.Assets.mainAssetBundle.LoadAsset<Material>("matHopooHammer");
+            if (hopooSkin.rendererInfos[1].defaultMaterial == null) hopooSkin.rendererInfos[1].defaultMaterial = Addressables.LoadAssetAsync<Material>("RoR2/Junk/HAND/matHANDHammer.mat").WaitForCompletion();
+            
             hopooSkin.rendererInfos[2].defaultMaterial = Modules.Materials.CreateHopooMaterial("matDroneHopoo").SetSpecular(0.15f, 2f);
             //hopooSkin.rendererInfos[3].defaultMaterial = Modules.Materials.CreateHopooMaterial("matDroneMastery");
 
