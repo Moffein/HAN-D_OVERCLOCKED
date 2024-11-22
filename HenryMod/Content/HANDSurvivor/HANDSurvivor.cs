@@ -63,15 +63,15 @@ namespace HANDMod.Content.HANDSurvivor
         public override CustomRendererInfo[] customRendererInfos { get; set; } = new CustomRendererInfo[] {
             new CustomRendererInfo {
                 childName = "HANDMesh",
-                material = Materials.CreateHopooMaterial("matHANDDefault").SetSpecular(0.15f, 2f)
+                material = Materials.CreateHopooMaterial("matHANDDefault")
             },
             new CustomRendererInfo {
                 childName = "HanDHammer",
-                material = Materials.CreateHopooMaterial("matHANDWeaponDefault").SetSpecular(0.15f, 2f)
+                material = Materials.CreateHopooMaterial("matHANDWeaponDefault")
             },
             new CustomRendererInfo {
                 childName = "Drone",
-                material = Materials.CreateHopooMaterial("matDroneBody").SetSpecular(0.15f, 2f)
+                material = Materials.CreateHopooMaterial("matDroneBody")
             },
             new CustomRendererInfo {
                 childName = "Saw",
@@ -511,8 +511,8 @@ namespace HANDMod.Content.HANDSurvivor
                 "meshHanDRorr_Hammer",
                 "meshDroneRorr_Body",
                 null/*"meshDroneMastery_Saw"*/);
-            
-            rorrSkin.rendererInfos[0].defaultMaterial = Modules.Materials.CreateHopooMaterial("matHANDRorr").SetSpecular(0.15f, 2f);
+
+            rorrSkin.rendererInfos[0].defaultMaterial = Modules.Materials.CreateHopooMaterial("matHANDRorr");
             rorrSkin.rendererInfos[1].defaultMaterial = Modules.Materials.CreateHopooMaterial("matHANDRorr");//will return cached
             rorrSkin.rendererInfos[2].defaultMaterial = Modules.Materials.CreateHopooMaterial("matHANDRorr");
             //rorrSkin.rendererInfos[3].defaultMaterial = Modules.Materials.CreateHopooMaterial("matDroneMastery");
@@ -542,8 +542,8 @@ namespace HANDMod.Content.HANDSurvivor
 
             hopooSkin.rendererInfos[1].defaultMaterial = Modules.Assets.mainAssetBundle.LoadAsset<Material>("matHopooHammer");
             if (hopooSkin.rendererInfos[1].defaultMaterial == null) hopooSkin.rendererInfos[1].defaultMaterial = Addressables.LoadAssetAsync<Material>("RoR2/Junk/HAND/matHANDHammer.mat").WaitForCompletion();
-            
-            hopooSkin.rendererInfos[2].defaultMaterial = Modules.Materials.CreateHopooMaterial("matDroneHopoo").SetSpecular(0.15f, 2f);
+
+            hopooSkin.rendererInfos[2].defaultMaterial = Modules.Materials.CreateHopooMaterial("matDroneHopoo");
             //hopooSkin.rendererInfos[3].defaultMaterial = Modules.Materials.CreateHopooMaterial("matDroneMastery");
 
             skins.Add(hopooSkin);
