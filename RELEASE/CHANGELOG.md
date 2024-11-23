@@ -1,3 +1,10 @@
+`1.5.0`
+
+- Updated Grandmastery skin.
+- Fixed textures on HOPOO skin.
+
+Thanks to FORCED_REASSEMBLY for handling this update!
+
 `1.4.15`
 
 - Italian Translation (Thanks Lonerdev!)
