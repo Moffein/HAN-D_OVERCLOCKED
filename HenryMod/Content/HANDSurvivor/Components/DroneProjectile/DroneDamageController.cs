@@ -173,6 +173,7 @@ namespace HANDMod.Content.HANDSurvivor.Components.DroneProjectile
                             procChainMask = default(ProcChainMask),
                             procCoefficient = procCoefficient
                         };
+                        droneDamage.damageType.damageSource = DamageSource.Special;
 
                         //Coolant scales burn damage but I don't want to rewrite the hook for it.
                         if (coolantCount > 0 && Util.CheckRoll(10f + 10f * coolantCount, master))

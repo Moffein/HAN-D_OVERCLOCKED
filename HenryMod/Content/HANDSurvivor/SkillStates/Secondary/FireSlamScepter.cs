@@ -1,5 +1,6 @@
 ﻿using HANDMod.Content;
 using R2API;
+using RoR2;
 
 namespace EntityStates.HAND_Overclocked.Secondary
 {
@@ -16,6 +17,7 @@ namespace EntityStates.HAND_Overclocked.Secondary
             this.attack.AddModdedDamageType(DamageTypes.HANDSecondaryScepter);
             this.attack.AddModdedDamageType(DamageTypes.SquashOnKill);
             this.attack.AddModdedDamageType(DamageTypes.ResetVictimForce);
+            this.attack.damageType.damageSource = DamageSource.Secondary;
         }
     }
 }

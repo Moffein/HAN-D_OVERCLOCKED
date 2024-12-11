@@ -123,6 +123,7 @@ namespace EntityStates.HAND_Overclocked.Secondary
             this.attack.AddModdedDamageType(DamageTypes.HANDSecondary);
             this.attack.AddModdedDamageType(DamageTypes.SquashOnKill);
             this.attack.AddModdedDamageType(DamageTypes.ResetVictimForce);
+            this.attack.damageType.damageSource = DamageSource.Secondary;
         }
 
         protected override void PlayAttackAnimation()

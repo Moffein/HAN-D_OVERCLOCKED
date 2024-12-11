@@ -1,3 +1,8 @@
+`1.5.1`
+
+- Recompiled for latest update.
+	- Custom damagetypes are currently broken, just wait for R2API DamageTypes to update.
+
 `1.5.0`
 
 - Updated Grandmastery skin.

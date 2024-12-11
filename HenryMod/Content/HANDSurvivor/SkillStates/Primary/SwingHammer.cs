@@ -46,6 +46,7 @@ namespace EntityStates.HAND_Overclocked.Primary
             if (SwingHammer.networkHitSound != null) this.impactSound = networkHitSound.index;
 
             this.damageType = DamageType.Generic;
+            this.damageType.damageSource = DamageSource.Primary;
             this.hitHopVelocity = 11f;
             this.scaleHitHopWithAttackSpeed = true;
             this.hitStopDuration = 0.1f;
