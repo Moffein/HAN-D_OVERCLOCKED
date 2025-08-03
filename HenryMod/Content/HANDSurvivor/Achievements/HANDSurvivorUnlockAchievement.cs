@@ -38,7 +38,7 @@ namespace HANDMod.Content.HANDSurvivor.Achievements
             public override void OnUninstall()
 			{
 				EntityStates.HAND_Overclocked.BrokenJanitor.BrokenJanitorMain.onBrokenJanitorPurchaseGlobal -= onPurchasedJanitor;
-				base.OnInstall();
+				base.OnUninstall();
 			}
 		}
 	}

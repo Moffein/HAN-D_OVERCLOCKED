@@ -1,3 +1,7 @@
+`1.5.2`
+
+- Fixed a minor issue related to achievments.
+
 `1.5.1`
 
 - Recompiled for latest update.
