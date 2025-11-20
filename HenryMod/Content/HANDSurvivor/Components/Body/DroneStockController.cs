@@ -14,6 +14,9 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
         private CharacterBody characterBody;
         private DroneStockPersist dronePersist;
 
+        internal static ItemIndex droneMeldStackItem = ItemIndex.None;
+        internal static ItemIndex minionMeldStackItem = ItemIndex.None;
+
         public void Start()
         {
             characterBody.skillLocator.special.RemoveAllStocks();
@@ -50,28 +53,24 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
                 }
 
                 int droneCount = characterBody.skillLocator.special.stock;
-                ReadOnlyCollection<TeamComponent> teamMembers = TeamComponent.GetTeamMembers(characterBody.teamComponent.teamIndex);
-                foreach (TeamComponent tc in teamMembers)
+                foreach (CharacterMaster characterMaster in CharacterMaster.readOnlyInstancesList)
                 {
-                    if (tc.body && tc.body != characterBody)
+                    if (characterMaster.minionOwnership && characterMaster.minionOwnership.ownerMaster == characterBody.master)
                     {
-                        if ((tc.body.bodyFlags & CharacterBody.BodyFlags.Mechanical) > 0 || CheckMechanicalBody(tc.body.bodyIndex))
+                        CharacterBody minionBody = characterMaster.GetBody();
+                        if (minionBody && !minionBody.isPlayerControlled && (minionBody.bodyFlags &= CharacterBody.BodyFlags.Mechanical) == CharacterBody.BodyFlags.Mechanical)
                         {
-                            droneCount++;
-                        }
-
-                        if (tc.body.inventory)
-                        {
-                            ItemIndex droneMeldStackItem = ItemCatalog.FindItemIndex("DronemeldInternalStackItem");
-                            if (droneMeldStackItem != ItemIndex.None)
+                            int mult = 1;
+                            if ((minionBody.bodyFlags & CharacterBody.BodyFlags.Mechanical) > 0 || (minionBody.bodyFlags & CharacterBody.BodyFlags.Drone) > 0 || CheckMechanicalBody(minionBody.bodyIndex))
                             {
-                                droneCount += tc.body.inventory.GetItemCount(droneMeldStackItem);
-                            }
+                                droneCount++;
+                                if (minionBody.inventory)
+                                {
+                                    if (droneMeldStackItem != ItemIndex.None) droneCount += minionBody.inventory.GetItemCountEffective(droneMeldStackItem);
+                                    if (minionMeldStackItem != ItemIndex.None) droneCount += minionBody.inventory.GetItemCountEffective(minionMeldStackItem);
 
-                            ItemIndex minionMeldStackItem = ItemCatalog.FindItemIndex("MinionMeldInternalStackItem");
-                            if (minionMeldStackItem != ItemIndex.None)
-                            {
-                                droneCount += tc.body.inventory.GetItemCount(minionMeldStackItem);
+                                    droneCount += minionBody.inventory.GetItemCountEffective(DLC3Content.Items.DroneUpgradeHidden);
+                                }
                             }
                         }
                     }

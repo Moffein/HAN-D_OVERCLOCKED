@@ -9,7 +9,7 @@
 	"MOFFEIN_HAND_BODY_OUTRO_FAILURE" : "..and so it vanished, unrewarded in all of its efforts.",
 	
 	"MOFFEIN_HAND_BODY_PASSIVE_NAME" : "SWARM_ARMOR",
-	"MOFFEIN_HAND_BODY_PASSIVE_DESC" : "<style=cIsDamage>Reduce incoming damage</style> by <style=cIsDamage>0.3%</style> of your maximum health for every <style=cIsUtility>drone</style> on your team.",
+	"MOFFEIN_HAND_BODY_PASSIVE_DESC" : "<style=cIsDamage>Reduce incoming damage</style> by <style=cIsDamage>0.3%</style> of your maximum health for every owned <style=cIsUtility>drone</style>.",
 	
 	"MOFFEIN_HAND_BODY_PRIMARY_NAME" : "HURT",
 	"MOFFEIN_HAND_BODY_PRIMARY_DESC" : "Apply force to all combatants for <style=cIsDamage>390% damage</style>. <style=cIsDamage>Stuns</style> while <style=cIsDamage>OVERCLOCK</style> is active.",

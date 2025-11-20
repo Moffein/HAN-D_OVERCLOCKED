@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Security;
 using System.Security.Permissions;
+using HANDMod.Content.HANDSurvivor.Components.Body;
 
 [module: UnverifiableCode]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
@@ -34,7 +35,7 @@ namespace HANDMod
     {
         public const string MODUID = "com.EnforcerGang.HANDOverclocked";
         public const string MODNAME = "HAN-D Overclocked";
-        public const string MODVERSION = "1.5.2";
+        public const string MODVERSION = "1.5.3";
 
         public const string DEVELOPER_PREFIX = "MOFFEIN";
 
@@ -84,6 +85,9 @@ namespace HANDMod
 
         private void AddMechanicalBodies()
         {
+            DroneStockController.droneMeldStackItem = ItemCatalog.FindItemIndex("DronemeldInternalStackItem");
+            DroneStockController.minionMeldStackItem = ItemCatalog.FindItemIndex("MinionMeldInternalStackItem");
+
             BodyIndex sniperClassicIndex = BodyCatalog.FindBodyIndex("SniperClassicBody");
             if (sniperClassicIndex != BodyIndex.None)
             {

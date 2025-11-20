@@ -1,3 +1,8 @@
+`1.5.3`
+
+- Passive now only applies to drones you own.
+- Passive is now compatible with DLC3 upgraded drones.
+
 `1.5.2`
 
 - Fixed a minor issue related to achievments.
