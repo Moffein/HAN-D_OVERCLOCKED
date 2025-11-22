@@ -30,7 +30,6 @@ namespace HANDMod.Content
             DamageTypes.SquashOnKill = DamageAPI.ReserveDamageType();
 
             On.RoR2.HealthComponent.TakeDamageProcess += HealthComponent_TakeDamage;
-
         }
 
         private static void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamageProcess orig, HealthComponent self, DamageInfo damageInfo)
@@ -38,6 +37,8 @@ namespace HANDMod.Content
             if (NetworkServer.active)
             {
                 CharacterBody cb = self.body;
+
+                bool dontKnockbackScale = cb && (cb.bodyIndex == DLC3Content.BodyPrefabs.SolusWingBody.bodyIndex || cb.bodyIndex == DLC3Content.BodyPrefabs.SolusHeartBody.bodyIndex);
 
                 if (damageInfo.attacker)
                 {
@@ -59,7 +60,7 @@ namespace HANDMod.Content
                 }
 
                 //This will only work on things that are run on the server.
-                if (damageInfo.HasModdedDamageType(DamageTypes.ResetVictimForce))
+                if (damageInfo.HasModdedDamageType(DamageTypes.ResetVictimForce) && !dontKnockbackScale)
                 {
                     if (cb.rigidbody)
                     {
@@ -105,7 +106,7 @@ namespace HANDMod.Content
                         }
                     }
 
-                    if (cb.rigidbody)
+                    if (cb.rigidbody && !dontKnockbackScale)
                     {
                         damageInfo.force *= Mathf.Max(cb.rigidbody.mass / 100f, 1f);
                     }
@@ -148,7 +149,7 @@ namespace HANDMod.Content
                         EffectManager.SimpleEffect(EntityStates.HAND_Overclocked.Primary.SwingHammer.hitEffect, damageInfo.position, default, true);
                     }
 
-                    if (cb.rigidbody)
+                    if (cb.rigidbody && !dontKnockbackScale)
                     {
                         float forceMult = Mathf.Max(cb.rigidbody.mass / 100f, 1f);
                         damageInfo.force *= forceMult;
@@ -173,7 +174,7 @@ namespace HANDMod.Content
                         damageInfo.force.y = 2000f;
                     }
 
-                    if (cb.rigidbody)
+                    if (cb.rigidbody && !dontKnockbackScale)
                     {
                         float forceMult = Mathf.Max(cb.rigidbody.mass / 100f, 1f);
                         if (!launchEnemy && !isScepter)

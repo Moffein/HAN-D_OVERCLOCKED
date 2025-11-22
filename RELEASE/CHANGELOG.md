@@ -1,3 +1,7 @@
+`1.5.4`
+
+- Disabled knockback mass scaling against 'the guy' to prevent instakilling them on the kill barrier.
+
 `1.5.3`
 
 - Passive now only applies to drones you own.
