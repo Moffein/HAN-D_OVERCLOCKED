@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace HANDMod.Content.HANDSurvivor.Achievements
 {
-	[RegisterAchievement("MoffeinHANDOverclockedSurvivorUnlock", "Characters.HANDOverclocked", null, typeof(HANDOverclockedSurvivorUnlockServerAchievement))]
+	[RegisterAchievement("MoffeinHANDOverclockedSurvivorUnlock", "Characters.HANDOverclocked", null, 3u, typeof(HANDOverclockedSurvivorUnlockServerAchievement))]
 	public class HANDOverclockedSurvivorUnlockAchievement : BaseAchievement
 	{
 		public override void OnInstall()
@@ -38,7 +38,7 @@ namespace HANDMod.Content.HANDSurvivor.Achievements
             public override void OnUninstall()
 			{
 				EntityStates.HAND_Overclocked.BrokenJanitor.BrokenJanitorMain.onBrokenJanitorPurchaseGlobal -= onPurchasedJanitor;
-				base.OnInstall();
+				base.OnUninstall();
 			}
 		}
 	}

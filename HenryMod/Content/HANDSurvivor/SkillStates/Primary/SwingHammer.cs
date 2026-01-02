@@ -8,6 +8,7 @@ using HANDMod.Content;
 using HANDMod.Content.Shared.Components.Body;
 using UnityEngine.Networking;
 using HANDMod;
+using BepInEx.Configuration;
 
 namespace EntityStates.HAND_Overclocked.Primary
 {
@@ -25,6 +26,8 @@ namespace EntityStates.HAND_Overclocked.Primary
         public static float momentumFadePercent = 0.6825f;
         public static float momentumEndPercent = 0.8f;
 
+        public static ConfigEntry<bool> useForwardLunge;
+
         private float accumulatedReductionPercent = 1f;
         private float inputReductionPercent = 0f;
         private bool hitEnemy = false;
@@ -33,14 +36,17 @@ namespace EntityStates.HAND_Overclocked.Primary
 
         private bool removedBuff = false;
 
+        private float lastUpdateTime;
         public override void OnEnter()
         {
+            lastUpdateTime = Time.time;
             this.bonusForce = Vector3.zero;
             this.attackRecoil = 0f;
             //this.hitEffectPrefab = SwingHammer.hitEffect;  //Why does this play the DRONE sound?
             if (SwingHammer.networkHitSound != null) this.impactSound = networkHitSound.index;
 
             this.damageType = DamageType.Generic;
+            this.damageType.damageSource = DamageSource.Primary;
             this.hitHopVelocity = 11f;
             this.scaleHitHopWithAttackSpeed = true;
             this.hitStopDuration = 0.1f;
@@ -126,6 +132,8 @@ namespace EntityStates.HAND_Overclocked.Primary
 
         public override void FixedUpdate()
         {
+            float deltaTime = Time.time - lastUpdateTime;
+            lastUpdateTime = Time.time;
             Vector3 aimFlat = base.GetAimRay().direction;
             aimFlat.y = 0;
             aimFlat.Normalize();
@@ -164,7 +172,7 @@ namespace EntityStates.HAND_Overclocked.Primary
             { 
                 if (!this.hasFired)
                 {
-                    this.startedSkillStationary = base.inputBank && base.inputBank.moveVector == Vector3.zero;
+                    this.startedSkillStationary = (base.inputBank && base.inputBank.moveVector == Vector3.zero) || !useForwardLunge.Value;
                     if (base.inputBank && !this.startedSkillStationary)
                     {
                         Ray aimRay = base.GetAimRay();
@@ -191,7 +199,7 @@ namespace EntityStates.HAND_Overclocked.Primary
                     float momentumEndTime = this.duration * SwingHammer.momentumEndPercent;
                     if (this.stopwatch <= momentumEndTime)
                     {
-                        float evaluatedForwardSpeed = SwingHammer.forwardSpeed * Time.fixedDeltaTime * (1f - inputReductionPercent) * accumulatedReductionPercent;
+                        float evaluatedForwardSpeed = SwingHammer.forwardSpeed * deltaTime * (1f - inputReductionPercent) * accumulatedReductionPercent;
                         if (this.stopwatch > fadeTime)
                         {
                             evaluatedForwardSpeed = Mathf.Lerp(evaluatedForwardSpeed, 0f, (this.stopwatch - fadeTime) / (momentumEndTime - fadeTime));

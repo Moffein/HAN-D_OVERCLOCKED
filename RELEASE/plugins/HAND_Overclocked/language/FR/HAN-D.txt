@@ -32,7 +32,7 @@
 	"MOFFEIN_HAND_BODY_UTILITY_DESC" : "<style=cIsUtility>Renforce</style>. Augmente <style=cIsUtility>la vitesse de déplacement</style> et <style=cIsDamage>la vitesse d'attaque</style> de <style=cIsDamage>40%</style>. Toucher des ennemis pour <style=cIsUtility>augmenter la durée</style>.",
 	
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_NAME" : "FOCUS",
-	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>Renforce</style>. Gagnez <style=cIsDamage>+50% dégâts</style> et <style=cIsUtility>50 armure</style>, mais perdez <style=cIsHealth>-30% de vitesse de déplacement</style>. Toucher des ennemis pour <style=cIsUtility>augmenter la durée</style>.",
+	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>Renforce</style>. Gagnez <style=cIsDamage>+50% dégâts</style> et <style=cIsUtility>50 armure</style>. Toucher des ennemis pour <style=cIsUtility>augmenter la durée</style>.",
 	
 	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "DRONE - SOIN",
 	"MOFFEIN_HAND_BODY_SPECIAL_DESC" : "Tire un drone qui inflige <style=cIsDamage>270% dégâts</style> et <style=cIsHealing> soigne pour 40% des dégâts engendrés</style>. Les ennemis tués et les dégâts de mélée <style=cIsUtility>réduisent le temps de rechargement</style>.",

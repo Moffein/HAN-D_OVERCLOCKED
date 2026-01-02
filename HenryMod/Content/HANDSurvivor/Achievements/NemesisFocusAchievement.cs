@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace HANDMod.Content.HANDSurvivor.Achievements
 {
-    [RegisterAchievement("MoffeinHANDOverclockedNemesisFocusUnlock", "Skills.HANDOverclocked.NemesisFocus", null, null)]
+    [RegisterAchievement("MoffeinHANDOverclockedNemesisFocusUnlock", "Skills.HANDOverclocked.NemesisFocus", null, 3u, null)]
     public class HANDOverclockedNemesisFocusUnlockAchievement : BaseAchievement
 	{
 		public override void OnInstall()

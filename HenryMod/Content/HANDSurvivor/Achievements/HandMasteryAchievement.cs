@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace HANDMod.Content.HANDSurvivor.Achievements
 {
-    [RegisterAchievement("MoffeinHANDOverclockedClearGameMonsoon", "Skins.HANDOverclocked.Mastery", null, null)]
+    [RegisterAchievement("MoffeinHANDOverclockedClearGameMonsoon", "Skins.HANDOverclocked.Mastery", null, 10u, null)]
     public class HandMasteryAchievement : BasePerSurvivorClearGameMonsoonAchievement
     {
         public override BodyIndex LookUpRequiredBodyIndex()

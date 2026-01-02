@@ -9,7 +9,7 @@
 	"MOFFEIN_HAND_BODY_OUTRO_FAILURE" : "..and so it vanished, unrewarded in all of its efforts.",
 	
 	"MOFFEIN_HAND_BODY_PASSIVE_NAME" : "SWARM_ARMOR",
-	"MOFFEIN_HAND_BODY_PASSIVE_DESC" : "<style=cIsDamage>Reduce incoming damage</style> by <style=cIsDamage>0.3%</style> of your maximum health for every <style=cIsUtility>drone</style> on your team.",
+	"MOFFEIN_HAND_BODY_PASSIVE_DESC" : "<style=cIsDamage>Reduce incoming damage</style> by <style=cIsDamage>0.3%</style> of your maximum health for every owned <style=cIsUtility>drone</style>.",
 	
 	"MOFFEIN_HAND_BODY_PRIMARY_NAME" : "HURT",
 	"MOFFEIN_HAND_BODY_PRIMARY_DESC" : "Apply force to all combatants for <style=cIsDamage>390% damage</style>. <style=cIsDamage>Stuns</style> while <style=cIsDamage>OVERCLOCK</style> is active.",
@@ -32,7 +32,7 @@
 	"MOFFEIN_HAND_BODY_UTILITY_DESC" : "<style=cIsUtility>Boost</style>. Increase <style=cIsUtility>movement speed</style> and <style=cIsDamage>attack speed</style> by <style=cIsDamage>40%</style>. Hit enemies to <style=cIsUtility>increase duration</style>.",
 	
 	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_NAME" : "FOCUS",
-	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>Boost</style>. Gain <style=cIsDamage>+50% damage</style> and <style=cIsUtility>50 armor</style>, but lose <style=cIsHealth>-30% movement speed</style>. Hit enemies to <style=cIsUtility>increase duration</style>.",
+	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>Boost</style>. Gain <style=cIsDamage>+50% damage</style> and <style=cIsUtility>50 armor</style>. Hit enemies to <style=cIsUtility>increase duration</style>.",
 	
 	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "DRONE - HEAL",
 	"MOFFEIN_HAND_BODY_SPECIAL_DESC" : "Fire a drone that deals <style=cIsDamage>270% damage</style> and <style=cIsHealing>heals for 40% of the damage dealt</style>. Kills and melee hits <style=cIsUtility>reduce cooldown</style>.",

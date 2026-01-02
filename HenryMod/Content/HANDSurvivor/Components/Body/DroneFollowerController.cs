@@ -14,19 +14,9 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
         {
             if (initialized) return;
             initialized = true;
-
-            On.RoR2.ModelSkinController.ApplySkin += ModelSkinController_ApplySkin;
+ 
         }
-
-        private static void ModelSkinController_ApplySkin(On.RoR2.ModelSkinController.orig_ApplySkin orig, ModelSkinController self, int skinIndex)
-        {
-            orig(self, skinIndex);
-            if(self.characterModel.body.TryGetComponent<DroneFollowerController>(out DroneFollowerController controller))
-            {
-                controller.ApplyDroneSkins();
-            }
-        }
-
+  
         //follower.GetComponentInChildren<Renderer>().material = characterModel.baseRendererInfos[2].defaultMaterial;
         //follower.GetComponentInChildren<MeshFilter>().mesh = characterModel.baseRendererInfos[2].renderer.GetComponent<MeshFilter>().mesh;
 
@@ -123,16 +113,28 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
             }
 
             InitDroneFollowers();
+
+            ApplyDroneSkins();
+
+            if (characterBody.modelLocator && characterBody.modelLocator.modelTransform)
+            {
+                characterBody.modelLocator.modelTransform.GetComponent<ModelSkinController>().onSkinApplied += DroneFollowerController_onSkinApplied;
+            }
+        }
+
+        private void DroneFollowerController_onSkinApplied(int obj)
+        {
+            ApplyDroneSkins();
         }
 
         private void InitDroneFollowers()
-        {
-            
+        {   
             droneFollowers = new DroneFollower[maxFollowingDrones];
             for (int i = 0; i < droneFollowers.Length; i++)
             {
                 droneFollowers[i].gameObject = Instantiate(dronePrefab);
-                droneFollowers[i].gameObject.transform.localScale = Vector3.zero;
+                droneFollowers[i].transform = droneFollowers[i].gameObject.transform;
+                droneFollowers[i].transform.localScale = Vector3.zero;
                 droneFollowers[i].active = false;
             }
         }
@@ -161,6 +163,10 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
                     Destroy(droneFollowers[i].gameObject);
                 }
             }
+            if (characterBody.modelLocator && characterBody.modelLocator.modelTransform)
+            {
+                characterBody.modelLocator.modelTransform.GetComponent<ModelSkinController>().onSkinApplied -= DroneFollowerController_onSkinApplied;
+            }
         }
 
         private void Update()
@@ -187,30 +193,30 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
                 {
                     if (!droneFollowers[i].active)
                     {
-                        EffectManager.SimpleEffect(activateEffect, droneFollowers[i].gameObject.transform.position, droneFollowers[i].gameObject.transform.rotation, false);
+                        EffectManager.SimpleEffect(activateEffect, droneFollowers[i].transform.position, droneFollowers[i].transform.rotation, false);
                     }
                     droneFollowers[i].active = true;
-                    droneFollowers[i].gameObject.transform.localScale = droneScale * Vector3.one;
+                    droneFollowers[i].transform.localScale = droneScale * Vector3.one;
                     if (characterBody.modelLocator && characterBody.modelLocator.modelTransform)
                     {
-                        droneFollowers[i].gameObject.transform.rotation = characterBody.modelLocator.modelTransform.rotation;
+                        droneFollowers[i].transform.rotation = characterBody.modelLocator.modelTransform.rotation;
                     }
                 }
                 else
                 {
                     if (droneFollowers[i].active)
                     {
-                        EffectManager.SimpleEffect(deactivateEffect, droneFollowers[i].gameObject.transform.position, droneFollowers[i].gameObject.transform.rotation, false);
+                        EffectManager.SimpleEffect(deactivateEffect, droneFollowers[i].transform.position, droneFollowers[i].transform.rotation, false);
                     }
                     droneFollowers[i].active = false;
-                    droneFollowers[i].gameObject.transform.localScale = Vector3.zero;
+                    droneFollowers[i].transform.localScale = Vector3.zero;
                 }
 
                 Vector3 offset = Quaternion.AngleAxis(360f / maxFollowingDrones * i + stopwatch / orbitDuration * 360f, Vector3.up) * Vector3.right * 2.4f;
                 offset.y = 1.2f;
 
                 Vector3 desiredPosition = characterBody.corePosition + offset;
-                droneFollowers[i].gameObject.transform.position = Vector3.SmoothDamp(droneFollowers[i].gameObject.transform.position, desiredPosition, ref this.velocity, 0.1f);
+                droneFollowers[i].transform.position = Vector3.SmoothDamp(droneFollowers[i].transform.position, desiredPosition, ref this.velocity, 0.1f);
             }
         }
 
@@ -242,6 +248,7 @@ namespace HANDMod.Content.HANDSurvivor.Components.Body
         public struct DroneFollower
         {
             public GameObject gameObject;
+            public Transform transform;
             public bool active;
         }
     }

@@ -1,0 +1,62 @@
+{
+	strings:
+	{
+	"MOFFEIN_HAND_BODY_NAME" : "HAN-D",
+	"MOFFEIN_HAND_BODY_SUBTITLE" : "Inserviente sotto-pagato",
+	"MOFFEIN_HAND_BODY_DESCRIPTION" : "HAN-D e' un Robusto Robottone Inserviente Che Tira potenti Ceffoni che lasciano un macello sui muri e pavimenti ! <style=cSub>\r\n\r\n< ! > DOLORE ha rinculo aumentato contro nemici in aria. Usa RIMONTAGGIO_FORZATO per slanciare combattenti in aria, poi DOLORE per mandarli a fanculo\r\n\r\n< ! > OVERCLOCK dura fin quando puoi colpire i combattenti.\r\n\r\n< ! > Cancellare OVERCLOCK ti consentira' di incrementare il tuo salto in su e raggiungere combattenti volanti.\r\n\r\n< ! > usa i DRONI per curarti e stare in combattimento.\r\n\r\n",
+	"MOFFEIN_HAND_BODY_LORE" :  "<style=cMono>\r\n//--AUTO-TRANSCRIZIONE DAL DIPARTIMENTO BASATO(BASED) DELLA UES [RIDATTO]--//</style>\r\n\r\n<i>*beve <color=#327FFF>Spinello Tonico </color>*</i>\n\n e' giocare senza l'artefatto del <color=#6955A6>comando</color> la forma finale della cornutagine ?\n\n non posso pensare o comprendere nulla piu' cornuto di giocare senza <color=#6955A6>Comando</color>. Onestamente, pensaci Razionalmente. Tu stai sparando, correndo, saltando per tipo  60 minuti solamente cosi per poi ottenere un fottuto <color=#77FF16>Polipo Squid</color>. Tutto quel sudore sprecato nella tua partita - a evitare lasers dei <style=cIsHealth>Golem di pietra</style>, Romperti i coglioni a causa di 6 milioni <style=cIsHealth>Spiriti Minori</color> Che si materializzano sopra di te, Attivare <color=#E5C962>La Sfida della montagna</color> tutto per il semplice risultato: il tuo inventario pieni di <color=#FFFFFF>Stendardi Di Guerra</color> e <color=#FFFFFF>Collane Di Denti Di mostro</color> che costano soldi.\n\n in una God Run ? Magnifico !. Un paio di oggetti merdosi che aggiungono un cazzo alla tua partita e continuano a uscire dalle <color=#E5C962>Casse</color> che compri. prendono il beneficio del tuo duro lavoro e dei tuoi preziosi soldi ottenuti dal uccidere queste bestie di satana <style=cIsHealth>Lemuriani</style>.\n\n come uomo che gioca a questo gioco, tu stai <style=cIsHealth>LETTERALMENTE</style> dedicando 2 ore della tua vita per aprire scatole e pregare che non sia un altra cazzo di <color=#77FF16>Chronosfera</color>. e' la forma Finale e Ultima della Cornutagine. Pesanci su logicalmente.\r\n<style=cMono>\r\n Transcrizione completa.\r\n</style>\r\n \r\n\r\n",
+	"MOFFEIN_HAND_BODY_OUTRO_FLAVOR" : "..e dunque.. se ne ando', Con tanto da ripulire.",
+	"MOFFEIN_HAND_BODY_OUTRO_FAILURE" : "..e dunque.. svanii, uncompensato per tutti i suoi sforzi..",
+	
+	"MOFFEIN_HAND_BODY_PASSIVE_NAME" : "ARMATURA_DI_SCIAMI",
+	"MOFFEIN_HAND_BODY_PASSIVE_DESC" : "<style=cIsDamage>Riduce danno in arrivo </style> del <style=cIsDamage>0.3%</style> della tua salute massima per ogni <style=cIsUtility>drone</style> nella tua squadra.",
+	
+	"MOFFEIN_HAND_BODY_PRIMARY_NAME" : "DOLORE",
+	"MOFFEIN_HAND_BODY_PRIMARY_DESC" : "applica forza a tutti i combattenti per <style=cIsDamage>390% danno </style>. <style=cIsDamage>stordisci</style> mentre  <style=cIsDamage>OVERCLOCK</style> e' attiva.",
+	
+	"MOFFEIN_HAND_BODY_PRIMARY_HAMMER_NAME" : "DISTRUGGERE",
+	"MOFFEIN_HAND_BODY_PRIMARY_HAMMER_DESC" : "<style=cIsHealth>Rallenta</style>e' schiaccia combattenti per <style=cIsDamage>600% danno</style>. <style=cIsDamage>stordisci</style> mentre <style=cIsDamage>OVERCLOCK</style> e' attiva.",
+	
+	"MOFFEIN_HAND_BODY_SECONDARY_NAME" : "RIMONTAGGIO_FORZATO",
+	"MOFFEIN_HAND_BODY_SECONDARY_DESC" : "<style=cIsDamage>Stordire</style>. Carica e Applica grande forza contro tutti i combattenti per <style=cIsDamage>600%-1500% danno</style>.",
+	
+	"MOFFEIN_HAND_BODY_SECONDARY_SCEPTER_NAME" : "RIMONTAGGIO_IMMORALE",
+	"MOFFEIN_HAND_BODY_SECONDARY_SCEPTER_DESC" : "<style=cIsDamage>Stordisce</style>.Carica e affliggi <style=cIsHealth>TRAVOLGENTE</style> Forza a tutti i combattenti per <style=cIsDamage>900%-2250% danno</style>.",
+	
+	"KEYWORD_MOFFEINHANDOVERCLOCKED_BOOST" : "<style=cKeywordName>incremento.</style><style=cSub>l'abilita' puo essere annullata per un incremento dell'altezza del salto.</style>",
+	
+	"MOFFEIN_HAND_BODY_UTILITY_CANCEL_NAME" : "CANCELLA",
+	"MOFFEIN_HAND_BODY_UTILITY_CANCEL_DESC" : "<style=cIsUtility>Salta in alto</style>.",
+	
+	"MOFFEIN_HAND_BODY_UTILITY_NAME" : "OVERCLOCK",
+	"MOFFEIN_HAND_BODY_UTILITY_DESC" : "<style=cIsUtility>Incrementa</style>. aumenta <style=cIsUtility>velocita' di movimento </style> e <style=cIsDamage> velocita' di attacco </style> del <style=cIsDamage>40%</style>. colpisci combattenti per <style=cIsUtility>aumentare la durata</style>.",
+	
+	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_NAME" : "CONCENTRARE",
+	"MOFFEIN_HAND_BODY_UTILITY_NEMESIS_DESC" : "<style=cIsUtility>Incremento</style>. Ottieni <style=cIsDamage>+50% Danno</style> e <style=cIsUtility>50 armatura</style>. Colpisci combattenti per <style=cIsUtility>aumentare la durata</style>.",
+	
+	"MOFFEIN_HAND_BODY_SPECIAL_NAME" : "DRONE - CURA",
+	"MOFFEIN_HAND_BODY_SPECIAL_DESC" : "rilascia un drone che infligge <style=cIsDamage>270% di danno</style> e <style=cIsHealing>cura per 40%  del danno inflitto</style>. Uccisioni e colpi da melee <style=cIsUtility>riducono la ricarica</style>.",
+	
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_NAME" : "DRONE - VELOCITA'",
+	"MOFFEIN_HAND_BODY_SPECIAL_SPEED_DESC" : "rilascia un drone che infligge <style=cIsDamage>270% di danno</style> e <style=cIsDamage> Concede Velocita' D'attacco </style>. Uccisioni e  Colpi da melee <style=cIsUtility>riducono la ricarica</style>.",
+	
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_NAME" : "Tuttofare",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDSURVIVORUNLOCK_DESCRIPTION" : "Ripara il robot inserviente su Rallypoint Delta con una cellula di carburante array.",
+	
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDNEMESISFOCUSUNLOCK_NAME" : "HAN-D: Massacro",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDNEMESISFOCUSUNLOCK_DESCRIPTION" : "tieni OVERCLOCK attiva per piu' di 45 secondi.",
+	
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDHAMMERPRIMARYUNLOCK_NAME" : "HAN-D: Bonk!",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDHAMMERPRIMARYUNLOCK_DESCRIPTION" : "Schiaccia il boss finale.",
+	
+	"MOFFEIN_HAND_BODY_MASTERY_SKIN_NAME" : "WOO-D",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDCLEARGAMEMONSOON_NAME" : "HAN-D: Mastery",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDCLEARGAMEMONSOON_DESCRIPTION" : "come HAN-D, vinci la partita o obliterati in Monsoon.",
+	
+	"MOFFEIN_HAND_BODY_GRANDMASTERY_SKIN_NAME" : "RE-TRN",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDCLEARGAMETYPHOON_NAME" : "HAN-D: Grand Mastery",
+	"ACHIEVEMENT_MOFFEINHANDOVERCLOCKEDCLEARGAMETYPHOON_DESCRIPTION" : "come HAN-D, vinci la partita o obliterati in Typhoon o Eclipse.\n<color=#8888>(Vale anche per Difficolta' piu' difficili di Typhoon)</color>",
+	
+	"MOFFEIN_HAND_BODY_HOPOO_SKIN_NAME" : "HO-POO",
+	}
+}

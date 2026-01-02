@@ -39,8 +39,8 @@ namespace HANDMod.Content.HANDSurvivor.CharacterUnlock
                 GameObject interactable = UnityEngine.Object.Instantiate(HANDMod.Content.HANDSurvivor.CharacterUnlock.BrokenJanitorInteractable.interactablePrefab);
                 if (interactable)
                 {
-                    interactable.transform.position = new Vector3(41.92087f, 5f, 87.45225f);
-                    interactable.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+                    interactable.transform.position = new Vector3(1.495881f, 10.6f, 13.58449f);
+                    interactable.transform.rotation = Quaternion.Euler(0f, -90f, 0f);
                     NetworkServer.Spawn(interactable);
                 }
             }
@@ -98,6 +98,7 @@ namespace HANDMod.Content.HANDSurvivor.CharacterUnlock
             EntityLocator el = gameObject.AddComponent<EntityLocator>();
             el.entity = gameObject;
 
+            gameObject.AddComponent<PingInfoProvider>().pingIconOverride = LegacyResourcesAPI.Load<Sprite>("textures/miscicons/texMysteryIcon");
             return gameObject;
         }
 
@@ -173,6 +174,24 @@ namespace HANDMod.Content.HANDSurvivor.CharacterUnlock
             healthComponent = base.GetComponent<HealthComponent>();
         }
 
+        public void Start()
+        {
+            if (healthComponent && healthComponent.body && healthComponent.body.inventory)
+            {
+                Inventory inv = healthComponent.body.inventory;
+                int badItems = 0;
+                badItems += inv.GetItemCount(DLC1Content.Items.GummyCloneIdentifier);
+                badItems += inv.GetItemCount(RoR2Content.Items.Ghost);
+                if (healthComponent.body.master && healthComponent.body.master.GetComponent<DestroyOnTimer>()) badItems++;
+                if (healthComponent.body.GetComponent<DestroyOnTimer>()) badItems++;
+                if (badItems > 0)
+                {
+                    Destroy(this);
+                }
+            }
+
+        }
+
         public void FixedUpdate()
         {
             if (NetworkServer.active && !spawnedRepair && !(healthComponent && healthComponent.alive))
@@ -189,6 +208,7 @@ namespace HANDMod.Content.HANDSurvivor.CharacterUnlock
                 }
             }
         }
+
         public static Vector3 FindSafeTeleportPosition(GameObject gameObject, Vector3 targetPosition)
         {
             return FindSafeTeleportPosition(gameObject, targetPosition, float.NegativeInfinity, float.NegativeInfinity);

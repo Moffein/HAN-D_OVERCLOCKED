@@ -77,8 +77,8 @@ namespace HANDMod.Content.Shared
 
             EntityStates.HAND_Overclocked.Utility.BeginOverclock.overlayMaterial = UnityEngine.Material.Instantiate(LegacyResourcesAPI.Load<Material>("Materials/matWolfhatOverlay"));
 
-            EntityStates.HAND_Overclocked.Utility.BeginOverclock.texGauge = Assets.mainAssetBundle.LoadAsset<Texture2D>("texGauge.png");
-            EntityStates.HAND_Overclocked.Utility.BeginOverclock.texGaugeArrow = Assets.mainAssetBundle.LoadAsset<Texture2D>("texGaugeArrow.png");
+            EntityStates.HAND_Overclocked.Utility.BeginOverclock.texGauge = Modules.Assets.mainAssetBundle.LoadAsset<Texture2D>("texGauge.png");
+            EntityStates.HAND_Overclocked.Utility.BeginOverclock.texGaugeArrow = Modules.Assets.mainAssetBundle.LoadAsset<Texture2D>("texGaugeArrow.png");
             HANDMod.Content.Shared.Components.Body.OverclockController.ovcDef = ovcSkill;
 
             SkillDef focusSkill = SkillDef.CreateInstance<SkillDef>();
@@ -107,8 +107,8 @@ namespace HANDMod.Content.Shared
 
             EntityStates.HAND_Overclocked.Utility.BeginFocus.overlayMaterial = UnityEngine.Material.Instantiate(LegacyResourcesAPI.Load<Material>("Materials/matFullCrit"));
 
-            EntityStates.HAND_Overclocked.Utility.BeginFocus.texGaugeNemesis = Assets.mainAssetBundle.LoadAsset<Texture2D>("texGaugeNemesis.png");
-            EntityStates.HAND_Overclocked.Utility.BeginFocus.texGaugeArrowNemesis = Assets.mainAssetBundle.LoadAsset<Texture2D>("texGaugeArrowNemesis.png");
+            EntityStates.HAND_Overclocked.Utility.BeginFocus.texGaugeNemesis = Modules.Assets.mainAssetBundle.LoadAsset<Texture2D>("texGaugeNemesis.png");
+            EntityStates.HAND_Overclocked.Utility.BeginFocus.texGaugeArrowNemesis = Modules.Assets.mainAssetBundle.LoadAsset<Texture2D>("texGaugeArrowNemesis.png");
         }
     }
 }

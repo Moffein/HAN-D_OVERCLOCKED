@@ -14,14 +14,14 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	3673881719	Volume_SFX			\Default Work Unit\Volume_SFX	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	28592980	wJanitorShoot1 1	C:\Users\Node\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\wJanitorShoot1 1_0D5756A9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\wJanitorShoot1 1		4846
-	115842647	wJanitorShoot4 2	C:\Users\Node\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\wJanitorShoot4 2_0D5756A9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\wJanitorShoot4 2		13352
-	189267586	exeSpecial	C:\Users\Node\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\exeSpecial_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\exeSpecial		14268
-	199100726	wDrill	C:\Users\Node\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\wDrill_0D5756A9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\Drone_Sounds\wDrill		18190
-	269277722	sndHammer	C:\Users\Node\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\sndHammer_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\sndHammer		3784
-	306440750	wJanitorShoot4 1	C:\Users\Node\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\wJanitorShoot4 1_0D5756A9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\wJanitorShoot4 1		11743
-	407884217	wJanitorShoot2 2	C:\Users\Node\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\wJanitorShoot2 2_0D5756A9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\wJanitorShoot2 2		3774
-	415114961	wJanitorShoot2 1	C:\Users\Node\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\wJanitorShoot2 1_0D5756A9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\wJanitorShoot2 1		1304
-	863164524	wLizardHit	C:\Users\Node\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\wLizardHit_0D5756A9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\Drone_Sounds\wLizardHit		4720
-	940683805	wJanitorShoot1 2	C:\Users\Node\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\wJanitorShoot1 2_0D5756A9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\wJanitorShoot1 2		6343
+	28592980	wJanitorShoot1 1	D:\Projects\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\wJanitorShoot1 1_C214D156.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\wJanitorShoot1 1		4870
+	115842647	wJanitorShoot4 2	D:\Projects\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\wJanitorShoot4 2_C214D156.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\wJanitorShoot4 2		13376
+	189267586	exeSpecial	D:\Projects\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\exeSpecial_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\exeSpecial		14292
+	199100726	wDrill	D:\Projects\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\wDrill_C214D156.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\Drone_Sounds\wDrill		18214
+	269277722	sndHammer	D:\Projects\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\sndHammer_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\sndHammer		3808
+	306440750	wJanitorShoot4 1	D:\Projects\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\wJanitorShoot4 1_C214D156.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\wJanitorShoot4 1		11767
+	407884217	wJanitorShoot2 2	D:\Projects\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\wJanitorShoot2 2_C214D156.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\wJanitorShoot2 2		3798
+	415114961	wJanitorShoot2 1	D:\Projects\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\wJanitorShoot2 1_C214D156.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\wJanitorShoot2 1		1328
+	863164524	wLizardHit	D:\Projects\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\wLizardHit_C214D156.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\Drone_Sounds\wLizardHit		4744
+	940683805	wJanitorShoot1 2	D:\Projects\RoR2 Mods\HAND\HAND_Overclocked_WWISE\.cache\Windows\SFX\wJanitorShoot1 2_C214D156.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX Mixer\HAND_Sounds\wJanitorShoot1 2		6367
 

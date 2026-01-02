@@ -8,7 +8,7 @@ namespace HANDMod.Modules
 {
     internal static class Skins
     {
-        internal static SkinDef CreateSkinDef(string skinName, Sprite skinIcon, CharacterModel.RendererInfo[] defaultRendererInfos, GameObject root, UnlockableDef unlockableDef = null)
+        internal static SkinDef CreateSkinDef(string skinName, string nameToken, Sprite skinIcon, CharacterModel.RendererInfo[] defaultRendererInfos, GameObject root, UnlockableDef unlockableDef = null)
         {
             SkinDefInfo skinDefInfo = new SkinDefInfo
             {
@@ -18,7 +18,7 @@ namespace HANDMod.Modules
                 MeshReplacements = new SkinDef.MeshReplacement[0],
                 MinionSkinReplacements = new SkinDef.MinionSkinReplacement[0],
                 Name = skinName,
-                NameToken = skinName,
+                NameToken = nameToken,
                 ProjectileGhostReplacements = new SkinDef.ProjectileGhostReplacement[0],
                 RendererInfos = new CharacterModel.RendererInfo[defaultRendererInfos.Length],
                 RootObject = root,

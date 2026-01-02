@@ -29,7 +29,7 @@ namespace HANDMod.Content.RMORSurvivor
             bodyNameToken = HandPlugin.DEVELOPER_PREFIX + "_RMOR_BODY_NAME",
             subtitleNameToken = HandPlugin.DEVELOPER_PREFIX + "_RMOR_BODY_SUBTITLE",
 
-            characterPortrait = Assets.mainAssetBundle.LoadAsset<Texture>("texPortrait.png"),
+            characterPortrait = Modules.Assets.mainAssetBundle.LoadAsset<Texture>("texPortrait.png"),
             bodyColor = new Color(0.556862745f, 0.682352941f, 0.690196078f),
 
             //crosshair = LegacyResourcesAPI.Load<GameObject>("prefabs/crosshair/simpledotcrosshair"),

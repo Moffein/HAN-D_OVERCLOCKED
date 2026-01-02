@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Security;
 using System.Security.Permissions;
+using HANDMod.Content.HANDSurvivor.Components.Body;
 
 [module: UnverifiableCode]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
@@ -21,22 +22,20 @@ namespace HANDMod
     [BepInDependency("com.ThinkInvisible.ClassicItems", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Kingpinush.KingKombatArena", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("HIFU.Inferno", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency(R2API.R2API.PluginGUID)]
+    [BepInDependency(R2API.PrefabAPI.PluginGUID)]
+    [BepInDependency(R2API.RecalculateStatsAPI.PluginGUID)]
+    [BepInDependency(R2API.SoundAPI.PluginGUID)]
+    [BepInDependency(R2API.DamageAPI.PluginGUID)]
+    [BepInDependency(R2API.UnlockableAPI.PluginGUID)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
-    [R2APISubmoduleDependency(new string[]
-    {
-        "PrefabAPI",
-        "UnlockableAPI",
-        "RecalculateStatsAPI",
-        "DamageAPI"
-    })]
 
     public class HandPlugin : BaseUnityPlugin
     {
         public const string MODUID = "com.EnforcerGang.HANDOverclocked";
         public const string MODNAME = "HAN-D Overclocked";
-        public const string MODVERSION = "1.4.0";
+        public const string MODVERSION = "1.5.4";
 
         public const string DEVELOPER_PREFIX = "MOFFEIN";
 
@@ -56,10 +55,11 @@ namespace HANDMod
             instance = this;
 
             CheckDependencies();
-            Modules.Config.ReadConfig();
 
             Log.Init(Logger);
             Modules.Assets.Initialize(); // load assets and read config
+            SoundBanks.Init();
+            Modules.Config.ReadConfig();
             Modules.ItemDisplays.PopulateDisplays(); // collect item display prefabs for use in our display rules
 
             new LanguageTokens();
@@ -83,13 +83,11 @@ namespace HANDMod
             RoR2.RoR2Application.onLoad += AddMechanicalBodies;
         }
 
-        private void Start()
-        {
-            SoundBanks.Init();
-        }
-
         private void AddMechanicalBodies()
         {
+            DroneStockController.droneMeldStackItem = ItemCatalog.FindItemIndex("DronemeldInternalStackItem");
+            DroneStockController.minionMeldStackItem = ItemCatalog.FindItemIndex("MinionMeldInternalStackItem");
+
             BodyIndex sniperClassicIndex = BodyCatalog.FindBodyIndex("SniperClassicBody");
             if (sniperClassicIndex != BodyIndex.None)
             {

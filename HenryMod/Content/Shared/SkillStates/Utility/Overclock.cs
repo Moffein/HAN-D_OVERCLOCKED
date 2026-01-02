@@ -11,10 +11,11 @@ namespace EntityStates.HAND_Overclocked.Utility
 {
 	public class BeginOverclock : BaseState
 	{
+        private float lastFUpdateTime;
 		public override void OnEnter()
 		{
 			base.OnEnter();
-
+            lastFUpdateTime = Time.time;
 			LoadStats();
 
             modelAnimator = base.GetModelAnimator();
@@ -79,14 +80,15 @@ namespace EntityStates.HAND_Overclocked.Utility
 					characterModel = base.modelLocator.modelTransform.gameObject.GetComponent<CharacterModel>();
 					if (characterModel)
 					{
-						tempOverlay = characterModel.gameObject.AddComponent<TemporaryOverlay>();
-						tempOverlay.duration = Mathf.Infinity;
-						tempOverlay.animateShaderAlpha = true;
-						tempOverlay.alphaCurve = AnimationCurve.EaseInOut(0f, 1f, 1f, 0f);
-						tempOverlay.destroyComponentOnEnd = true;
-						tempOverlay.originalMaterial = internalOverlayMaterial;
-						tempOverlay.AddToCharacerModel(characterModel);
-					}
+                        tempOverlay = TemporaryOverlayManager.AddOverlay(characterModel.gameObject);
+                        tempOverlay.duration = Mathf.Infinity;
+                        tempOverlay.animateShaderAlpha = true;
+                        tempOverlay.alphaCurve = AnimationCurve.EaseInOut(0f, 1f, 1f, 0f);
+                        tempOverlay.destroyComponentOnEnd = true;
+                        tempOverlay.originalMaterial = internalOverlayMaterial;
+                        tempOverlay.AddToCharacterModel(characterModel);
+                        tempOverlay.Start();
+                    }
 				}
 			}
 		}
@@ -121,10 +123,10 @@ namespace EntityStates.HAND_Overclocked.Utility
                 }
             }
 
-			if (tempOverlay)
+			if (tempOverlay != null)
             {
 				tempOverlay.RemoveFromCharacterModel();
-				UnityEngine.Object.Destroy(tempOverlay);
+                tempOverlay.Destroy();
 				tempOverlay = null;
             }
 
@@ -144,8 +146,9 @@ namespace EntityStates.HAND_Overclocked.Utility
         public override void FixedUpdate()
 		{
 			base.FixedUpdate();
-
-			jetStopwatch += Time.fixedDeltaTime;
+            float deltaTime = Time.time - lastFUpdateTime;
+            lastFUpdateTime = Time.time;
+            jetStopwatch += deltaTime;
 			if (jetStopwatch >= jetFireTime)
 			{
 				jetStopwatch -= jetFireTime;
@@ -161,7 +164,7 @@ namespace EntityStates.HAND_Overclocked.Utility
 
 			if (base.isAuthority)
 			{
-				stopwatch += Time.fixedDeltaTime;
+                stopwatch += deltaTime;
 				if (overclockController)
 				{
 					stopwatch = ExtendBuff(stopwatch, overclockController.ConsumeExtensionTime());
@@ -176,7 +179,7 @@ namespace EntityStates.HAND_Overclocked.Utility
 				}
 				if (this.beginExit)
 				{
-					this.timerSinceComplete += Time.fixedDeltaTime;
+                    this.timerSinceComplete += deltaTime;
 					if (this.timerSinceComplete > BeginOverclock.baseExitDuration)
 					{
 						this.outer.SetNextStateToMain();
@@ -208,7 +211,7 @@ namespace EntityStates.HAND_Overclocked.Utility
 		private int startStocks = 0;
 		private Transform leftJet;
 		private Transform rightJet;
-		private TemporaryOverlay tempOverlay;
+		private TemporaryOverlayInstance tempOverlay;
 		private CharacterModel characterModel;
 
 		public static GameObject jetEffectPrefab;
