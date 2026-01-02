@@ -1,3 +1,8 @@
+`1.5.5`
+- Fixed alt skins not having custom drones.  
+- Added R2API_Skins dependency so that skins appear in lobby.
+- Broken Janitor ping icon now ?, instead of chest.
+
 `1.5.4`
 
 - Disabled knockback mass scaling against 'the guy' to prevent instakilling them on the kill barrier.

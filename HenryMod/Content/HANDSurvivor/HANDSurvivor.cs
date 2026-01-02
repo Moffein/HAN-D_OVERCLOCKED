@@ -440,7 +440,7 @@ namespace HANDMod.Content.HANDSurvivor
 
             #region DefaultSkin
             //this creates a SkinDef with all default fields
-            SkinDef defaultSkin = Modules.Skins.CreateSkinDef("DEFAULT_SKIN",
+            SkinDef defaultSkin = Modules.Skins.CreateSkinDef("skinHANDOverclocked_Default", "DEFAULT_SKIN",
                 Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texHANDSkinIconDefault"),
                 defaultRendererinfos,
                 model);
@@ -455,12 +455,12 @@ namespace HANDMod.Content.HANDSurvivor
 
             //materials are the default materials
             #endregion
-            Log.Warning("skin1");
+            //Log.Warning("skin1");
             #region MasterySkin
 
             //creating a new skindef as we did before
             Sprite masteryIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texHANDSkinIconMastery");
-            SkinDef masterySkin = Modules.Skins.CreateSkinDef(HAND_PREFIX + "MASTERY_SKIN_NAME",
+            SkinDef masterySkin = Modules.Skins.CreateSkinDef("skinHANDOverclocked_Mastery",HAND_PREFIX + "MASTERY_SKIN_NAME",
                 masteryIcon,
                 defaultRendererinfos,
                 model/*,
@@ -487,7 +487,7 @@ namespace HANDMod.Content.HANDSurvivor
             skins.Add(masterySkin);
 
             #endregion
-            Log.Warning("skin2");
+            //Log.Warning("skin2");
 
             #region RorrSkin
 
@@ -500,7 +500,7 @@ namespace HANDMod.Content.HANDSurvivor
             Modules.ContentPacks.unlockableDefs.Add(rorrUnlockableDef);
              
             //creating a new skindef as we did before
-            SkinDef rorrSkin = Modules.Skins.CreateSkinDef(HAND_PREFIX + "GRANDMASTERY_SKIN_NAME",
+            SkinDef rorrSkin = Modules.Skins.CreateSkinDef("skinHANDOverclocked_GrandMastery", HAND_PREFIX + "GRANDMASTERY_SKIN_NAME",
                 rorrIcon,
                 defaultRendererinfos,
                 model,
@@ -520,12 +520,12 @@ namespace HANDMod.Content.HANDSurvivor
             skins.Add(rorrSkin);
 
             #endregion
-            Log.Warning("skin3");
+            //Log.Warning("skin3");
 
             #region HopooSkin
 
             //creating a new skindef as we did before
-            SkinDef hopooSkin = Modules.Skins.CreateSkinDef(HAND_PREFIX + "HOPOO_SKIN_NAME",
+            SkinDef hopooSkin = Modules.Skins.CreateSkinDef("skinHANDOverclocked_Hopoo",HAND_PREFIX + "HOPOO_SKIN_NAME",
                 Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texHANDSkinIconHopoo"),
                 defaultRendererinfos,
                 model,
@@ -549,39 +549,53 @@ namespace HANDMod.Content.HANDSurvivor
             skins.Add(hopooSkin);
 
             #endregion
-            Log.Warning("skin4");
+            //Log.Warning("skin4");
 
             skinController.skins = skins.ToArray();
-            Log.Warning("skin69");
+            //Log.Warning("skin69");
 
-
-            On.RoR2.ProjectileGhostReplacementManager.Init += ProjectileGhostReplacementManager_Init;
+             
+            On.RoR2.SkinCatalog.Init += SkinCatalog_Init;
+            //BodyCatalog.availability.CallWhenAvailable(MakeSkinnedProjectileGhosts);
         }
 
-        private void ProjectileGhostReplacementManager_Init(On.RoR2.ProjectileGhostReplacementManager.orig_Init orig)
+        private System.Collections.IEnumerator SkinCatalog_Init(On.RoR2.SkinCatalog.orig_Init orig)
+        {
+            try
+            {
+                MakeSkinnedProjectileGhosts();
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e.ToString());
+            }
+            return orig();
+        }
+
+        private void MakeSkinnedProjectileGhosts()
         {
             ModelSkinController skinController = bodyPrefab.GetComponentInChildren<ModelSkinController>();
             for (int i = 1; i < skinController.skins.Length; i++)
             {
                 SkinDef skin = skinController.skins[i];
 
-                if (DoesSkinHaveDroneReplacement(skin))
+                //Force make SkinDefParams early for better to support with other mods that add HanD skins.
+                SkinCatalog.ValidateParams(skin);
+                if (DoesSkinHaveDroneReplacement(skin.skinDefParams))
                 {
-                    HG.ArrayUtils.ArrayAppend(ref skin.projectileGhostReplacements,new SkinDef.ProjectileGhostReplacement
+                    HG.ArrayUtils.ArrayAppend(ref skin.skinDefParams.projectileGhostReplacements,new SkinDef.ProjectileGhostReplacement
                     {
                             projectilePrefab = EntityStates.HAND_Overclocked.Special.FireSeekingDrone.projectilePrefab,
-                            projectileGhostReplacementPrefab = CreateProjectileGhostReplacementPrefab(skin),
+                            projectileGhostReplacementPrefab = CreateProjectileGhostReplacementPrefab(skin, skin.skinDefParams),
                     });
                 }
             }
-
-            orig();
+ 
         }
 
 
-        public static bool DoesSkinHaveDroneReplacement(SkinDef skin)
+        public static bool DoesSkinHaveDroneReplacement(SkinDefParams skin)
         {
-
             SkinDef defaultSkin = HANDSurvivor.instance.bodyPrefab.GetComponentInChildren<ModelSkinController>().skins[0];
 
             for (int i = 0; i < skin.meshReplacements.Length; i++)
@@ -604,16 +618,16 @@ namespace HANDMod.Content.HANDSurvivor
         }
 
 
-        public static GameObject CreateProjectileGhostReplacementPrefab(SkinDef skin)
+        public static GameObject CreateProjectileGhostReplacementPrefab(SkinDef skinDef, SkinDefParams skin)
         {
-            GameObject ghostReplacement = PrefabAPI.InstantiateClone(DroneSetup.droneProjectileGhost, skin.nameToken + "DroneGhostReplacement", false);
+            GameObject ghostReplacement = PrefabAPI.InstantiateClone(DroneSetup.droneProjectileGhost, skinDef.name + "DroneGhostReplacement", false);
             SkinnedMeshRenderer ghostDroneRenderer = ghostReplacement.GetComponent<ChildLocator>().FindChildComponent<SkinnedMeshRenderer>("Drone");
             MeshRenderer ghostSawRenderer = ghostReplacement.GetComponent<ChildLocator>().FindChildComponent<MeshRenderer>("Saw");
 
             SkinDef defaultSkin = HANDSurvivor.instance.bodyPrefab.GetComponentInChildren<ModelSkinController>().skins[0];
 
-            CharacterModel.RendererInfo defaultRendererInfoDrone = defaultSkin.rendererInfos[2];
-            CharacterModel.RendererInfo defaultRendererInfoSaw = defaultSkin.rendererInfos[3];
+            CharacterModel.RendererInfo defaultRendererInfoDrone = defaultSkin.skinDefParams.rendererInfos[2];
+            CharacterModel.RendererInfo defaultRendererInfoSaw = defaultSkin.skinDefParams.rendererInfos[3];
 
             for (int i = 0; i < skin.rendererInfos.Length; i++)
             {
