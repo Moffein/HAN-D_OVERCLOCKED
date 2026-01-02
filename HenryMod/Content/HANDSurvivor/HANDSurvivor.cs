@@ -577,25 +577,25 @@ namespace HANDMod.Content.HANDSurvivor
 
                 //Force make SkinDefParams early for better to support with other mods that add HanD skins.
                 SkinCatalog.ValidateParams(skin);
-                if (DoesSkinHaveDroneReplacement(skin.skinDefParams))
+                bool hasReplacement = DoesSkinHaveDroneReplacement(skin.skinDefParams);
+                if (hasReplacement)
                 {
-                    HG.ArrayUtils.ArrayAppend(ref skin.skinDefParams.projectileGhostReplacements,new SkinDef.ProjectileGhostReplacement
+                    HG.ArrayUtils.ArrayAppend(ref skin.skinDefParams.projectileGhostReplacements, new SkinDef.ProjectileGhostReplacement
                     {
-                            projectilePrefab = EntityStates.HAND_Overclocked.Special.FireSeekingDrone.projectilePrefab,
-                            projectileGhostReplacementPrefab = CreateProjectileGhostReplacementPrefab(skin, skin.skinDefParams),
+                        projectilePrefab = EntityStates.HAND_Overclocked.Special.FireSeekingDrone.projectilePrefab,
+                        projectileGhostReplacementPrefab = CreateProjectileGhostReplacementPrefab(skin, skin.skinDefParams),
                     });
                 }
             }
- 
-        }
 
+        }
 
         public static bool DoesSkinHaveDroneReplacement(SkinDefParams skin)
         {
             SkinDef defaultSkin = HANDSurvivor.instance.bodyPrefab.GetComponentInChildren<ModelSkinController>().skins[0];
 
             for (int i = 0; i < skin.meshReplacements.Length; i++)
-            {
+            {                                             //using the SkinDef.rendererInfos rather than the SkinDefParams.rendererinfos as we skip validating the defaultSkin in the function above because we don't need to check if it has projectile ghost replacements
                 if (skin.meshReplacements[i].renderer == defaultSkin.rendererInfos[2].renderer ||
                    skin.meshReplacements[i].renderer == defaultSkin.rendererInfos[3].renderer)
                 {
@@ -622,8 +622,8 @@ namespace HANDMod.Content.HANDSurvivor
 
             SkinDef defaultSkin = HANDSurvivor.instance.bodyPrefab.GetComponentInChildren<ModelSkinController>().skins[0];
 
-            CharacterModel.RendererInfo defaultRendererInfoDrone = defaultSkin.skinDefParams.rendererInfos[2];
-            CharacterModel.RendererInfo defaultRendererInfoSaw = defaultSkin.skinDefParams.rendererInfos[3];
+            CharacterModel.RendererInfo defaultRendererInfoDrone = defaultSkin.rendererInfos[2];
+            CharacterModel.RendererInfo defaultRendererInfoSaw = defaultSkin.rendererInfos[3];
 
             for (int i = 0; i < skin.rendererInfos.Length; i++)
             {
