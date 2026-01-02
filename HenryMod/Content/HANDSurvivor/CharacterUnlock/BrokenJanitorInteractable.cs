@@ -98,6 +98,7 @@ namespace HANDMod.Content.HANDSurvivor.CharacterUnlock
             EntityLocator el = gameObject.AddComponent<EntityLocator>();
             el.entity = gameObject;
 
+            gameObject.AddComponent<PingInfoProvider>().pingIconOverride = LegacyResourcesAPI.Load<Sprite>("textures/miscicons/texMysteryIcon");
             return gameObject;
         }
 
